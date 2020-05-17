@@ -1,7 +1,5 @@
-body {
-  font-family: sans-serif;
-  background-color: #ffffff;
-}
+
+
 
 #disqus_thread {
 	padding: 12px 10px 0;
@@ -33,8 +31,8 @@ body {
 .file-upload {
   padding: 13% 0%;
   border-radius: 50px;
-  border: solid 1.5px #C1F4FF;
-  background-color:#C1F4FF;
+  
+  background-color:#ffde7a40;
   
   
 }
@@ -209,7 +207,7 @@ body {
  .navnar-light .navbar-brand {
   
   object-fit: contain;
-  font-family: MoeumTR-HM;
+ 
 
   line-height: 1.2;
   text-align: left;
@@ -222,10 +220,11 @@ body {
 .section {
   margin-top: 100px;
 }
-.title{
+.title{ 
+    
     text-align: center;
     line-height: 1.53;
-   
+    
 }
 
 .subtitle {
@@ -238,7 +237,7 @@ body {
        font-size: 10px;
   }
      .navbar-brand{
-      font-size: 1.8rem;
+      font-size: 2.8rem;
     }
   }
 
