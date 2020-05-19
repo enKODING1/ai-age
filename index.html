@@ -2,34 +2,34 @@
 <html>
 
 <head>
+    <title>AI나이 테스트</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   
-   <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eb9054607873539"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Jua&display=swap" rel="stylesheet"><style>
-	
-	body {
-font-family: 'Cute Font', cursive;
-  background-color: #ffffff;
-	
-}
 
-	
-	</style>
-<meta name="naver-site-verification" content="d78be66e1c7c3a7f75b0ef791e6fbeda55eb8434" />
-      
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eb9054607873539"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Jua&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cute Font', cursive;
+            background-color: #ffffff;
+
+        }
+    </style>
+    <meta name="naver-site-verification" content="d78be66e1c7c3a7f75b0ef791e6fbeda55eb8434" />
+    <link rel=" shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico">
+    <script data-ad-client="ca-pub-5207006250876379" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body>
-	
 
     <script id="dsq-count-scr" src="//ksjdevelop53.disqus.com/count.js" async></script>
     <nav class="navbar navbar-expand-lg navbar-light nav-distance" style="
     padding-top: 2.1%;
     padding-left: 7.7%;">
-        <a class="navbar-brand"  href="#" >몇 살 인지 맞춰 볼까요~ᕕ( ᐛ )ᕗ</a>
+        <a class="navbar-brand" href="#">몇 살 인지 맞춰 볼까요~ᕕ( ᐛ )ᕗ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -55,9 +55,17 @@ font-family: 'Cute Font', cursive;
     <section class="section">
         <h1 class="title">인공지능 나이 분석</h1>
         <h2 class="subtitle">인공지능은 나를 몇 살로 볼까 ~?</h2>
+		
+		<button class="thankyou-jocoding" onclick = "window.open('https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg')">
+			도움이된 영상들
+			
+		</button>
+		<button class="animal-test" onclick = "window.open('https://animalface.site/ko/index.html')">
+			동물상 테스트
+		</button>
     </section>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <div class="container file-upload"  style=" width: 70%; margin: 0 auto;">
+    <div class="container file-upload" style=" width: 70%; margin: 0 auto;">
         <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
@@ -77,31 +85,29 @@ font-family: 'Cute Font', cursive;
             </div>
             <p class="result-message"></p>
             <div id="label-container" class="d-flex flex-column justify-content-around"></div>
-           
-                <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox_baxz"></div>
-            
+
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_inline_share_toolbox_baxz"></div>
+
             <div class="pt-3 image-title-wrap">
 
                 <button type="button p-2" class="try-again-btn" onclick="window.location.reload();" data-toggle="modal" data-target="#adModal" style="border-radius: 50px;">
                     <span class="try-again-text">다른 사진</span>
                 </button>
             </div>
-        
+
         </div>
 
     </div>
-	
-	<ins class="kakao_ad_area" style="display:none;" 
- data-ad-unit    = "DAN-to4k3cv5at6f" 
- data-ad-width   = "320" 
- data-ad-height  = "100"></ins> 
-<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+	 
+
+    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-to4k3cv5at6f" data-ad-width="320" data-ad-height="100"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <div class="contanerb pt-3">
         <div id="disqus_thread"></div>
     </div>
     <div id="webcam-container"></div>
-    
+
     <script>
         /**
          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -172,16 +178,14 @@ font-family: 'Cute Font', cursive;
         // Load the image model and setup the webcam
         async function init() {
             const modelURL = URL + "model.json";
-            const metadataURL = URL + "metadata.json";
-            // load the model and metadata
-            // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-            // or files from your local hard drive
-            // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+            const metadataURL = URL + "metadata.json"
             model = await tmImage.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
             labelContainer = document.getElementById("label-container");
             for (let i = 0; i < maxPredictions; i++) { // and class labels
-                labelContainer.appendChild(document.createElement("div"));
+                var element = document.createElement("div")
+                element.classList.add("d-flex");
+                labelContainer.appendChild(element);
             }
         }
         // run the webcam image through the image model
@@ -195,33 +199,33 @@ font-family: 'Cute Font', cursive;
             switch (prediction[0].className) {
                 case "baby":
                     resultmessage = "귀여운 애기"
-                    resultExplain = ""
+                    resultExplain = "혹시 애기가 아니라면 그만큼 귀여우신가 봐요٩(ˊωˋ*)و✧"
                     break;
                 case "one":
-                    resultmessage = "활활 의욕 넘치는 10대!"
-                    resultExplain = ""
+                    resultmessage = "꿈을 기록하는 것이 목표인 10대!!"
+                    resultExplain = "꿈을 기록하는 것이 목표가아닌 꿈을 실현하는 것이 나의 목표인 10대~!"
                     break;
                 case "two":
                     resultmessage = "앞날이 밝고 무궁무진한 일들을 해낼 20대!"
-                    resultExplain = ""
+                    resultExplain = "상상할 수 없는 꿈을 꾸고 있다면 상상할 수 없는 노력을 하면 이뤄낼 수 있는 나이!"
                     break;
                 case "three":
-                    resultmessage = "세상을 바꿀 수 있는 30대!"
-                    resultExplain = ""
+                    resultmessage = "최고의 경쟁력을 지닌 30대!"
+                    resultExplain = "최고의 경쟁력은 공부일수도 있지만 가장 중요한 열정을 가진 당신 ~!"
                     break;
                 case "four":
-                    resultmessage = "점점 더 우아함을 가지게 되는 40대!"
-                    resultExplain = ""
+                    resultmessage = "시간의 능력자 40대 ~!"
+                    resultExplain = "우리가 진정으로 소유하는 것은 시간 뿐이고 가진 것이 달리 아무 것도 없는 이에게도 시간은 있어요 당신은 시간을 가지고 놀 수 있는 사람입니다~!"
                     break;
                 case "five":
-                    resultmessage = "50대!"
-                    resultExplain = ""
+                    resultmessage = "시작이 반 인 50대 ~~!"
+                    resultExplain = "애벌레가 세상이 끝났다고 생각하는 순간 나비로 변하는 순간~~/"
                     break;
                 default:
                     resultmessage = "잘 모르겠습니다"
                     resultExplain = "test7"
             }
-            var title = "<div class='" + prediction[0].className + "-age-title' style="font-weight: bold; ">" + resultmessage + "</div>"
+            var title = "<div class='" + prediction[0].className + "-age-title'>" + resultmessage + "</div>"
             var explain = "<div class='age-explain pt-2'>" + resultExplain + "</div>"
             $('.result-message').html(title + explain);
             var barWidth;
@@ -233,36 +237,35 @@ font-family: 'Cute Font', cursive;
                     barWidth = "4%"
                 } else {
                     barWidth = "2%"
+                }
+                var labelTitle;
+                switch (prediction[i].className) {
+                    case "baby":
+                        labelTitle = "애기"
+                        break;
+                    case "one":
+                        labelTitle = "10대"
+                        break;
+                    case "two":
+                        labelTitle = "20대"
+                        break;
+                    case "three":
+                        labelTitle = "30대"
+                        break;
+                    case "four":
+                        labelTitle = "40대"
+                        break;
+                    case "five":
+                        labelTitle = "50대"
+                        break;
+                    default:
+                        labelTitle = "알수없음"
+                }
+                var label = "<div class='age-label d-flex align-items-center'>" + labelTitle + "</div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                labelContainer.childNodes[i].innerHTML = label + bar;
             }
-            var labelTitle;
-            switch (prediction[i].className) {
-                case "baby":
-                    labelTitle = "애기"
-                    break;
-                case "one":
-                    labelTitle = "10대"
-                    break;
-                case "two":
-                    labelTitle = "20대"
-                    break;
-                case "three":
-                    labelTitle = "30대"
-                    break;
-                case "four":
-                    labelTitle = "40대"
-                    break;
-                case "five":
-                    labelTitle = "50대"
-                    break;
-                default:
-                    labelTitle = "알수없음"
-            }
-            var label = "<div class='age-label d-flex align-items-center'>" + labelTitle + "</div>"
-            var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
-            labelContainer.childNodes[i].innerHTML = label + bar;
         }
-
-    }   
     </script>
 
 </body>
