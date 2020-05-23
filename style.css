@@ -139,7 +139,7 @@
 }
 .try-again-text {
   display: block;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   text-align: center;
   color: #ffffff;
   padding: 4px 15px;
@@ -489,4 +489,11 @@ left: 31%;
 .modal-title{
 	width:50%;
 	margin:0 auto;
+}
+.ad-banner3{
+	width:300px;
+	margin: 0 auto;
+}
+.text-center{
+	font-size:2.5rem;
 }
