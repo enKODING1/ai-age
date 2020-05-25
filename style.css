@@ -219,15 +219,7 @@
   border: 0;
   transition: all 0.2s ease;
 }
-.navnar-light .navbar-brand {
-  object-fit: contain;
-  line-height: 1.2;
-  text-align: left;
-  color: #707070;
-}
-.navbar-light .navbar-toggler {
-  border-color: #ffffff !important;
-}
+
 .section {
   margin-top: 100px;
 }
@@ -496,4 +488,29 @@ left: 31%;
 }
 .text-center{
 	font-size:2.5rem;
+}
+.bg-dark1{
+	background-color:#e4e4e4!important;
+}
+.youtube-link{
+	font-size: 2rem;
+	color: #f62828;
+    text-decoration: underline;
+}
+
+.youtube-link:hover{
+	font-size:2rem;
+	color: #f62828;
+    text-decoration: underline;
+}
+.youtube-logo{
+	height:25px;
+}
+.youtubed{
+	margin-right:15%;
+	margin-top:3%;
+}
+.navbar-light .navbar-toggler {
+    border-color: rgba(248, 249, 250, 1)!important;
+   
 }
