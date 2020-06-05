@@ -388,47 +388,7 @@
   height: 315px;
   object-fit: contain;
 }
-.thankyou-jocoding {
-  
-  background: #4829c93d;
-  color: #ffffff;
-  border: none;
-  position: relative;
-  height: 60px;
-  font-size: 1.6em;
-  padding: 0 2em;
-  cursor: pointer;
-  transition: 800ms ease all;
-  outline: none;
-  border-radius: 50px;
-left: 26%;
-}
-.thankyou-jocoding:hover {
-  background: #fff;
-  color: #1AAB8A;
-}
-.thankyou-jocoding:before,
-.thankyou-jocoding:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: #1AAB8A;
-  transition: 400ms ease all;
-}
-.thankyou-jocoding:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
-}
-.thankyou-jocoding:hover:before,
-.thankyou-jocoding:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
-}
+
 .animal-test {
  
   background: #4829c93d;
@@ -492,13 +452,13 @@ left: 31%;
 .bg-dark1{
 	background-color:#e4e4e4!important;
 }
-.youtube-link{
+.thankyou-jocoding{
 	font-size: 2rem;
 	color: #f62828;
     text-decoration: underline;
 }
 
-.youtube-link:hover{
+.thankyou-jocoding:hover{
 	font-size:2rem;
 	color: #f62828;
     text-decoration: underline;
