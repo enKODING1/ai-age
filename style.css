@@ -434,6 +434,8 @@ left: 31%;
 	width: 320px;
 	margin: 0 auto;
 }
+
+
 .modal-body{
 	width:300px;
 	margin: 0 auto;
@@ -445,6 +447,20 @@ left: 31%;
 .ad-banner3{
 	width:300px;
 	margin: 0 auto;
+}
+.coupang
+{
+	width:700px;
+	margin:0 auto;
+}
+.coupang2{
+	width:728px;
+	margin:0 auto;
+}
+.kakao_ad_area1
+{
+	width:320px;
+	margin:0 auto;
 }
 .text-center{
 	font-size:2.5rem;
@@ -462,6 +478,7 @@ left: 31%;
 	color: #f62828;
     text-decoration: underline;
 }
+
 .youtube-logo{
 	height:25px;
 }
