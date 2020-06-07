@@ -449,8 +449,7 @@ left: 31%;
 .text-center{
 	font-size:2.5rem;
 }
-.bg-dark1{
-	background-color:#e4e4e4!important;
+
 }
 .thankyou-jocoding{
 	font-size: 2rem;
@@ -471,6 +470,7 @@ left: 31%;
 	margin-top:3%;
 }
 .navbar-light .navbar-toggler {
-    border-color: rgba(248, 249, 250, 1)!important;
+    border-color: #ffffff!important;
    
 }
+
