@@ -1,1 +1,15 @@
-{"storage":"container","type":"hcj","detailedtype":"default","author":"104427662011958781029_cp35l_google","name":"web_age","description":"","date":"2020/5/9 11:36:0","plugins":{"goorm.plugin.hcj":[{}]},"is_user_plugin":false,"author_email":"rkdd2846@gmail.com","author_name":"강성진","ignore_patterns":[],"project_domain":[{"id":"104427662011958781029_cp35l_google","url":"web-age-tnqoj.run.goorm.io","port":"9090"}],"visibility":2}
+{"storage":"container",
+"type":"hcj",
+"detailedtype":"default",
+"author":"104427662011958781029_cp35l_google",
+"name":"web_age",
+"description":"",
+"date":"2020/5/9 11:36:0",
+"plugins":{"goorm.plugin.hcj":[{}]},
+"is_user_plugin":false,
+"author_email":"rkdd2846@gmail.com",
+"author_name":"강성진",
+"ignore_patterns":[],"project_domain":[{"id":"104427662011958781029_cp35l_google",
+"url":"web-age-tnqoj.run.goorm.io",
+"port":"9090"}],
+"visibility":2}
