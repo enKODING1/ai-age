@@ -7,6 +7,16 @@ body{
   transition: all 0.5s;
 }
 
+.text-click{
+  margin: 0 auto;
+  margin-bottom: 14px;
+  width:130px;
+  border-radius: 8px;
+  background-color:rgba(235, 83, 116, 0.082); /*dark rgba(235, 83, 116, 0.082);*/
+  color: rgb(235, 83, 116); /*dark rgb(235, 83, 116);*/
+  text-align: center;
+}
+
 /* loading bar */
 
 /*email*/
