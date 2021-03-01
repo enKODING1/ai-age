@@ -7,7 +7,13 @@ body{
   transition: all 0.5s;
 }
 
-
+.ad-wrap{
+  border: 3px solid white;
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
 
 .text-click{
   margin: 0 auto;
@@ -98,7 +104,9 @@ body{
   height: 30px;
 }
 
-
+.li-wr{
+  width: 180px;
+}
 
 
 
@@ -163,12 +171,13 @@ body{
 
 
 .email{
-  position: relative;
-  left: 25%;
   border-radius: 5px;
   color:rgb(86, 115, 235);
   background-color: rgb(224, 230, 251);
   width: 200px;
+  height: 23px;
+  margin: 0 auto;
+  text-align: center;
   cursor: pointer;
 }
 
