@@ -5,7 +5,7 @@ function readURL(input) {
   
       reader.onload = function(e) {
         $('.image-upload-wrap').hide();
-  
+        $('#loading').show();
         $('.file-upload-image').attr('src', e.target.result);
         $('.file-upload-content').show();
   
@@ -16,6 +16,7 @@ function readURL(input) {
       init().then(()=>{
         console.log("hello");
         predict();
+        $('#loading').hide();
       });
       
     } else {
