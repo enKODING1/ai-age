@@ -425,31 +425,15 @@ body{
   padding: 20px;
 }
 
-.remove-image {
+.reload-image {
   width: 200px;
-  margin: 0;
-  color: #fff;
-  background: #cd4535;
+  background-color:rgba(235, 83, 116, 0.082); /*dark rgba(235, 83, 116, 0.082);*/
+  color: rgb(235, 83, 116); /*dark rgb(235, 83, 116);*/
   border: none;
-  padding: 10px;
-  border-radius: 4px;
-  border-bottom: 4px solid #b02818;
-  transition: all .2s ease;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: 700;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
 }
 
-.remove-image:hover {
-  background: #c13b2a;
-  color: #ffffff;
-  transition: all .2s ease;
-  cursor: pointer;
-}
-
-.remove-image:active {
-  border: 0;
-  transition: all .2s ease;
-}
 
 }
