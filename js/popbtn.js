@@ -1,8 +1,10 @@
 var wide = document.querySelector('.pop-btn');
 var mylist = document.querySelector("#mylist");
 
+
 wide.addEventListener("mouseover",mouseOver);
 wide.addEventListener("mouseout",mouseOut);
+
 
 
 function mouseOver(){
@@ -11,3 +13,4 @@ function mouseOver(){
 function mouseOut(){
    mylist.style.display = "none";
 }
+
