@@ -87,7 +87,7 @@ async function predict() {
                 labelTitle = "알수없음"
         }
       var label = "<div class='label-name' style='text-align:left;'>"+labelTitle+"</div>";
-      var bar = "<div class='label-bar' style='height:30px'><div class='"+ prediction[i].className + "-label' style='height:30px; border-radius:5px; width:"+Math.round(prediction[i].probability.toFixed(2) * 100)+"%'; text-align:center;><span style='color:black;  position:relative; top:5px;'>"+Math.round(prediction[i].probability.toFixed(2) * 100)+"% </span></div></div>";
+      var bar = "<div class='label-bar' style='height:30px'><div class='"+ prediction[i].className + "-label' style='height:30px; border-radius:10px; width:"+Math.round(prediction[i].probability.toFixed(2) * 100)+"%'; text-align:center;><span style='color:black;  position:relative; top:5px;'>"+Math.round(prediction[i].probability.toFixed(2) * 100)+"% </span></div></div>";
       labelContainer.childNodes[i].innerHTML = label + bar;
     }
 }
