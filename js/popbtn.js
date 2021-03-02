@@ -1,5 +1,5 @@
-var wide = document.querySelector('.pop-btn');
-var mylist = document.querySelector("#mylist");
+// var wide = document.querySelector('.pop-btn');
+// var mylist = document.querySelector("#mylist");
 // var Body_1 = document.querySelector('body');
 
 wide.addEventListener("mouseover",mouseOver);
@@ -8,10 +8,12 @@ wide.addEventListener("mouseout",mouseOut);
 
 
 function mouseOver(){
-    mylist.style.display = "block";
+    // mylist.style.display = "block";
+    $('.pop-btn').css('display','block');
 }
 function mouseOut(){
-    mylist.style.display = "none";
+    // mylist.style.display = "none";
+    $('#mylist').css('display','none');
 } 
 // function onClick(){
 //     mylist.style.display = "none";
