@@ -1,4 +1,4 @@
-// var wide = document.querySelector('.pop-btn');
+ var wide = document.querySelector('.pop-btn');
 // var mylist = document.querySelector("#mylist");
 // var Body_1 = document.querySelector('body');
 
@@ -9,11 +9,11 @@ wide.addEventListener("mouseout",mouseOut);
 
 function mouseOver(){
     // mylist.style.display = "block";
-    $('.pop-btn').css('display','block');
+    $('#mylist').show();
 }
 function mouseOut(){
     // mylist.style.display = "none";
-    $('#mylist').css('display','none');
+    $('#mylist').hide();
 } 
 // function onClick(){
 //     mylist.style.display = "none";
