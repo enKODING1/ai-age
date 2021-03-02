@@ -187,7 +187,7 @@ body{
 }
 
 .shadow{
-  box-shadow: 2px 2px 2px rgb(180, 180, 180);
+  box-shadow: rgb(172 172 172) 0px 0px 12px -2px
 }
 
 .list-wrap{
@@ -295,7 +295,7 @@ body{
 /*사진업로드 박스*/
 .file-upload {
   background-color: #ffffff;
-  box-shadow: 3px 3px 3px rgb(228, 228, 228);
+  box-shadow: rgb(172 172 172) 0px 0px 12px -2px;
   border-radius: 10px;
   width: 600px;
   height: 50%;
@@ -402,17 +402,8 @@ body{
 
 /*모바일 화면일 때*/
 @media screen and (max-width: 600px) {
-  .pop-btn{
-    background-color: white;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: auto;
-    margin-top: 20px;
-    transition: all 0.5s;
-  }
-
-  .pop-btn:active{
+ 
+  .pop-btn:hover{
     width: 400px;
     height: 450px;
     border-radius: 10px;
@@ -420,7 +411,7 @@ body{
   /*사진업로드 박스*/
 .file-upload {
   background-color: #ffffff;
-  box-shadow: 3px 3px 3px rgb(228, 228, 228);
+  box-shadow: rgb(172 172 172) 0px 0px 12px -2px;
   border-radius: 10px;
   width: 300px;
   height: 50%;
