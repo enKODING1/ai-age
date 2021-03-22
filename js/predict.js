@@ -21,7 +21,7 @@ async function predict() {
     prediction.sort((a,b)=>parseFloat(b.probability) - parseFloat(a.probability));
     console.log(prediction);
     var resultmessage, resultExplain;
-    switch(prediction[0].className){
+    switch(prediction[0].className){    
         case "baby":
             resultmessage = "귀여운 애기"
             resultExplain = "혹시 애기가 아니라면 그만큼 귀여우신가 봐요٩(ˊωˋ*)و✧"
@@ -52,7 +52,38 @@ async function predict() {
     }
     var title = "<div class='" + prediction[0].className + "-age-title'>"+ resultmessage + "</div>";
     var explain = "<div class='age-explain'>"+ resultExplain + "</div>";
-    $('.result-message').html(title + explain);
+
+    var result = 0;
+   for(let i = 0;i <maxPredictions; i++){
+      switch(prediction[i].className){
+            case "baby":
+                age = 5;
+                break;
+            case "one":
+                age = 15;
+                break;
+            case "two":
+                age = 25;
+                break;
+            case "three":
+                age = 35;
+                break;
+            case "four":
+                age = 45;
+                break;
+            case "five":
+                age = 55;
+                break;
+            default:
+                resultmessage = "잘 모르겠습니다"
+                resultExplain = "test7"
+      } 
+      var pre_result = Math.round(prediction[i].probability.toFixed(2) * 100)*age/100;
+      result = result + pre_result;
+   }
+     
+    var prediction_age = "<div class='prediction-age'>대략 "+Math.round(result)+"세 입니다!</div>"
+    $('.result-message').html(title + explain + prediction_age);
 
     var barWidth;
     for (let i = 0; i < maxPredictions; i++) {

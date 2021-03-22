@@ -107,10 +107,14 @@ body{
 .li-wr{
   width: 180px;
 }
-
-
-
-
+.prediction-age{
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  color:#4e4e4e; 
+  background-color: #f8cfb3;
+}
 /*label-bar*/
 .label-wrap{
   display: flex;
