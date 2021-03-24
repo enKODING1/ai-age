@@ -15,14 +15,7 @@ var Body = {
     }
 }
 
-var Links = {
-        NightColors:function(color){
-        $('#list').css('color',color);
-    },
-        DayColor:function(color){
-        $('#list').css('color',color);
-        }
-}     
+    
 var Mode = {
         setMoon:function(color){
             $('#Moon').css("backgroundColor",color);
@@ -47,7 +40,17 @@ var License_wrap = {
 }
 
 
-
+var ListsLink = {
+    setListBackgroundColor:((color)=>{
+        $(".list").css("backgroundColor",color);
+    }),
+    // setTextColor:((color)=>{
+    //     $(".list").css("color",color);
+    // }),
+    setLinkColor:((color)=>{
+        $(".link").css('color',color);
+    })
+}
     function NightDayHandler(self){
            
             if(self.value === "checked"){
@@ -56,11 +59,12 @@ var License_wrap = {
                 Body.setColor('#7b9acc');
                 Body.setUpload('white');
                 Body.setPopbtn('white');
+                ListsLink.setListBackgroundColor('#ffffff');
                 License_wrap.setLicenseBackgroundColor('rgb(224, 230, 251)');
                 License_wrap.setLicenseColor('rgb(86, 115, 235)');
                 License_wrap.setEmailBackgroundColor('rgb(224, 230, 251)');
                 License_wrap.setEmailColor('rgb(86, 115, 235)');
-                Links.NightColors('#7b9acc');
+               
                 self.value = 'check';
             }
             else{
@@ -69,7 +73,7 @@ var License_wrap = {
                 Body.setColor('#DCE2F0');
                 Body.setUpload('#484A50');
                 Body.setPopbtn('#484A50');
-                Links.NightColors('#DCE2F0');
+                ListsLink.setListBackgroundColor('#484A50');
                 License_wrap.setLicenseBackgroundColor('rgba(86, 115, 235, 0.082)');
                 License_wrap.setLicenseColor('rgb(86, 115, 235)');
                 License_wrap.setEmailBackgroundColor('rgba(86, 115, 235, 0.082)');

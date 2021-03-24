@@ -43,7 +43,7 @@
   <script src="./js/predict.js" defer></script>
   <script src="./js/popbtn.js" defer></script>
   <script src="./js/upload.js" defer></script>
-
+  <script src="./js/nav-scroll.js" defer></script>
   <!--teachable machine-->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js" defer></script>
@@ -54,36 +54,28 @@
 
   <title>얼굴나이 테스트</title>
  
-
 </head>
 
 <body>
-
-  <header>
-    <div class="pop-box">
-      <div class="pop-btn shadow">
-        <h2>Ai 노안 테스트</h2>
-        <div id="mylist">
-          <ul class="list-wrap">
-            <li class="li-wr"><a id="list" href="https://github.com/enkoding1" target="_blank">깃허브</a></li>
-            <li class="li-wr"><a id="list" href="https://enkoding.tistory.com" target="_blank">블로그</a></li>
-            <li class="li-wr"><a id="list" href="https://enkoding1.github.io" target="_blank">깃 블로그</a></li>
-            <li class="li-wr"><a id="list" href="https://old-aige.netlify.app" target="_blank">구 노안테스트</a></li>
-          </ul>
-          <br><br><br>
-          <span>
-            <p class="email" onclick="location.href='mailto:ksjdevelop53@gmail.com?subject=문의하기 및 피드백'"
-              style="text-align: center;">ksjdevelop53@gmail.com</p>
-          </span>
-        </div>
-      </div>
-    </div>
-  </header>
-  <br>
-  <br>
-  <div>
-    <h4 class="text-click" style="text-align: center;">위를 클릭해보세요!</h4>
+  <div class="ad-wrap-1">
+    <ins class="kakao_ad_area" style="display:none;" 
+ data-ad-unit    = "DAN-NQr6jHIZukNiyueJ" 
+ data-ad-width   = "320" 
+ data-ad-height  = "50"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+  </div> 
+<nav>
+  <div class="nav-bar">
+     <div class="nav-box">
+         <ul class="list-box">
+           <li class="list shadow"><a class="link" href="https://enkoding.tistory.com" target="_blank">Blog</a></li>
+           <li class="list shadow"><a class="link" href="https://github.com/enkoding1" target="_blank">Github</a></li>
+           <li class="list shadow"><a class="link" href="https://old-aige.netlify.app" target="_blank">Old aige</a></li>
+         </ul>
+     </div>
   </div>
+</nav>
+  <br><br><br>
   <div class="label-box">
     <div class="night-day" onclick="NightDayHandler(this)">
       <div id="moon">
@@ -104,6 +96,7 @@
 
 
 
+  
   <div class="file-upload">
     <div class="image-upload-wrap">
       <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />

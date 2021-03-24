@@ -14,15 +14,12 @@ body{
   text-align: center;
   margin: 0 auto;
 }
-
-.text-click{
-  margin: 0 auto;
-  margin-bottom: 14px;
-  width:130px;
-  border-radius: 8px;
-  background-color:rgba(235, 83, 116, 0.082); /*dark rgba(235, 83, 116, 0.082);*/
-  color: rgb(235, 83, 116); /*dark rgb(235, 83, 116);*/
+.ad-wrap-1{
+  border: 3px solid white;
+  width: 320px;
+  height: 50px;
   text-align: center;
+  margin: 0 auto;
 }
 
 /* loading bar */
@@ -104,9 +101,7 @@ body{
   height: 30px;
 }
 
-.li-wr{
-  width: 180px;
-}
+
 .prediction-age{
   width: 150px;
   margin: 0 auto;
@@ -194,50 +189,7 @@ body{
   box-shadow: rgb(172 172 172) 0px 0px 12px -2px
 }
 
-.list-wrap{
 
-  margin: 20px 100px 0 108px;
-	font-size:2rem;
-}
-
-#mylist .list-wrap li a{
-	text-decoration:none;
-	color:#7b9acc;
-	list-style:none;
-  transition: all 0.5s;
-}
-#list:hover{
-  text-decoration: underline;
-}
-
-.pop-btn{
-  background-color: white;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: auto;
-  margin-top: 20px;
-  transition: all 0.5s;
-}
-
-.pop-btn:hover{
-    width: 400px;
-    height: 400px;
-    border-radius: 10px;
-  }
-
-.pop-btn h2{
-  padding-top: 35px;
-  text-align: center;
-  font-size: 1rem;
-}
-
- #mylist{
-
-   display: none;
-	 margin-top:40px;
-   
-} 
 
 .sec{
   text-align: center;
@@ -266,6 +218,7 @@ body{
 }
 
 .label-box{
+
   width: 30px;
   height: 30px;
   margin: 0 auto;
@@ -296,6 +249,57 @@ body{
    margin-top: 13%;
 }
 } */
+
+
+
+
+/*navigation bar*/
+
+nav{
+  margin-top: 30px;
+
+}
+
+.nav-bar{
+  width: 99.5%;
+  height: 60px;
+  margin: 0 auto;
+
+}
+.nav-box{
+  
+  width: 99.5%;
+  height: 55px;
+  margin: 0 auto;
+}
+.list-box{
+  
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  height: 24px;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 10px;
+  list-style: none;
+  transition: all;
+ 
+}
+
+.list{
+  padding: 0 20px 0 20px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 9px;
+  transition: all 0.5s;
+}
+
+.list a{
+  text-decoration: none;
+  color: #7b9acc;
+}
+
+
 /*사진업로드 박스*/
 .file-upload {
   background-color: #ffffff;
@@ -407,11 +411,46 @@ body{
 /*모바일 화면일 때*/
 @media screen and (max-width: 600px) {
  
-  .pop-btn:hover{
-    width: 400px;
-    height: 450px;
-    border-radius: 10px;
+  /*navigationbar*/
+  nav{
+    margin-top: 20px;
   }
+  .nav-bar{
+    position: fixed;
+    width: 99.5%;
+    height: 60px;
+    margin: 0 auto;
+  }
+  .nav-box{
+    
+    width: 99.5%;
+    height: 55px;
+    margin: 0 auto;
+  }
+  .list-box{
+
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 24px;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 10px;
+    list-style: none;
+    transition: all;
+  }
+  .list{
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 9px;
+    transition: all 0.5s;
+  }
+  
+  .list a{
+  text-decoration: none;
+  color: #7b9acc;
+   }
   /*사진업로드 박스*/
 .file-upload {
   background-color: #ffffff;
