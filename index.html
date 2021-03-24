@@ -14,7 +14,8 @@
     gtag('config', 'UA-167117355-1');
   </script>
   <!--Google Adsense-->
-  <script data-ad-client="ca-pub-5207006250876379" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script data-ad-client="ca-pub-5207006250876379" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!--meta tag-->
   <meta name="얼굴나이 테스트" content="티처블 머신을 활용하여 만든 얼굴 노안테스트 사이트" />
   <meta name="title" content="얼굴노안 테스트 | 얼굴노안">
@@ -46,35 +47,34 @@
   <script src="./js/nav-scroll.js" defer></script>
   <!--teachable machine-->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"
+    defer></script>
   <!--link jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
   <link rel=" shortcut icon" href="favicon.ico">
   <link rel="icon" href="favicon.ico">
 
   <title>얼굴나이 테스트</title>
- 
+
 </head>
 
 <body>
   <div class="ad-wrap-1">
-    <ins class="kakao_ad_area" style="display:none;" 
- data-ad-unit    = "DAN-NQr6jHIZukNiyueJ" 
- data-ad-width   = "320" 
- data-ad-height  = "50"></ins> 
-<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-  </div> 
-<nav>
-  <div class="nav-bar">
-     <div class="nav-box">
-         <ul class="list-box">
-           <li class="list shadow"><a class="link" href="https://enkoding.tistory.com" target="_blank">Blog</a></li>
-           <li class="list shadow"><a class="link" href="https://github.com/enkoding1" target="_blank">Github</a></li>
-           <li class="list shadow"><a class="link" href="https://old-aige.netlify.app" target="_blank">Old aige</a></li>
-         </ul>
-     </div>
+    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-NQr6jHIZukNiyueJ" data-ad-width="320"
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
   </div>
-</nav>
+  <nav>
+    <div class="nav-bar">
+      <div class="nav-box">
+        <ul class="list-box">
+          <li class="list shadow"><a class="link" href="https://enkoding.tistory.com" target="_blank">Blog</a></li>
+          <li class="list shadow"><a class="link" href="https://github.com/enkoding1" target="_blank">Github</a></li>
+          <li class="list shadow"><a class="link" href="https://old-aige.netlify.app" target="_blank">Old aige</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <br><br><br>
   <div class="label-box">
     <div class="night-day" onclick="NightDayHandler(this)">
@@ -96,41 +96,46 @@
 
 
 
-  
-  <div class="file-upload">
-    <div class="image-upload-wrap">
-      <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-      <div class="drag-text">
-        <h3>드래그 & 드롭 또는 사진을 업로드해주세요!!</h3>
-      </div>
-
+  <div class="full-wrap">
+    <div class="ad-wrap-3">
+      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-zmJO8pfJK5wY7K8t" data-ad-width="160"
+        data-ad-height="600"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     </div>
+    <div class="file-upload">
+      <div class="image-upload-wrap">
+        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+        <div class="drag-text">
+          <h3>드래그 & 드롭 또는 사진을 업로드해주세요!!</h3>
+        </div>
 
-    <div class="file-upload-content">
-      <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-      <p class="result-message"></p>
-      <div id="label-container"></div>
-      <br>
-      <div id="loading" class="lds-ellipsis">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
       </div>
-      <br>
-      <div class="image-title-wrap">
 
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <div class="addthis_inline_share_toolbox_tnde"></div>
+      <div class="file-upload-content">
+        <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+        <p class="result-message"></p>
+        <div id="label-container"></div>
         <br>
+        <div id="loading" class="lds-ellipsis">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
         <br>
-        <button type="button" onclick="window.location.reload()" class="reload-image">
-          다른사진
-        </button>
+        <div class="image-title-wrap">
+
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <div class="addthis_inline_share_toolbox_tnde"></div>
+          <br>
+          <br>
+          <button type="button" onclick="window.location.reload()" class="reload-image">
+            다른사진
+          </button>
+        </div>
       </div>
     </div>
   </div>
-
 
   <!-- disqus
   <script>
@@ -149,11 +154,11 @@
 
   <p style="text-align: center;">
     *사용된 사진은 어디에도 저장되지 않습니다*</p>
-       <div class="ad-wrap">
+  <div class="ad-wrap-2">
     <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-rCnk2z6YiPGVPPbO" data-ad-width="320"
-    data-ad-height="50"></ins>
-  <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script> 
-  </div> 
+      data-ad-height="50"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+  </div>
   <span class="license-wrap">
 
     <p class="license">
