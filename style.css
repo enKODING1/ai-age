@@ -7,20 +7,7 @@ body{
   transition: all 0.5s;
 }
 
-.ad-wrap-2{
-  border: 3px solid white;
-  width: 350px;
-  height: 50px;
-  text-align: center;
-  margin: 0 auto;
-}
-.ad-wrap-1{
-  border: 3px solid white;
-  width: 320px;
-  height: 50px;
-  text-align: center;
-  margin: 0 auto;
-}
+
 
 
 /* loading bar */
@@ -255,15 +242,6 @@ body{
   display: flex;
   flex-direction: row;
 }
-.ad-wrap-3{
-  border: 3px solid white;
-  width: 160px;
-  height: 600px;
-  text-align: center;
-  margin: 0 auto;
-  margin: 0 20px 0 20px;
-}
-
 /*navigation bar*/
 
 nav{
@@ -425,6 +403,20 @@ nav{
  .ad-wrap-3{
    display: none;
  }
+ .ad-wrap-2{
+  border: 3px solid white;
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+.ad-wrap-1{
+  border: 3px solid white;
+  width: 320px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
   /*navigationbar*/
   nav{
     margin-top: 20px;
