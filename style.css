@@ -139,7 +139,6 @@ body{
 
 
 
-
 .license{
   margin: 0 auto;
   margin-top: 20px;
@@ -244,19 +243,16 @@ body{
 }
 /*navigation bar*/
 
-nav{
-  margin-top: 30px;
 
-}
 
 .nav-bar{
+  position: fixed;
   width: 99.5%;
   height: 60px;
   margin: 0 auto;
 
 }
 .nav-box{
-  
   width: 99.5%;
   height: 55px;
   margin: 0 auto;
