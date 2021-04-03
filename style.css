@@ -261,11 +261,6 @@ body{
   margin: 0 auto;
 
 }
-.nav-box{
-  width: 99.5%;
-  height: 55px;
-  margin: 0 auto;
-}
 .list-box{
   
   display: flex;
@@ -302,7 +297,6 @@ body{
   width: 600px;
   height: 50%;
   margin: 0 auto;
-  margin-left: 400px;
   padding: 40px 40px 80px 40px;
   transition: all 0.5s;
 }
@@ -430,12 +424,7 @@ body{
     height: 60px;
     margin: 0 auto;
   }
-  .nav-box{
-    
-    width: 99.5%;
-    height: 55px;
-    margin: 0 auto;
-  }
+ 
   .list-box{
 
     display: flex;
