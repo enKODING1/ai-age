@@ -7,7 +7,7 @@ document.addEventListener('scroll', function () {
     console.log(currentScroll);
     if (currentScroll > 40) {
         $(".nav-bar").fadeOut();
-        currentScroll+11;
+
     } else if (currentScroll < 50) {
         $(".nav-bar").fadeIn();
     }
