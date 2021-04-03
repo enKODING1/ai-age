@@ -237,13 +237,22 @@ body{
 }
 } */
 
-.full-wrap{
-  display: flex;
-  flex-direction: row;
-}
+
 /*navigation bar*/
-
-
+.ad-wrap-2{
+  border: 3px solid white;
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+.ad-wrap-1{
+  border: 3px solid white;
+  width: 320px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
 
 .nav-bar{
   position: fixed;
@@ -396,9 +405,7 @@ body{
 
 /*모바일 화면일 때*/
 @media screen and (max-width: 600px) {
- .ad-wrap-3{
-   display: none;
- }
+ 
  .ad-wrap-2{
   border: 3px solid white;
   width: 350px;
