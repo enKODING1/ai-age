@@ -44,9 +44,6 @@ var ListsLink = {
     setListBackgroundColor:((color)=>{
         $(".list").css("backgroundColor",color);
     }),
-    // setTextColor:((color)=>{
-    //     $(".list").css("color",color);
-    // }),
     setLinkColor:((color)=>{
         $(".link").css('color',color);
     })
