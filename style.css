@@ -4,7 +4,7 @@ body{
   background-color: #F7F8FB;
   color:#7b9acc;
   font-family: 'Jua', sans-serif;
-  transition: all 0.5s;
+  transition: ease-in 0.5s;
 }
 
 
@@ -180,6 +180,8 @@ body{
 
 .sec{
   text-align: center;
+  transition: ease-in 0.5s;
+  transform: scale(45px);
 }
 
 
@@ -271,7 +273,7 @@ body{
   margin: 0 auto;
   margin-top: 10px;
   list-style: none;
-  transition: all;
+  transition: ease-in 0.5s;
  
 }
 
@@ -280,7 +282,7 @@ body{
   margin: 0 auto;
   background-color: #ffffff;
   border-radius: 9px;
-  transition: all 0.5s;
+  transition: ease-in 0.5s;
 }
 
 .list a{
@@ -298,7 +300,7 @@ body{
   height: 50%;
   margin: 0 auto;
   padding: 40px 40px 80px 40px;
-  transition: all 0.5s;
+  transition: ease-in 0.5s;
 }
 
 .file-upload-btn {
@@ -435,14 +437,14 @@ body{
     margin: 0 auto;
     margin-top: 10px;
     list-style: none;
-    transition: all;
+    transition: ease-in 0.5s;
   }
   .list{
     padding: 0 20px 0 20px;
     margin: 0 auto;
     background-color: #ffffff;
     border-radius: 9px;
-    transition: all 0.5s;
+    transition: ease-in 0.5s;
   }
   
   .list a{
@@ -459,7 +461,7 @@ body{
   margin: 0 auto;
   padding: 20px;
   padding-bottom: 80px;
-  transition: all 0.5s;
+  transition: ease-in 0.5s;
 }
 
 .file-upload-btn {
