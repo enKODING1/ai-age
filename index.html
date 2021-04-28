@@ -57,7 +57,20 @@
 
   <title>얼굴나이 테스트</title>
 
-
+  <script>
+    jQuery(function($) {
+    $("body").css("display", "none");
+    $("body").fadeIn(1000);
+    $("a.transition").click(function(event){
+    event.preventDefault();
+    linkLocation = this.href;
+    $("body").fadeOut(500, redirectPage);
+    });
+    function redirectPage() {
+    window.location = linkLocation;
+    }
+    });
+    </script>
 </head>
 
 <body>
