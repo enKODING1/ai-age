@@ -5,29 +5,10 @@ body{
   color:#7b9acc;
   font-family: 'Jua', sans-serif;
   transition: ease-in 0.5s;
-  animation: fadein 2000ms ease-out;
-  -moz-animation: fadein 2000ms ease-out; /* Firefox */
-  -webkit-animation: fadein 2000ms ease-out; /* Safari and  Chrome */
-  -o-animation: fadein 2000ms ease-out; /* Opera */
 }
 
 
-@keyframes fadein{
-  from {opacity:0;}
-  to {opacity:1;}
-}
-@-moz-keyframes fadein { /* Firefox */
-  from {opacity:0;}
-  to {opacity:1;}
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-  from {opacity:0;}
-  to {opacity:1;}
-}
-@-o-keyframes fadein { /* Opera */
-  from {opacity:0;}
-  to {opacity: 1;}
-}
+
 
 /* loading bar */
 .lds-ellipsis {
@@ -116,6 +97,12 @@ body{
   border-radius: 10px;
   color:#4e4e4e; 
   background-color: #f8cfb3;
+  animation: 1s down both;
+}
+@keyframes down{
+  from{
+    margin-top: 0px;
+  }
 }
 /*label-bar*/
 .label-wrap{
@@ -134,21 +121,32 @@ body{
 /*age label*/
 .baby-label{
   background-color: #ff86eb;
+  animation: 2s show both;
 }
 .one-label{
   background-color: #e97062;
+  animation: 2s show both;
 }
 .two-label{
   background-color: rgb(236, 203, 143);
+  animation: 2s show both;
 }
 .three-label{
   background-color: rgb(255, 218, 218);
+  animation: 2s show both;
 }
 .four-label{
   background-color: #bae7af;
+  animation: 2s show both;
 }
 .five-label{
   background-color: rgb(182, 182, 255);
+  animation: 2s show both;
+}
+@keyframes show{
+  from{
+    width: 0%;
+  }
 }
 
 
@@ -201,6 +199,9 @@ body{
   text-align: center;
   transition: ease-in 0.5s;
   transform: scale(45px);
+  position: relative;
+  top: 0px;
+  animation: 0.8s slide both;
 }
 
 
@@ -213,6 +214,9 @@ body{
   border-radius: 50%;
   width: 30px;
   height: 30px;
+  position: relative;
+  top: 0px;
+  animation: 0.5s slide both;
 }
 #half{
  
@@ -299,9 +303,17 @@ body{
 .list{
   padding: 0 20px 0 20px;
   margin: 0 auto;
+  position: relative;
+  top: 0px;
   background-color: #ffffff;
   border-radius: 9px;
   transition: ease-in 0.5s;
+  animation: 0.3s slide both;
+}
+@keyframes slide {
+   from{
+     top: -30px;
+   }
 }
 
 .list a{
@@ -317,10 +329,14 @@ body{
   border-radius: 10px;
   width: 600px;
   height: 50%;
+  position: relative;
+  top: 0px;
   margin: 0 auto;
   padding: 40px 40px 80px 40px;
   transition: ease-in 0.5s;
+  animation: 1s slide both;
 }
+
 
 .file-upload-btn {
   width: 100%;
