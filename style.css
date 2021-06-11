@@ -480,7 +480,15 @@ body{
     background-color: #ffffff;
     border-radius: 9px;
     transition: ease-in 0.5s;
-  }
+    position: relative;
+    top: 0px;
+    animation: 0.3s slide both;
+}
+@keyframes slide {
+   from{
+     top: -30px;
+   }
+}
   
   .list a{
   text-decoration: none;
@@ -497,6 +505,9 @@ body{
   padding: 20px;
   padding-bottom: 80px;
   transition: ease-in 0.5s;
+  position: relative;
+  top: 0px;
+  animation: 1s slide both;
 }
 
 .file-upload-btn {
