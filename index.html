@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-signin-client_id"
-    content="713679821975-mqpqmptocveslvbai5uqrtktd38iter8.apps.googleusercontent.com" />
+
   <meta name="google-site-verification" content="c_8SA0-cFptL1fv-xIDNGNRWsF3i7pmZmp2rvwzU0r4" />
 
   <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly" />
@@ -180,8 +179,7 @@
     </span>
     <p class="license">ⓒ 2020.ksjdevelop53 all rights reserved.</p>
   </span>
-  <p class="g-signin2" data-onsuccess="queryReports"></p>
-  <textarea cols="80" rows="20" id="query-output"></textarea>
+
 
   <br />
 
@@ -202,37 +200,7 @@
         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
   <!-- Load the JavaScript API client and Sign-in library. -->
 
-  <script>
-    // Replace with your view ID.
-    var VIEW_ID = '218918984';
 
-    // Query the API and print the results to the page.
-    function queryReports() {
-      gapi.client.request({
-        path: '/v4/reports:batchGet',
-        root: 'https://analyticsreporting.googleapis.com/',
-        method: 'POST',
-        body: {
-          reportRequests: [{
-            viewId: VIEW_ID,
-            dateRanges: [{
-              startDate: '2020-05-25',
-              endDate: 'today'
-            }],
-            metrics: [{
-              expression: 'ga:users'
-            }]
-          }]
-        }
-      }).then(displayResults, console.error.bind("api: " + console));
-    }
-
-    function displayResults(response) {
-      var formattedJson = JSON.stringify(response.result, null, 2);
-      document.getElementById('query-output').value = formattedJson;
-    }
-  </script>
-  <script src="https://apis.google.com/js/client:platform.js"></script>
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <!--link jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
