@@ -1,6 +1,6 @@
 document.addEventListener('scroll', function () {
     var currentScroll = document.documentElement.scrollTop;
-    console.log(currentScroll);
+ 
     if (currentScroll > 40) {
         $(".nav-bar").fadeOut();
 
