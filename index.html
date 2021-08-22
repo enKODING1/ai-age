@@ -5,9 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="c_8SA0-cFptL1fv-xIDNGNRWsF3i7pmZmp2rvwzU0r4" />
-
+  <meta name="google-signin-client_id"
+    content="713679821975-mqpqmptocveslvbai5uqrtktd38iter8.apps.googleusercontent.com">
+  <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-167117355-1"></script>
+  <script>
+    alert("현재 잠시 점검중입니다!");
+  </script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -174,8 +179,9 @@
     </span>
     <p class="license">ⓒ 2020.ksjdevelop53 all rights reserved.</p>
   </span>
-  <button id="auth-button" onclick="authorize();">Authorize</button>
+  <p class="g-signin2" data-onsuccess="queryReports"></p>
   <textarea cols="80" rows="20" id="query-output"></textarea>
+
   <br />
 
   <!-- Copyright (c) 2021 by Aaron Vanston
@@ -195,139 +201,37 @@
         CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
   <!-- Load the JavaScript API client and Sign-in library. -->
 
-  <script src="https://apis.google.com/js/api.js"></script>
   <script>
-    // Replace with your client ID from the developer console.
-    var CLIENT_ID =
-      '713679821975-mqpqmptocveslvbai5uqrtktd38iter8.apps.googleusercontent.com'; // <-- 발급받은 Client ID 입력 
+    // Replace with your view ID.
+    var VIEW_ID = '713679821975-mqpqmptocveslvbai5uqrtktd38iter8.apps.googleusercontent.com';
 
-    // Set authorized scope.
-    var SCOPES = ['https://www.googleapis.com/auth/analytics.readonly'];
-
-    function authorize() {
-      // Handles the authorization flow.
-      // `immediate` should be false when invoked from the button click.
-      // var useImmdiate = event ? false : true;
-      var authData = {
-        client_id: CLIENT_ID,
-        scope: SCOPES,
-        immediate: false
-      };
-
-      gapi.auth.authorize(authData, function (response) {
-        var authButton = document.getElementById('auth-button');
-        if (response.error) {
-          authButton.hidden = false;
-        } else {
-          authButton.hidden = true;
-          queryAccounts();
+    // Query the API and print the results to the page.
+    function queryReports() {
+      gapi.client.request({
+        path: '/v4/reports:batchGet',
+        root: 'https://analyticsreporting.googleapis.com/',
+        method: 'POST',
+        body: {
+          reportRequests: [{
+            viewId: VIEW_ID,
+            dateRanges: [{
+              startDate: '2020-05-25',
+              endDate: 'today'
+            }],
+            metrics: [{
+              expression: 'ga:sessions'
+            }]
+          }]
         }
-      });
+      }).then(displayResults, console.error.bind("api: " + console));
     }
 
-    function queryAccounts() {
-      // Load the Google Analytics client library.
-      gapi.client.load('analytics', 'v3').then(function () {
-
-        // Get a list of all Google Analytics accounts for this user
-        gapi.client.analytics.management.accounts.list().then(handleAccounts);
-      });
-    }
-
-    function handleAccounts(response) {
-      // Handles the response from the accounts list method.
-      if (response.result.items && response.result.items.length) {
-        // Get the first Google Analytics account.
-        var firstAccountId = response.result.items[0].id;
-
-        // Query for properties.
-        queryProperties(firstAccountId);
-      } else {
-        console.log('No accounts found for this user.');
-      }
-    }
-
-    function queryProperties(accountId) {
-      // Get a list of all the properties for the account.
-      gapi.client.analytics.management.webproperties.list({
-          'accountId': accountId
-        })
-        .then(handleProperties)
-        .then(null, function (err) {
-          // Log any errors.
-          console.log(err);
-        });
-    }
-
-    function handleProperties(response) {
-      // Handles the response from the webproperties list method.
-      if (response.result.items && response.result.items.length) {
-
-        // Get the first Google Analytics account
-        var firstAccountId = response.result.items[0].accountId;
-
-        // Get the first property ID
-        var firstPropertyId = response.result.items[0].id;
-
-        // Query for Views (Profiles).
-        queryProfiles(firstAccountId, firstPropertyId);
-      } else {
-        console.log('No properties found for this user.');
-      }
-    }
-
-    function queryProfiles(accountId, propertyId) {
-      // Get a list of all Views (Profiles) for the first property
-      // of the first Account.
-      gapi.client.analytics.management.profiles.list({
-          'accountId': accountId,
-          'webPropertyId': propertyId
-        })
-        .then(handleProfiles)
-        .then(null, function (err) {
-          // Log any errors.
-          console.log(err);
-        });
-    }
-
-    function handleProfiles(response) {
-      // Handles the response from the profiles list method.
-      if (response.result.items && response.result.items.length) {
-        // Get the first View (Profile) ID.
-        var firstProfileId = response.result.items[0].id;
-        // Query the Core Reporting API.
-        queryCoreReportingApi(firstProfileId);
-
-      } else {
-        console.log('No views (profiles) found for this user.');
-      }
-    }
-
-    function queryCoreReportingApi(profileId) {
-      // Query the Core Reporting API for the number sessions for
-      // the past seven days.
-      gapi.client.analytics.data.ga.get({
-          'ids': 'ga:' + profileId,
-          // ## 조회 시작일자
-          'start-date': '2020-03-03',
-          // ## 조회 마지막일자
-          'end-date': 'today',
-          // ##  -- 사용자, 신규 방문자, 세션, 이탈률, 평균세션시간(초), 페이지뷰 수, 세션당 페이지수, 사용자당 세션 수 
-          'metrics': 'ga:users,ga:newUsers,ga:sessions,ga:bounceRate,ga:avgSessionDuration,ga:pageviews,ga:pageviewsPerSession,ga:sessionsPerUser',
-          // ##  -- 소스 , 매체
-          'dimensions': 'ga:source,ga:medium'
-        })
-        .then(function (response) {
-          var formattedJson = JSON.stringify(response.result, null, 2);
-          document.getElementById('query-output').value = formattedJson;
-        })
-        .then(null, function (err) {
-          // Log any errors.
-          console.log(err);
-        });
+    function displayResults(response) {
+      var formattedJson = JSON.stringify(response.result, null, 2);
+      document.getElementById('query-output').value = formattedJson;
     }
   </script>
-  <script src="https://apis.google.com/js/client.js?onload=authorize"></script>
+  <script src="https://apis.google.com/js/client:platform.js"></script>
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <!--link jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
