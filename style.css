@@ -1,14 +1,27 @@
-body{
+body {
   margin: 0;
   padding: 0;
   background-color: #F7F8FB;
-  color:#7b9acc;
+  color: #7b9acc;
   font-family: 'Jua', sans-serif;
   transition: ease-in 0.5s;
 }
 
 
+.share_text {
+  animation: 2s repeat infinite;
+  font-size: 1.1rem;
+}
 
+@keyframes repeat {
+  50% {
+    font-size: 1.3rem;
+  }
+
+  100% {
+    font-size: 1.1rem;
+  }
+}
 
 /* loading bar */
 .lds-ellipsis {
@@ -17,6 +30,7 @@ body{
   width: 80px;
   height: 80px;
 }
+
 .lds-ellipsis div {
   position: absolute;
   top: 33px;
@@ -26,42 +40,52 @@ body{
   background: rgb(216, 157, 255);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
+
 .lds-ellipsis div:nth-child(1) {
   left: 8px;
   animation: lds-ellipsis1 0.6s infinite;
 }
+
 .lds-ellipsis div:nth-child(2) {
   left: 8px;
   animation: lds-ellipsis2 0.6s infinite;
 }
+
 .lds-ellipsis div:nth-child(3) {
   left: 32px;
   animation: lds-ellipsis2 0.6s infinite;
 }
+
 .lds-ellipsis div:nth-child(4) {
   left: 56px;
   animation: lds-ellipsis3 0.6s infinite;
 }
+
 @keyframes lds-ellipsis1 {
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 @keyframes lds-ellipsis3 {
   0% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(0);
   }
 }
+
 @keyframes lds-ellipsis2 {
   0% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(24px, 0);
   }
@@ -69,7 +93,7 @@ body{
 
 
 /*email*/
-.email-wrap{
+.email-wrap {
   display: flex;
   flex-direction: row;
   height: 30px;
@@ -79,7 +103,7 @@ body{
 }
 
 
-.email-img{
+.email-img {
   background-color: rgb(197, 209, 253);
   text-align: center;
   border-radius: 8px;
@@ -90,61 +114,71 @@ body{
 }
 
 
-.prediction-age{
+.prediction-age {
   width: 150px;
   margin: 0 auto;
   margin-top: 20px;
   border-radius: 10px;
-  color:#4e4e4e; 
+  color: #4e4e4e;
   background-color: #f8cfb3;
   animation: 1s down both;
 }
-@keyframes down{
-  from{
+
+@keyframes down {
+  from {
     margin-top: 0px;
   }
 }
+
 /*label-bar*/
-.label-wrap{
+.label-wrap {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
 }
-.label-name{
+
+.label-name {
   width: 60px;
 }
 
-.label-bar{
+.label-bar {
   background-color: #e0e8f5;
   border-radius: 10px;
 }
+
 /*age label*/
-.baby-label{
+.baby-label {
   background-color: #ff86eb;
   animation: 2s show both;
 }
-.one-label{
+
+.one-label {
   background-color: #e97062;
   animation: 2s show both;
 }
-.two-label{
+
+.two-label {
   background-color: rgb(236, 203, 143);
   animation: 2s show both;
 }
-.three-label{
+
+.three-label {
   background-color: rgb(255, 218, 218);
   animation: 2s show both;
 }
-.four-label{
+
+.four-label {
   background-color: #bae7af;
   animation: 2s show both;
 }
-.five-label{
+
+.five-label {
   background-color: rgb(182, 182, 255);
   animation: 2s show both;
 }
-@keyframes show{
-  from{
+
+@keyframes show {
+  from {
     width: 0%;
   }
 }
@@ -156,26 +190,28 @@ body{
 
 
 
-.license{
+.license {
   margin: 0 auto;
   margin-top: 20px;
   width: 300px;
-  border-radius:5px ;
-  color:rgb(86, 115, 235);
+  border-radius: 5px;
+  color: rgb(86, 115, 235);
   background-color: rgb(224, 230, 251);
 }
-.license:nth-child(1){
+
+.license:nth-child(1) {
   text-align: center;
   width: 120px;
 }
-.license:nth-child(2){
+
+.license:nth-child(2) {
   border: 3px solid red;
 }
 
 
-.email{
+.email {
   border-radius: 5px;
-  color:rgb(86, 115, 235);
+  color: rgb(86, 115, 235);
   background-color: rgb(224, 230, 251);
   width: 200px;
   height: 23px;
@@ -184,18 +220,18 @@ body{
   cursor: pointer;
 }
 
-.developer{
+.developer {
   position: relative;
   left: 50px;
 }
 
-.shadow{
+.shadow {
   box-shadow: rgb(172 172 172) 0px 0px 12px -2px
 }
 
 
 
-.sec{
+.sec {
   text-align: center;
   transition: ease-in 0.5s;
   transform: scale(45px);
@@ -207,8 +243,8 @@ body{
 
 /*dark mode switch*/
 
-#moon{
-  background-color:rgb(20, 22, 26);
+#moon {
+  background-color: rgb(20, 22, 26);
   margin: 0;
   padding: 0;
   border-radius: 50%;
@@ -218,18 +254,19 @@ body{
   top: 0px;
   animation: 0.5s slide both;
 }
-#half{
- 
+
+#half {
+
   margin: 0;
   padding: 0;
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background-color:#FCF6F5;
- 
+  background-color: #FCF6F5;
+
 }
 
-.label-box{
+.label-box {
 
   width: 30px;
   height: 30px;
@@ -242,8 +279,8 @@ body{
 
 /* pc화면일때 */
 @media screen and (min-width: 600px) {
-/*사진업로드 박스*/
-/* .container{
+  /*사진업로드 박스*/
+  /* .container{
   border-radius: 20px;
   background-color: white;
   border: 3px solid ;
@@ -263,206 +300,214 @@ body{
 } */
 
 
-/*navigation bar*/
-.ad-wrap-2{
-  border: 3px solid white;
-  width: 350px;
-  height: 50px;
-  text-align: center;
-  margin: 0 auto;
-}
-.ad-wrap-1{
-  border: 3px solid white;
-  width: 320px;
-  height: 50px;
-  text-align: center;
-  margin: 0 auto;
-}
+  /*navigation bar*/
+  .ad-wrap-2 {
+    border: 3px solid white;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
 
-.nav-bar{
-  position: fixed;
-  width: 99.5%;
-  height: 60px;
-  margin: 0 auto;
+  .ad-wrap-1 {
+    border: 3px solid white;
+    width: 320px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
 
-}
-.list-box{
-  
-  display: flex;
-  flex-direction: row;
-  width: 30%;
-  height: 24px;
-  padding: 0;
-  margin: 0 auto;
-  margin-top: 10px;
-  list-style: none;
-  transition: ease-in 0.5s;
- 
-}
+  .nav-bar {
+    position: fixed;
+    width: 99.5%;
+    height: 60px;
+    margin: 0 auto;
 
-.list{
-  padding: 0 20px 0 20px;
-  margin: 0 auto;
-  position: relative;
-  top: 0px;
-  background-color: #ffffff;
-  border-radius: 9px;
-  transition: ease-in 0.5s;
-  animation: 0.3s slide both;
-}
-@keyframes slide {
-   from{
-     top: -30px;
-   }
-}
+  }
 
-.list a{
-  text-decoration: none;
-  color: #7b9acc;
-}
+  .list-box {
 
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 24px;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 10px;
+    list-style: none;
+    transition: ease-in 0.5s;
 
-/*사진업로드 박스*/
-.file-upload {
-  background-color: #ffffff;
-  box-shadow: rgb(172 172 172) 0px 0px 12px -2px;
-  border-radius: 10px;
-  width: 600px;
-  height: 50%;
-  position: relative;
-  top: 0px;
-  margin: 0 auto;
-  padding: 40px 40px 80px 40px;
-  transition: ease-in 0.5s;
-  animation: 1s slide both;
-}
+  }
+
+  .list {
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
+    position: relative;
+    top: 0px;
+    background-color: #ffffff;
+    border-radius: 9px;
+    transition: ease-in 0.5s;
+    animation: 0.3s slide both;
+  }
+
+  @keyframes slide {
+    from {
+      top: -30px;
+    }
+  }
+
+  .list a {
+    text-decoration: none;
+    color: #7b9acc;
+  }
 
 
-.file-upload-btn {
-  width: 100%;
-  margin: 0;
-  color: #fff;
-  background: #1FB264;
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  border-bottom: 4px solid #15824B;
-  transition: all .2s ease;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.file-upload-btn:hover {
-  background: #1AA059;
-  color: #ffffff;
-  transition: all .2s ease;
-  cursor: pointer;
-}
-
-.file-upload-btn:active {
-  border: 0;
-  transition: all .2s ease;
-}
-
-.file-upload-content {
-  display: none;
-  text-align: center;
-  margin-top: 50px;
-}
-
-.file-upload-input {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  outline: none;
-  opacity: 0;
-  cursor: pointer;
-}
+  /*사진업로드 박스*/
+  .file-upload {
+    background-color: #ffffff;
+    box-shadow: rgb(172 172 172) 0px 0px 12px -2px;
+    border-radius: 10px;
+    width: 600px;
+    height: 50%;
+    position: relative;
+    top: 0px;
+    margin: 0 auto;
+    padding: 40px 40px 80px 40px;
+    transition: ease-in 0.5s;
+    animation: 1s slide both;
+  }
 
 
-.image-upload-wrap {
-  margin-top: 50px;
-  border: 4px dashed #7b9acc;
-  position: relative;
-  padding: 50px;
-}
+  .file-upload-btn {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background: #1FB264;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #15824B;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
 
-.image-dropping,
-.image-upload-wrap:hover {
-  background-color:#f6f7fa;
-  border: 4px dashed #b3c4f8;
-}
+  .file-upload-btn:hover {
+    background: #1AA059;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+  }
 
-.image-title-wrap {
-  padding: 0 15px 15px 15px;
-  color: #222;
-}
+  .file-upload-btn:active {
+    border: 0;
+    transition: all .2s ease;
+  }
 
-.drag-text {
-  text-align: center;
-}
+  .file-upload-content {
+    display: none;
+    text-align: center;
+    margin-top: 50px;
+  }
 
-.drag-text h3 {
-  font-weight: 100;
-  text-transform: uppercase;
-  color: #7b9acc;
-  padding: 60px 0;
-}
+  .file-upload-input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+  }
 
-.file-upload-image {
-  border-radius: 30px;
-  max-height: 400px;
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
 
-}
+  .image-upload-wrap {
+    margin-top: 50px;
+    border: 4px dashed #7b9acc;
+    position: relative;
+    padding: 50px;
+  }
 
-.reload-image {
-  width: 200px;
-  background-color:rgba(235, 83, 116, 0.082); /*dark rgba(235, 83, 116, 0.082);*/
-  color: rgb(235, 83, 116); /*dark rgb(235, 83, 116);*/
-  border: none;
-  border-radius: 10px;
-  width: 200px;
-  height: 40px;
-}
+  .image-dropping,
+  .image-upload-wrap:hover {
+    background-color: #f6f7fa;
+    border: 4px dashed #b3c4f8;
+  }
+
+  .image-title-wrap {
+    padding: 0 15px 15px 15px;
+    color: #222;
+  }
+
+  .drag-text {
+    text-align: center;
+  }
+
+  .drag-text h3 {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #7b9acc;
+    padding: 60px 0;
+  }
+
+  .file-upload-image {
+    border-radius: 30px;
+    max-height: 400px;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+
+  }
+
+  .reload-image {
+    width: 200px;
+    background-color: rgba(235, 83, 116, 0.082);
+    /*dark rgba(235, 83, 116, 0.082);*/
+    color: rgb(235, 83, 116);
+    /*dark rgb(235, 83, 116);*/
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+  }
 
 
 }
 
 /*모바일 화면일 때*/
 @media screen and (max-width: 600px) {
- 
- .ad-wrap-2{
-  border: 3px solid white;
-  width: 350px;
-  height: 50px;
-  text-align: center;
-  margin: 0 auto;
-}
-.ad-wrap-1{
-  border: 3px solid white;
-  width: 320px;
-  height: 50px;
-  text-align: center;
-  margin: 0 auto;
-}
+
+  .ad-wrap-2 {
+    border: 3px solid white;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .ad-wrap-1 {
+    border: 3px solid white;
+    width: 320px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
   /*navigationbar*/
-  nav{
+  nav {
     margin-top: 20px;
   }
-  .nav-bar{
+
+  .nav-bar {
     position: fixed;
     width: 99.5%;
     height: 60px;
     margin: 0 auto;
   }
- 
-  .list-box{
+
+  .list-box {
 
     display: flex;
     flex-direction: row;
@@ -474,7 +519,8 @@ body{
     list-style: none;
     transition: ease-in 0.5s;
   }
-  .list{
+
+  .list {
     padding: 0 20px 0 20px;
     margin: 0 auto;
     background-color: #ffffff;
@@ -483,124 +529,128 @@ body{
     position: relative;
     top: 0px;
     animation: 0.3s slide both;
-}
-@keyframes slide {
-   from{
-     top: -30px;
-   }
-}
-  
-  .list a{
-  text-decoration: none;
-  color: #7b9acc;
-   }
+  }
+
+  @keyframes slide {
+    from {
+      top: -30px;
+    }
+  }
+
+  .list a {
+    text-decoration: none;
+    color: #7b9acc;
+  }
+
   /*사진업로드 박스*/
-.file-upload {
-  background-color: #ffffff;
-  box-shadow: rgb(172 172 172) 0px 0px 12px -2px;
-  border-radius: 10px;
-  width: 300px;
-  height: 50%;
-  margin: 0 auto;
-  padding: 20px;
-  padding-bottom: 80px;
-  transition: ease-in 0.5s;
-  position: relative;
-  top: 0px;
-  animation: 1s slide both;
-}
+  .file-upload {
+    background-color: #ffffff;
+    box-shadow: rgb(172 172 172) 0px 0px 12px -2px;
+    border-radius: 10px;
+    width: 300px;
+    height: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 80px;
+    transition: ease-in 0.5s;
+    position: relative;
+    top: 0px;
+    animation: 1s slide both;
+  }
 
-.file-upload-btn {
-  width: 100%;
-  margin: 0;
-  color: #fff;
-  background: #1FB264;
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  border-bottom: 4px solid #15824B;
-  transition: all .2s ease;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: 700;
-}
+  .file-upload-btn {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background: #1FB264;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #15824B;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
 
-.file-upload-btn:hover {
-  background: #1AA059;
-  color: #ffffff;
-  transition: all .2s ease;
-  cursor: pointer;
-}
+  .file-upload-btn:hover {
+    background: #1AA059;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+  }
 
-.file-upload-btn:active {
-  border: 0;
-  transition: all .2s ease;
-}
+  .file-upload-btn:active {
+    border: 0;
+    transition: all .2s ease;
+  }
 
-.file-upload-content {
-  display: none;
-  text-align: center;
-  margin-top: 30px;
-}
+  .file-upload-content {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+  }
 
-.file-upload-input {
-  border: 3px solid red;
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  outline: none;
-  opacity: 0;
-  cursor: pointer;
-}
+  .file-upload-input {
+    border: 3px solid red;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+  }
 
-.image-upload-wrap {
-  margin-top: 50px;
-  border: 4px dashed #7b9acc;
-  position: relative;
-  padding: 50px;
-}
+  .image-upload-wrap {
+    margin-top: 50px;
+    border: 4px dashed #7b9acc;
+    position: relative;
+    padding: 50px;
+  }
 
-.image-dropping,
-.image-upload-wrap:hover {
-  background-color:#f6f7fa;
-  border: 4px dashed #b3c4f8;
-}
+  .image-dropping,
+  .image-upload-wrap:hover {
+    background-color: #f6f7fa;
+    border: 4px dashed #b3c4f8;
+  }
 
-.image-title-wrap {
-  padding: 0 15px 15px 15px;
-  color: #222;
-}
+  .image-title-wrap {
+    padding: 0 15px 15px 15px;
+    color: #222;
+  }
 
-.drag-text {
-  text-align: center;
-}
+  .drag-text {
+    text-align: center;
+  }
 
-.drag-text h3 {
-  font-weight: 100;
-  text-transform: uppercase;
-  color: #7b9acc;
-  padding: 60px 0;
-}
+  .drag-text h3 {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #7b9acc;
+    padding: 60px 0;
+  }
 
-.file-upload-image {
-  border-radius: 30px;
-  max-height: 250px;
-  max-width: 250px;
-  margin: auto;
-  padding: 20px;
-}
+  .file-upload-image {
+    border-radius: 30px;
+    max-height: 250px;
+    max-width: 250px;
+    margin: auto;
+    padding: 20px;
+  }
 
-.reload-image {
-  width: 200px;
-  background-color:rgba(235, 83, 116, 0.082); /*dark rgba(235, 83, 116, 0.082);*/
-  color: rgb(235, 83, 116); /*dark rgb(235, 83, 116);*/
-  border: none;
-  border-radius: 10px;
-  width: 200px;
-  height: 40px;
-}
+  .reload-image {
+    width: 200px;
+    background-color: rgba(235, 83, 116, 0.082);
+    /*dark rgba(235, 83, 116, 0.082);*/
+    color: rgb(235, 83, 116);
+    /*dark rgb(235, 83, 116);*/
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+  }
 
 
 }
