@@ -7,7 +7,7 @@ async function init() {
     const metadataURL = URL + "metadata.json";
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
-    console.log("maxPredictions: "+maxPredictions + "개"); //6개 값이 나옴
+    // console.log("maxPredictions: "+maxPredictions + "개"); //6개 값이 나옴
     labelContainer = document.getElementById("label-container");
     for (let i = 0; i < maxPredictions; i++) { // and class labels
       var element =  labelContainer.appendChild(document.createElement("div"));
@@ -19,7 +19,7 @@ async function predict() {
     var image = document.getElementById("face-image");
     const prediction = await model.predict(image, false);
     prediction.sort((a,b)=>parseFloat(b.probability) - parseFloat(a.probability));
-    console.log(prediction);
+    // console.log(prediction);
     var resultmessage, resultExplain;
     switch(prediction[0].className){    
         case "baby":
