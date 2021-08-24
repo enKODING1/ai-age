@@ -9,8 +9,13 @@ body {
 
 
 .share_text {
+  transition: all 0.5s;
   animation: 2s repeat infinite;
   font-size: 1.1rem;
+}
+
+#mobile {
+  display: none;
 }
 
 @keyframes repeat {
@@ -652,5 +657,20 @@ body {
     height: 40px;
   }
 
+  #pc {
+    display: none;
+  }
+
+  #mobile {
+    display: block;
+  }
+
+  #mobile:nth-child(2) {
+    margin-bottom: 0;
+  }
+
+  #mobile:nth-child(3) {
+    margin-top: 0;
+  }
 
 }
