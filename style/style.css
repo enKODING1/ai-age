@@ -11,6 +11,7 @@ body {
 .share_text {
   transition: all 0.5s;
   animation: 2s repeat infinite;
+  -webkit-animation: 2s repeat infinite;
   font-size: 1.1rem;
 }
 
@@ -25,6 +26,16 @@ body {
 
   100% {
     font-size: 1.1rem;
+  }
+}
+
+@-webkit-keyframes repeat {
+  50% {
+    -webkit-font-size: 1.3rem;
+  }
+
+  100% {
+    -webkit-font-size: 1.1rem;
   }
 }
 
@@ -657,6 +668,8 @@ body {
     height: 40px;
   }
 
+  /* 공유 추천 텍스트 */
+
   #pc {
     display: none;
   }
@@ -671,6 +684,16 @@ body {
 
   #mobile:nth-child(3) {
     margin-top: 0;
+  }
+
+  @keyframes repeat {
+    50% {
+      font-size: 1.3rem;
+    }
+
+    100% {
+      font-size: 1.1rem;
+    }
   }
 
 }
