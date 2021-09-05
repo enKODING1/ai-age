@@ -1,31 +1,40 @@
-const user_data = { 
-    dateTime : {
-        "year" : "2021",
-        "month" : "9",
-        "day": "5",
-        "time" : "2" 
-    },
-    "visitor" : 15227
-};
+class USER {
+    constructor(YY, MM, DD, T, V) {
+        this.user_data = {
+            dateTime: {
+                year: YY,
+                month: MM,
+                day: DD,
+                time: T
+            },
+            "visitor": V
+        };
 
-var user = document.querySelector('#user');
+        this.user = document.querySelector('#user');
+        this.datetime = document.querySelector("#datetime");
+        this.count = 0;
+        this.date()
+        this.visitorCounter()
+    }
 
 
-var datetime = document.querySelector("#datetime");
+    date() {
+        for (var key in this.user_data.dateTime) {
+            this.datetime.childNodes[this.count].innerHTML = this.user_data.dateTime[key];
+            this.count += 2;
+            console.log(key);
+        }
+    }
 
-datetime.childNodes[0].innerHTML = user_data.dateTime.year;
-datetime.childNodes[2].innerHTML = user_data.dateTime.month;
-datetime.childNodes[4].innerHTML = user_data.dateTime.day;
-datetime.childNodes[6].innerHTML = user_data.dateTime.time;
+    visitorCounter() {
+        for (var i = 0; i < this.user_data.visitor.toLocaleString().length; i++) {
+            this.user.appendChild(document.createElement('span'))
+            this.user.childNodes[i + 4].innerHTML = this.user_data.visitor.toLocaleString()[i];
+        }
+    }
 
-for(var i = 0 ; i < user_data.visitor.toLocaleString().length ; i++)
-{
-    user.appendChild(document.createElement('span'))
-    user.childNodes[i+4].innerHTML = user_data.visitor.toLocaleString()[i];
 }
 
 
-
-
-
+const userData = new USER("2021","9","5",'2',15227);
 
