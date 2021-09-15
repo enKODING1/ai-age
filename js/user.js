@@ -27,7 +27,9 @@ class USER {
 
     visitorCounter() {
         for (var i = 0; i < this.user_data.visitor.toLocaleString().length; i++) {
-            this.user.appendChild(document.createElement('span'))
+            var user_num = document.createElement('div')
+            this.user.appendChild(user_num);
+            user_num.classList.add("user");
             this.user.childNodes[i + 4].innerHTML = this.user_data.visitor.toLocaleString()[i];
         }
     }
