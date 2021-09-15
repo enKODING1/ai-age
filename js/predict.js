@@ -123,14 +123,3 @@ async function predict() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-

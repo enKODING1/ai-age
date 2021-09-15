@@ -1,11 +1,11 @@
 class USER {
-    constructor(YY, MM, DD, T, V) {
+    constructor(YY, MM, DD, Hour, V) {
         this.user_data = {
             dateTime: {
                 year: YY,
                 month: MM,
                 day: DD,
-                time: T
+                time: Hour
             },
             "visitor": V
         };
@@ -22,7 +22,6 @@ class USER {
         for (var key in this.user_data.dateTime) {
             this.datetime.childNodes[this.count].innerHTML = this.user_data.dateTime[key];
             this.count += 2;
-            console.log(key);
         }
     }
 
@@ -36,5 +35,5 @@ class USER {
 }
 
 
-const userData = new USER("2021","9","5",'2',15227);
+const userData = new USER("2021","9","16",'2',16426);
 
