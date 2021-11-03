@@ -1,83 +1,83 @@
-//night_day code
-
-var Body = {
-    setColor:function(color){
-      $('body').css('color',color)
-    },
-    setBackgroundColor:function(color){
-     $('body').css('backgroundColor',color);
-    },
-    setUpload:function(color){
-        $('.file-upload').css('backgroundColor',color);
-    },
-    setPopbtn:function(color){
-        $('.pop-btn').css('backgroundColor',color);
-    }
-}
-
-    
-var Mode = {
-        setMoon:function(color){
-            $('#Moon').css("backgroundColor",color);
-        },
-        setSun:function(color){
-            $('#half').css("backgroundColor",color);
-        }   
-}
-var License_wrap = {
-    setLicenseBackgroundColor:((color)=>{
-        $('.license').css("backgroundColor",color);
-    }),
-    setLicenseColor:((color)=>{
-        $('.license').css('color',color);
-    }),
-    setEmailBackgroundColor:((color)=>{
-        $('.email').css('backgroundColor',color);
-    }),
-    setEmailColor:((color)=>{
-        $('.email').css('color',color);
-    })
-}
+import { ThemeHandler } from "./ThemeHandler.js";
+var btn = document.querySelector('.night-day')
 
 
-var ListsLink = {
-    setListBackgroundColor:((color)=>{
-        $(".list").css("backgroundColor",color);
-    }),
-    setLinkColor:((color)=>{
-        $(".link").css('color',color);
-    })
-}
-    function NightDayHandler(self){
-           
-            if(self.value === "checked"){
-                //밝아질때
-                Body.setBackgroundColor('#F7F8FB');
-                Body.setColor('#7b9acc');
-                Body.setUpload('white');
-                Body.setPopbtn('white');
-                ListsLink.setListBackgroundColor('#ffffff');
-                License_wrap.setLicenseBackgroundColor('rgb(224, 230, 251)');
-                License_wrap.setLicenseColor('rgb(86, 115, 235)');
-                License_wrap.setEmailBackgroundColor('rgb(224, 230, 251)');
-                License_wrap.setEmailColor('rgb(86, 115, 235)');
-               
-                self.value = 'check';
-            }
-            else{
-                //어두워질때
-                Body.setBackgroundColor('#14161A'); 
-                Body.setColor('#DCE2F0');
-                Body.setUpload('#484A50');
-                Body.setPopbtn('#484A50');
-                ListsLink.setListBackgroundColor('#484A50');
-                License_wrap.setLicenseBackgroundColor('rgba(86, 115, 235, 0.082)');
-                License_wrap.setLicenseColor('rgb(86, 115, 235)');
-                License_wrap.setEmailBackgroundColor('rgba(86, 115, 235, 0.082)');
-                License_wrap.setEmailColor('rgb(86, 115, 235)');
-                $('.email').css('backgroundColor','rgb(224, 230, 251)');
-                Mode.setMoon("#F9EBDE");
-                self.value = 'checked';
-            }   
-            
-}
+let mode = "white"
+//다크 모드 배경색 폰트색
+const night = {
+    background: [
+        {
+            elem: "body",
+            color: '#14161A'
+        }, {
+            elem: '.file-upload',
+            color: '#484A50'
+        }, {
+            elem: '.pop-btn',
+            color: '#484A50'
+        }, {
+            elem: ".list",
+            color: '#484A50'
+        }, {
+            elem: '.license',
+            color: 'rgba(86, 115, 235, 0.082)'
+        }, {
+            elem: '.email',
+            color: 'rgba(86, 115, 235, 0.082)'
+        }
+    ],
+    font: [
+        {
+            elem: "body",
+            color: '#DCE2F0'
+        }, {
+            elem: '.license',
+            color: 'rgb(86, 115, 235)'
+        }, {
+            elem: '.license',
+            color: 'rgb(86, 115, 235)'
+        }, {
+            elem: '.email',
+            color: 'rgb(86, 115, 235)'
+        }
+    ]
+};
+
+const light = {
+    background: [
+        {
+            elem: "body",
+            color: '#F7F8FB'
+        }, {
+            elem: '.file-upload',
+            color: 'white'
+        }, {
+            elem: '.pop-btn',
+            color: 'white'
+        }, {
+            elem: ".list",
+            color: '#ffffff'
+        }, {
+            elem: '.license',
+            color: 'rgb(224, 230, 251)'
+        }, {
+            elem: '.email',
+            color: 'rgb(224, 230, 251)'
+        }
+    ],
+    font: [
+        {
+            elem: "body",
+            color: '#7b9acc'
+        }, {
+            elem: '.license',
+            color: 'rgb(86, 115, 235)'
+        }, {
+            elem: '.email',
+            color: 'rgb(86, 115, 235)'
+        }
+    ]
+};
+
+var handler = new ThemeHandler(light,night);
+handler.autoDetect();
