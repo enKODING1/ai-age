@@ -1,0 +1,130 @@
+/* ad */
+  .ad-wrap-2 {
+    border: 3px solid white;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .ad-wrap-1 {
+    border: 3px solid white;
+    width: 320px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+/*navigation bar*/
+  .nav-bar {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    transition: ease-in 0.2s;
+    /* box-shadow: 0 2px 4px 0 rgba(131, 130, 130, 0.2); */
+  }
+
+  .list-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    transition: ease-in 0.4s;
+
+  }
+
+  .list {
+     display: flex;
+    width: 140vw;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
+    position: relative;
+    font-size: 1.2rem;
+    top: 0px;
+    background-color: #ffffff;
+    transition: ease-in 0.2s;
+    animation: 0.3s slide both;
+  }
+
+  @keyframes slide {
+    from {
+      top: -30px;
+    }
+  }
+
+  .list a {
+    text-decoration: none;
+    color: #7b9acc;
+  }
+
+
+
+
+
+
+
+
+  @media screen and (max-width: 600px){
+  .ad-wrap-2 {
+    border: 3px solid white;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .ad-wrap-1 {
+    border: 3px solid white;
+    width: 320px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /*navigationbar*/
+  nav {
+    margin-top: 20px;
+  }
+
+  .nav-bar {
+    position: fixed;
+    width: 99.5%;
+    height: 60px;
+    margin: 0 auto;
+  }
+
+  .list-box {
+
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 24px;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 10px;
+    list-style: none;
+    transition: ease-in 0.5s;
+  }
+
+  .list {
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 9px;
+    transition: ease-in 0.5s;
+    position: relative;
+    top: 0px;
+    animation: 0.3s slide both;
+  }}

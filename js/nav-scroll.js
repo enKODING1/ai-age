@@ -1,10 +1,17 @@
-document.addEventListener('scroll', function () {
-    var currentScroll = document.documentElement.scrollTop;
- 
-    if (currentScroll > 40) {
-        $(".nav-bar").fadeOut();
+const navbar = document.querySelector(".nav-bar");
+let wheel = 0;
 
-    } else if (currentScroll < 50) {
-        $(".nav-bar").fadeIn();
+
+window.document.onmousewheel = (e)=>{
+
+    wheel += e.deltaY * -0.01;
+    wheel = Math.min(Math.max(wheel,-2.5),0);
+    if(wheel == 0){
+        navbar.style.display = "block";
+        navbar.style.transform = `translate(0px,0px)`;
+    }else if(wheel == -2.5){
+        navbar.style.transform = `translate(0px,-60px)`;
+       
     }
-});
+
+}

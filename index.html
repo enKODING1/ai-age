@@ -68,7 +68,7 @@
   <link rel="stylesheet" href="./style/user.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
-
+  <link rel="stylesheet" href="./style/navbar.css">
 
   <!--JavaScript-->
   <script type="module" src="./js/color.js" defer="defer"></script>
@@ -87,38 +87,24 @@
 
   <title>얼굴나이 테스트</title>
 
-  <script>
-    jQuery(function ($) {
-      $("body").css("display", "none");
-      $("body").fadeIn(1000);
-      $("a.transition").click(function (event) {
-        event.preventDefault();
-        linkLocation = this.href;
-        $("body").fadeOut(500, redirectPage);
-      });
 
-      function redirectPage() {
-        window.location = linkLocation;
-      }
-    });
-  </script>
 </head>
 
 <body>
-  <div class="ad-wrap-1">
+  <!-- <div class="ad-wrap-1">
     <ins class="kakao_ad_area" data-ad-unit="DAN-NQr6jHIZukNiyueJ" data-ad-width="320" data-ad-height="50"></ins>
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async="async"></script>
-  </div>
+  </div> -->
 
   <nav class="nav-bar">
     <ul class="list-box">
-      <li class="list shadow">
+      <li class="list">
         <a class="link" href="https://enkoding.tistory.com" target="_blank">Blog</a>
       </li>
-      <li class="list shadow">
+      <li class="list">
         <a class="link" href="https://github.com/enkoding1" target="_blank">Github</a>
       </li>
-      <li class="list shadow">
+      <li class="list">
         <a class="link" href="https://old-aige.netlify.app" target="_blank">Old aige</a>
       </li>
     </ul>
@@ -229,7 +215,7 @@
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <!--link jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="path/to/dist/jquery.facedetection.min.js"></script>
+
   <script src="./js/user.js"></script>
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eb9054607873539"></script>
 </body>

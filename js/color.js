@@ -1,8 +1,8 @@
 import { ThemeHandler } from "./ThemeHandler.js";
-var btn = document.querySelector('.night-day')
+const btn = document.querySelector('.night-day')
+let mode = 'light';
 
 
-let mode = "white"
 //다크 모드 배경색 폰트색
 const night = {
     background: [
@@ -24,6 +24,9 @@ const night = {
         }, {
             elem: '.email',
             color: 'rgba(86, 115, 235, 0.082)'
+        },{
+            elem:'.nav-bar',
+            color: '#484A50'
         }
     ],
     font: [
@@ -63,6 +66,9 @@ const light = {
         }, {
             elem: '.email',
             color: 'rgb(224, 230, 251)'
+        },{
+            elem:'.nav-bar',
+            color: 'white'
         }
     ],
     font: [
@@ -79,5 +85,23 @@ const light = {
     ]
 };
 
-var handler = new ThemeHandler(light,night);
-handler.autoDetect();
+window.onload = ()=>{
+    const handler = new ThemeHandler(light,night);
+    handler.autoDetect();
+
+    
+btn.onclick = ()=>{
+    if(mode === 'light')
+    {
+        handler.changeTheme(mode);
+
+        mode = 'night'
+    } else if(mode === 'night'){
+        handler.changeTheme(mode);
+        mode = 'light'
+    }
+};
+}
+
+
+
