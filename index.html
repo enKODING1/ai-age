@@ -69,6 +69,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style/navbar.css">
+  <link rel="stylesheet" href="./style/language.css">
 
   <!--JavaScript-->
   <script type="module" src="./js/color.js" defer="defer"></script>
@@ -130,6 +131,7 @@
   </nav>
 
   <br /><br /><br />
+ <br />
   <div class="label-box">
     <div class="night-day">
       <div id="moon">
@@ -143,14 +145,20 @@
   <section class="sec">
     <p>Ai는 나를 몇 살로 볼까 ??</p>
   </section>
+  <div id="language">
+    <select name="language" id="">
+      <option value="korea">한국어</option>
+      <option value="english">English</option>
+      <option value="japanese">日本</option>
+      <option value="chinese">中国人</option>
+    </select>
+  </div>
   <section>
     <div id="user">
       <div id="datetime"><span></span> 년 <span></span> 월 <span></span> 일 <span></span> 시 기준 누적사용자</div><br>
     </div>
   </section>
-
   <br />
-
   <div class="file-upload">
     <div class="image-upload-wrap">
       <input class="file-upload-input" type="file" onchange="readURL(this);" accept="image/*" />

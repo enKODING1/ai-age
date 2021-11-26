@@ -9,9 +9,7 @@ body {
 
 
 .share_text {
-  transition: all 0.5s;
-  animation: 2s repeat infinite;
-  -webkit-animation: 2s repeat infinite;
+
   font-size: 1.1rem;
 }
 
@@ -19,25 +17,9 @@ body {
   display: none;
 }
 
-@keyframes repeat {
-  50% {
-    font-size: 1.3rem;
-  }
 
-  100% {
-    font-size: 1.1rem;
-  }
-}
 
-@-webkit-keyframes repeat {
-  50% {
-    -webkit-font-size: 1.3rem;
-  }
 
-  100% {
-    -webkit-font-size: 1.1rem;
-  }
-}
 
 /* loading bar */
 .lds-ellipsis {
