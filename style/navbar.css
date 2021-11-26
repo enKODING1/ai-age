@@ -28,6 +28,9 @@
     transition: ease-in 0.2s;
     /* box-shadow: 0 2px 4px 0 rgba(131, 130, 130, 0.2); */
 }
+.mnav-bar{
+    display: none;
+}
 
 .list-box {
     display: flex;
@@ -98,15 +101,9 @@
         margin-top: 20px;
     }
 
-    .nav-bar {
+    .nav-bar{
         display: none;
-        position: fixed;
-        width: 99.5%;
-       
-        
-        margin: 0 auto;
     }
-
     .mnav-bar{
         transform: translateY(-300px);
         display: flex;
