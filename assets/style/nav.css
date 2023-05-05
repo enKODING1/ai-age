@@ -1,0 +1,60 @@
+.nav-container{
+    position: fixed;
+    width: calc(100% - 20px);
+    height: 50px;
+    /* background-color: white; */
+    background: rgba(255, 255, 255, 8%);
+    backdrop-filter: saturate(180%) blur(6px);
+    padding: 10px;
+    z-index: 5;
+}
+
+.nav-container .nav-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    font-weight: bold;
+ 
+}
+
+.nav-wrapper li {
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.nav-wrapper li a{
+    padding: 5px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: rgb(123, 154, 204);
+}
+
+.nav-wrapper li a:hover{
+    color: rgb(60, 113, 197);
+}
+
+ 
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+
+    .nav-container .nav-wrapper{
+        width: 100%;
+        font-size: 0.8em;
+    
+    }
+  }
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (min-width:480px) and (max-width:767px) {
+    .nav-container .nav-wrapper{
+        width: 80%;
+    }
+  } 
+  

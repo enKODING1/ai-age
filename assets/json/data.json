@@ -1,0 +1,55 @@
+[{
+
+        "className": "baby",
+        "age": 5,
+        "labelTitle": "애기",
+        "resultMessage": "귀여운 애기",
+        "resultExplain": "혹시 애기가 아니라면 그만큼 귀여우신가 봐요٩(ˊωˋ*)و✧"
+
+    },
+    {
+
+        "className": "one",
+        "age": 15,
+        "labelTitle": "10대",
+        "resultMessage": "꿈을 실현하는 것이 목표인 10대!!",
+        "resultExplain": "꿈을 기록하는 것이 목표가아닌 꿈을 실현하는 것이 나의 목표인 10대~!"
+
+    },
+    {
+
+        "className": "two",
+        "age": 25,
+        "labelTitle": "20대",
+        "resultMessage": "앞날이 밝고 무궁무진한 일들을 해낼 20대!",
+        "resultExplain": "상상할 수 없는 꿈을 꾸고 있다면 상상할 수 없는 노력을 하면 이뤄낼 수 있는 나이!"
+
+    },
+    {
+
+        "className": "three",
+        "age": 35,
+        "labelTitle": "30대",
+        "resultMessage": "최고의 경쟁력을 지닌 30대!",
+        "resultExplain": "최고의 경쟁력은 공부일수도 있지만 가장 중요한 열정을 가진 당신 ~!"
+
+    },
+    {
+
+        "className": "four",
+        "age": 45,
+        "labelTitle": "40대",
+        "resultMessage": "시간의 능력자 40대 ~!",
+        "resultExplain": "우리가 진정으로 소유하는 것은 시간 뿐이고 가진 것이 달리 아무 것도 없는 이에게도 시간은 있어요 당신은 시간을 가지고 놀 수 있는 사람입니다~!"
+
+    },
+    {
+
+        "className": "five",
+        "age": 55,
+        "labelTitle": "50대",
+        "resultMessage": "시작이 반 인 50대 ~~!",
+        "resultExplain": "애벌레가 세상이 끝났다고 생각하는 순간 나비로 변하는 순간~~!"
+
+    }
+]
