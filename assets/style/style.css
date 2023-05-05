@@ -13,6 +13,18 @@ body{
     font-family: 'Leon Sans', sans-serif;                                      
 }
 
+#darkMode{
+ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#darkMode svg{
+    width: 10%;
+}
+
 .content-container{
 
     width: 100%;
@@ -93,7 +105,7 @@ body{
 .content-bottom p{
     border-radius: 5px;
     padding: 8px;
-    background-color: rgba(255, 214, 214, 0.603);
+    background-color: rgba(255, 214, 214, 0.4);
     color: rgb(250, 124, 124);
 }
 
