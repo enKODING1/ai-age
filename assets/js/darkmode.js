@@ -7,13 +7,17 @@ const imageUploadWrap = document.querySelector('.image-upload-wrap');
 
 let toggle = true;
 
+function getPercentValue(x, percent){
+    return x * (percent / 100);
+}
+
 mode.addEventListener('click',function(){
     console.log(toggle)
-    
+    let duration = 400    
     const timeline = anime.timeline({
-        duration: 750,
+        duration: duration,
         // easing: "easeOutExpo"
-        easing:"easeOutElastic"
+        easing:"easeInOutCirc"
 
     });
 
@@ -28,19 +32,19 @@ mode.addEventListener('click',function(){
     .add({
         targets:"#darkMode",
         rotate:toggle ? 220 : 0
-    },'-=350')
+    },`-=${duration - getPercentValue(duration, 5)}`)
     .add({
         targets:"body",
         backgroundColor: toggle ? "rgba(22,22,22)" : "rgb(247, 248, 251)"
-    },'-=750')
+    },`-=${duration}`)
     .add({
         targets:".file-upload",
         backgroundColor: toggle ? "#444444" : "#ffffff"
-    },'-=750')
+    },`-=${duration}`)
     .add({
         targets: ".image-upload-wrap",
         backgroundColor: toggle ? "#363636" : "#ffffff"
-    }, '-=750')
+    },`-=${duration}`)
 
 
     
