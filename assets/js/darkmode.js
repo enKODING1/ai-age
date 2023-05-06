@@ -22,11 +22,12 @@ mode.addEventListener('click',function(){
         targets: '.sun',
         d: [
             {value: toggle? moonPath : sunPath}
-        ]
+        ],
+        fill: toggle?'#fff' : 'rgb(255, 180, 112)'
     })
     .add({
         targets:"#darkMode",
-        rotate:220
+        rotate:toggle ? 220 : 0
     },'-=350')
     .add({
         targets:"body",
