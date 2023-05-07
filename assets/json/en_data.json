@@ -1,0 +1,56 @@
+[
+    {
+
+        "className": "baby",
+        "age": 5,
+        "labelTitle": "baby",
+        "resultMessage": "Cute baby",
+        "resultExplain": "If you're not an actual baby, you must have that excessive cuteness of a baby  ٩(ˊωˋ*)و✧"
+
+    },
+    {
+
+        "className": "one",
+        "age": 15,
+        "labelTitle": "teens",
+        "resultMessage": "Ambitious teen",
+        "resultExplain": "Your goal is to realize your dream, not recording it~!"
+
+    },
+    {
+
+        "className": "two",
+        "age": 25,
+        "labelTitle": "twenties",
+        "resultMessage": "Twenties, an age with enormous possibilities",
+        "resultExplain": "If your dream is beyond imagination, you can achieve it with unimaginable efforts!"
+
+    },
+    {
+
+        "className": "three",
+        "age": 35,
+        "labelTitle": "thirties",
+        "resultMessage": "Thirties, an age with the maximum competency",
+        "resultExplain": "What really matters in the end is you passion~!"
+
+    },
+    {
+
+        "className": "four",
+        "age": 45,
+        "labelTitle": "forties",
+        "resultMessage": "Forties, when you have the most time",
+        "resultExplain": "The only thing we truly possess is time, and even those who have nothing else have time. You are a person who can manage your time without any restraints~!"
+
+    },
+    {
+
+        "className": "five",
+        "age": 55,
+        "labelTitle": "fifties",
+        "resultMessage": "Fifties, when a good beginning is half battle won~~!",
+        "resultExplain": "The moment when a caterpillar thinks the world is over, it will turn into a butterfly~~!"
+
+    }
+]

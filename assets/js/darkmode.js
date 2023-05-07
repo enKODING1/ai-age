@@ -12,7 +12,7 @@ function getPercentValue(x, percent){
 }
 
 mode.addEventListener('click',function(){
-    console.log(toggle)
+    // console.log(toggle)
     let duration = 400    
     const timeline = anime.timeline({
         duration: duration,

@@ -26,7 +26,6 @@ body{
 }
 
 .content-container{
-
     width: 100%;
     padding-top: 70px;
 }
@@ -36,6 +35,27 @@ body{
     margin: 0 auto;
     margin-top: 70px;
 }
+
+.language{
+    display: flex;
+    justify-content: right;
+}
+
+.language select{
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom:1px solid gray;
+    /* background: rgb(242, 245, 253); 
+    padding: 8px;
+    border-radius: 10px;
+ 
+    box-shadow: rgba(0,0,0,0.2) 2px 2px 5px 0px,
+                    white -4px -4px 5px 0px;   */
+}
+
+ 
+
 
 .content-wrapper section p{
     text-align: center;

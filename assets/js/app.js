@@ -1,3 +1,14 @@
+function link(target){
+    if(location.pathname === '/en/' ){
+        if(target.value === 'en') location.href = './';
+        if(target.value === 'kr') location.href = '../';
+    }
+
+    if(location.pathname === '/'){
+        if(target.value === 'en') location.href = './en';
+        if(target.value === 'kr') location.href = './';
+    }
+}
 function createLoading() {
 
     const html = `
@@ -91,17 +102,32 @@ window.onload = async () => {
     let labelBars = '';
     let totalData = [];
 
+    const kr_data = './assets/json/kr_data.json';
+    const en_data = '../assets/json/en_data.json';
+    let data_url = '';
 
+    if(location.pathname === '/'){
+        data_url = kr_data;
+    }
+    if(location.pathname === '/en/'){
+        data_url = en_data;
+    }
 
-    const dataFile = await fetch('./assets/json/data.json')
+    const dataFile = await fetch(data_url)
         .then((res) => res.json())
         .catch((err) => console.log(err));
 
-
+    
 
     // console.log(dataFile);
     upload.onchange = async (input) => {
-        fileUploadBox.innerHTML = `<div class="analyzing"><p>분석 중..</p> ${createLoading()}</div>`;
+        fileUploadBox.innerHTML = `<div class="analyzing">
+                                    <p>
+                                    ${location.pathname === '/' 
+                                    ?"분석 중.."
+                                    : "Analyzing.."}
+                                    </p>
+                                    ${createLoading()}</div>`;
 
         if (input.target.files && input.target.files[0]) {
             const imageURL = await getImageURL(input.target.files[0]).then((res) => res);
@@ -144,9 +170,9 @@ window.onload = async () => {
             console.log(resultAge);
             imageWrap.append(image)
             description.innerHTML = `<p>${totalData[0].resultMessage}</p><p>${totalData[0].resultExplain}</p> `
-            predictionAge.innerText = `대략 ${resultAge} 세`;
+            predictionAge.innerText = location.pathname === '/' ? `대략 ${resultAge} 세` : `${resultAge} years old`
             labelContainer.innerHTML = labelBars;
-            reload.innerHTML = `<img src="./assets/img/reload.svg" alt="aige reload">`;
+            reload.innerHTML = `<img src="${location.pathname === '/' ? "./" : "../" }assets/img/reload.svg" alt="aige reload">`;
 
             predictWrapper.append(imageWrap);
             predictWrapper.append(imageWrap); 
