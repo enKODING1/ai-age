@@ -45,6 +45,10 @@ mode.addEventListener('click',function(){
         targets: ".image-upload-wrap",
         backgroundColor: toggle ? "#363636" : "#ffffff"
     },`-=${duration}`)
+    .add({
+        targets: ".language_box",
+        color: toggle ? "#ffffff" :"#000000" 
+    },`-=${duration}`)
 
 
     
