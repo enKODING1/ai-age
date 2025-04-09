@@ -1,9 +1,17 @@
 # Ai얼굴 나이 테스트
-Ai가 내 얼굴 나이를 분석해주는 서비스 입니다. <br/>
-[테스트 하기](https://aige.netlify.app)
+여러분의 얼굴은 몇 살로 보일까요? 인공지능이 분석한 외모 나이와 실제 나이의 차이를 확인해보세요! 
 
-# 사용법
-이미지를 업로드 하면 결과를 볼 수 있습니다.<br>
-<span>
-<img alt='ai가 생성한 얼굴로 테스트' width="446" alt="스크린샷 2024-07-09 오후 5 58 12" src="https://github.com/enKODING1/ai-age/assets/65354945/6aaec28a-c6db-4092-8fdb-c0ac020c52ff"></br>
-</span>
+# 서비스 소개
+AI 얼굴 나이 테스트는 Teachable Machine으로 학습된 모델을 활용해 사용자의 얼굴 나이를 재미있게 예측하는 서비스 입니다. 정확한 나이 분석보다는 재미 목적으로 제작되었습니다.
+
+# 기술 스택
+- 프론트엔드: HTML, CSS, JavaScript, Anime.js
+- AI 모델: Google Teachablne Machine
+- 배포: Netlify
+
+# 사용방법
+1. 메인 페이지에서 '사진 업로드' 버튼 클릭
+2. 얼굴이 잘 나온 사진 선택
+3. AI의 분석 결과 확인
+4. 결과를 SNS에 공유하기(선택사항)
+
