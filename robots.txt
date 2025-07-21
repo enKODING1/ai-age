@@ -1,3 +1,21 @@
 User-agent: *
 Allow: /
+
+# 주요 페이지들
+Allow: /index.html
+Allow: /about.html
+Allow: /info.html
+Allow: /en/
+Allow: /en/index.html
+Allow: /en/about.html
+Allow: /en/info.html
+
+# 정적 자원들
+Allow: /assets/
+Allow: /favicon.ico
+
+# 광고 관련
+Disallow: /Ads.txt
+
+# 사이트맵 위치
 Sitemap: https://aige.netlify.app/sitemap.xml
