@@ -54,6 +54,12 @@
     overflow: hidden;
     font-weight: 600;
     letter-spacing: 0.5px;
+    /* 터치 최적화 */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-wrapper .nav-item a::before {
@@ -96,6 +102,11 @@
     box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
     position: relative;
     overflow: hidden;
+    /* 터치 최적화 */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 #darkMode::before {
@@ -152,27 +163,38 @@
     }
     
     .nav-wrapper .nav-left {
-        gap: 15px;
+        gap: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .nav-wrapper .nav-item {
+        flex-shrink: 0;
     }
     
     .nav-wrapper .nav-item a{
         padding: 8px 12px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        min-width: auto;
     }
     
     #darkMode{
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
     }
     
     #darkMode svg{
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
     
     .logo {
-        font-size: 1.2rem;
-        margin-right: 10px;
+        font-size: 1.1rem;
+        margin-right: 8px;
+        flex-shrink: 0;
     }
 }
 
@@ -183,12 +205,26 @@
     }
     
     .nav-wrapper .nav-left {
-        gap: 20px;
+        gap: 15px;
     }
     
     .nav-wrapper .nav-item a{
         padding: 10px 16px;
         font-size: 0.9rem;
+    }
+    
+    #darkMode{
+        width: 46px;
+        height: 46px;
+    }
+    
+    #darkMode svg{
+        width: 22px;
+        height: 22px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
     }
 }
 

@@ -104,6 +104,10 @@ body{
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     user-select: none;
+    /* 터치 최적화 */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
 }
 
 .language-selected:hover {
@@ -250,10 +254,13 @@ body{
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border: 3px dashed rgba(102, 126, 234, 0.3);
-    border-radius: 0;
+    border-radius: 24px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     overflow: hidden;
+    /* 터치 최적화 */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .file-upload .image-upload-wrap::before {
@@ -350,6 +357,9 @@ body:not(.dark) .file-upload .image-upload-wrap:hover {
     font-weight: 500;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(229, 62, 62, 0.2);
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 .predict-wrapper{
@@ -509,6 +519,11 @@ body:not(.dark) .file-upload .image-upload-wrap:hover {
     justify-content: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    /* 터치 최적화 */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .reload:hover{
@@ -565,30 +580,116 @@ body:not(.dark) .file-upload .image-upload-wrap:hover {
  
 /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
 @media all and (min-width:480px) and (max-width:767px) {
-    .content-wrapper{
-        width: 90%;
+    body {
+        font-size: 1rem;
     }
     
-    .predict-wrapper{
-        padding: 30px 20px;
-    }
-} 
-  
-/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
-@media all and (max-width:479px) {
     .content-container{
         padding-top: 80px;
     }
     
     .content-wrapper{
+        width: 90%;
+        padding: 50px 20px;
+    }
+    
+    .hero-section {
+        margin-bottom: 50px;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+        margin-bottom: 18px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 35px;
+    }
+    
+    .predict-wrapper{
+        padding: 30px 20px;
+        border-radius: 22px;
+    }
+    
+    .file-upload .image-upload-wrap{
+        min-height: 280px;
+        padding: 25px;
+    }
+    
+    .file-upload .image-upload-wrap p{
+        font-size: 1.1rem;
+        margin-top: 18px;
+    }
+    
+    .upload-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 18px;
+    }
+    
+    .upload-icon::before {
+        font-size: 26px;
+    }
+    
+    .description{
+        font-size: 1.05rem;
+        margin: 25px 0;
+    }
+    
+    .prediction-age{
+        padding: 14px 28px;
+        font-size: 1.3rem;
+    }
+    
+    .reload{
+        width: 55px;
+        height: 55px;
+    }
+    
+    .reload img {
+        width: 22px;
+        height: 22px;
+    }
+} 
+  
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+    body {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .content-container{
+        padding-top: 70px;
+    }
+    
+    .content-wrapper{
         width: 95%;
-        padding: 40px 15px;
+        padding: 30px 15px;
+    }
+
+    .hero-section {
+        margin-bottom: 40px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+        line-height: 1.4;
     }
 
     .predict-wrapper{
         width: 100%;
-        padding: 25px 15px;
-        margin-top: 30px;
+        padding: 20px 15px;
+        margin-top: 25px;
+        border-radius: 20px;
     }
 
     .content-container .file-upload{
@@ -596,15 +697,214 @@ body:not(.dark) .file-upload .image-upload-wrap:hover {
     }
     
     .file-upload .image-upload-wrap{
-        min-height: 250px;
+        min-height: 220px;
         border-radius: 20px;
+        padding: 20px;
     }
     
-    .hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .hero-subtitle {
+    .file-upload .image-upload-wrap p{
         font-size: 1rem;
+        margin-top: 15px;
+        text-align: center;
+        line-height: 1.4;
+    }
+    
+    .upload-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .upload-icon::before {
+        font-size: 24px;
+    }
+    
+    .description{
+        margin: 20px 0;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .prediction-age{
+        padding: 12px 24px;
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+    
+    .label-container{
+        margin-top: 25px;
+    }
+    
+    .label-wrap {
+        margin-bottom: 14px;
+    }
+    
+    .label-wrap label {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .label-wrap #label-bar{
+        height: 10px;
+    }
+    
+    .reload{
+        width: 50px;
+        height: 50px;
+        margin-top: 30px;
+    }
+    
+                .reload img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .analyzing{
+        height: 250px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+    
+    .analyzing p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .content-bottom {
+        margin-top: 30px;
+    }
+    
+    .content-bottom p{
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 15px;
+    }
+    
+    .ad-wrap-2 {
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    .footer-container{
+        margin-top: 40px;
+        padding: 30px 15px;
+    }
+    
+    .footer-container p{
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+}
+
+/* 전역 터치 최적화 */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 스크롤바 스타일 (웹킷 기반 브라우저) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.7);
+}
+
+/* 모바일에서 스크롤바 숨기기 */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
+    * {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+/* iOS 스타일 개선 */
+@supports (-webkit-touch-callout: none) {
+    .file-upload .image-upload-wrap {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+    }
+    
+    .nav-wrapper .nav-item a {
+        -webkit-touch-callout: none;
+    }
+    
+    .reload, #darkMode, .language-selected {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+    }
+}
+
+/* 고해상도 디스플레이 최적화 */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+    
+    .upload-icon::before {
+        font-size: 30px;
+    }
+    
+    .reload img, #darkMode svg {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* 다크모드 시스템 감지 */
+@media (prefers-color-scheme: dark) {
+    body:not(.light-mode) {
+        color-scheme: dark;
+    }
+}
+
+/* 모션 감소 설정 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 추가 모바일 최적화 */
+@media (max-width: 479px) {
+    /* 키보드가 올라올 때 레이아웃 유지 */
+    @supports (-webkit-touch-callout: none) {
+        .content-container {
+            min-height: calc(100vh - env(keyboard-inset-height, 0px));
+        }
+    }
+    
+    /* 안전 영역 고려 (노치 등) */
+    .nav-container {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .content-wrapper {
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+        padding-bottom: max(30px, env(safe-area-inset-bottom));
     }
 }
