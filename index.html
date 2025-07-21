@@ -96,14 +96,16 @@
         <div class="nav-wrapper">
             <div class="nav-left">
                 <div class="logo">AI Age</div>
-                <div class="nav-item">
-                    <a href="./about.html">테스트 소개</a>
-                </div>
-                <div class="nav-item">
-                    <a href="./info.html">개인정보 & 연락처</a>
-                </div>
-                <div class="nav-item">
-                    <a href="https://egen-teto.vercel.app/" target="_blank">Egen Teto</a>
+                <div class="nav-items desktop-nav">
+                    <div class="nav-item">
+                        <a href="./about.html">테스트 소개</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="./info.html">개인정보 & 연락처</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="https://egen-teto.vercel.app/" target="_blank">Egen Teto</a>
+                    </div>
                 </div>
             </div>
             <div class="nav-right">
@@ -111,6 +113,25 @@
                     <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="sun" d="M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50Z" fill="white"/>
                     </svg>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <!-- 모바일 메뉴 -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-items">
+                <div class="mobile-nav-item">
+                    <a href="./about.html">테스트 소개</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="./info.html">개인정보 & 연락처</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="https://egen-teto.vercel.app/" target="_blank">Egen Teto</a>
                 </div>
             </div>
         </div>
@@ -271,6 +292,7 @@
     <script src="./assets/js/app.js" defer="defer"></script>
     <script src="./assets/js/darkmode.js" defer="defer"></script>
     <script src="./assets/js/language.js" defer="defer"></script>
+    <script src="./assets/js/navigation.js" defer="defer"></script>
 
 </body>
 

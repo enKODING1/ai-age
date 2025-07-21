@@ -31,6 +31,12 @@
     gap: 30px;
 }
 
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .nav-wrapper .nav-right {
     display: flex;
     align-items: center;
@@ -151,8 +157,111 @@
     margin-right: 20px;
 }
 
-/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
-@media all and (max-width:479px) {
+/* 햄버거 메뉴 버튼 */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1001;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* 모바일 메뉴 */
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-items {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav-item {
+    width: 100%;
+}
+
+.mobile-nav-item a {
+    display: block;
+    padding: 16px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #2d3748;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-nav-item a:hover,
+.mobile-nav-item a:active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 767px)*/ 
+@media all and (max-width:767px) {
     .nav-container {
         height: 60px;
     }
@@ -163,27 +272,28 @@
     }
     
     .nav-wrapper .nav-left {
-        gap: 10px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        gap: 0;
+        width: 100%;
+        justify-content: space-between;
     }
     
-    .nav-wrapper .nav-item {
-        flex-shrink: 0;
+    .desktop-nav {
+        display: none;
     }
     
-    .nav-wrapper .nav-item a{
-        padding: 8px 12px;
-        font-size: 0.8rem;
-        white-space: nowrap;
-        min-width: auto;
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .mobile-menu {
+        top: 60px;
     }
     
     #darkMode{
         width: 44px;
         height: 44px;
         flex-shrink: 0;
+        margin-right: 10px;
     }
     
     #darkMode svg{
@@ -193,38 +303,23 @@
     
     .logo {
         font-size: 1.1rem;
-        margin-right: 8px;
+        margin-right: 0;
         flex-shrink: 0;
     }
 }
 
-/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
-@media all and (min-width:480px) and (max-width:767px) {
-    .nav-container .nav-wrapper{
-        padding: 0 20px;
+/* 데스크톱과 큰 태블릿에서만 일반 메뉴 표시 */
+@media all and (min-width:768px) {
+    .mobile-menu-toggle {
+        display: none;
     }
     
-    .nav-wrapper .nav-left {
-        gap: 15px;
+    .mobile-menu {
+        display: none;
     }
     
-    .nav-wrapper .nav-item a{
-        padding: 10px 16px;
-        font-size: 0.9rem;
-    }
-    
-    #darkMode{
-        width: 46px;
-        height: 46px;
-    }
-    
-    #darkMode svg{
-        width: 22px;
-        height: 22px;
-    }
-    
-    .logo {
-        font-size: 1.3rem;
+    .desktop-nav {
+        display: flex;
     }
 }
 
@@ -233,11 +328,19 @@
     .nav-wrapper .nav-left {
         gap: 25px;
     }
+    
+    .nav-items {
+        gap: 25px;
+    }
 }
 
 /* 데스크톱 */
 @media all and (min-width:1024px) {
     .nav-wrapper .nav-left {
+        gap: 35px;
+    }
+    
+    .nav-items {
         gap: 35px;
     }
 } 
