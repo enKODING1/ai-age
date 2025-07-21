@@ -92,7 +92,7 @@ window.onload = async () => {
 
     
 
-    const reload = document.createElement('reload');
+    const reload = document.createElement('div');
     reload.className = 'reload';
     reload.onclick = () => {
         location.reload();
@@ -102,93 +102,127 @@ window.onload = async () => {
     let labelBars = '';
     let totalData = [];
 
-    const kr_data = './assets/json/kr_data.json';
-    const en_data = '../assets/json/en_data.json';
     let data_url = '';
 
-    if(location.pathname === '/'){
-        data_url = kr_data;
+    if(location.pathname === '/' || location.pathname.includes('index.html')){
+        data_url = '/assets/json/kr_data.json';
     }
-    if(location.pathname === '/en/'){
-        data_url = en_data;
+    else if(location.pathname === '/en/' || location.pathname.includes('/en/')){
+        data_url = '/assets/json/en_data.json';
+    }
+    else {
+        data_url = '/assets/json/kr_data.json'; // 기본값
     }
 
     const dataFile = await fetch(data_url)
-        .then((res) => res.json())
-        .catch((err) => console.log(err));
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .catch((err) => {
+            console.error('데이터 파일 로드 오류:', err);
+            return [];
+        });
 
     
 
     // console.log(dataFile);
     upload.onchange = async (input) => {
-        fileUploadBox.innerHTML = `<div class="analyzing">
-                                    <p>
-                                    ${location.pathname === '/' 
-                                    ?"분석 중.."
-                                    : "Analyzing.."}
-                                    </p>
-                                    ${createLoading()}</div>`;
+        try {
+            // 변수 초기화
+            labelBars = '';
+            totalData = [];
+            
+            fileUploadBox.innerHTML = `<div class="analyzing">
+                                        <p>
+                                        ${location.pathname === '/' 
+                                        ?"분석 중.."
+                                        : "Analyzing.."}
+                                        </p>
+                                        ${createLoading()}</div>`;
 
-        if (input.target.files && input.target.files[0]) {
-            const imageURL = await getImageURL(input.target.files[0]).then((res) => res);
-            image.src = imageURL;
-            const model = await getModel(URL);
-            const maxPredictions = model.getTotalClasses();
-            const prediction = await predict(model, image);
+            if (input.target.files && input.target.files[0]) {
+                const imageURL = await getImageURL(input.target.files[0]).then((res) => res);
+                image.src = imageURL;
+                const model = await getModel(URL);
+                const maxPredictions = model.getTotalClasses();
+                const prediction = await predict(model, image);
 
- 
-            // console.log(prediction);
+     
+                // console.log(prediction);
 
-       
+           
 
-            for (let i = 0; i < maxPredictions; i++) {
-                const predictionData = prediction[i];
-                const labelData = dataFile[i];
-                totalData.push({
-                    "className": predictionData.className,
-                    "probability":predictionData.probability, 
-                    "labelTitle": labelData.labelTitle,
-                    "resultMessage": labelData.resultMessage,
-                    "resultExplain": labelData.resultExplain,
-                    "age": labelData.age
-                   
-                })
-            }
+                // 데이터 파일이 제대로 로드되었는지 확인
+                if (!dataFile || dataFile.length === 0) {
+                    throw new Error('데이터 파일을 로드할 수 없습니다.');
+                }
 
-            totalData.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+                for (let i = 0; i < maxPredictions; i++) {
+                    const predictionData = prediction[i];
+                    const labelData = dataFile[i];
+                    
+                    if (!labelData) {
+                        console.warn(`인덱스 ${i}에 대한 레이블 데이터가 없습니다.`);
+                        continue;
+                    }
+                    
+                    totalData.push({
+                        "className": predictionData.className,
+                        "probability":predictionData.probability, 
+                        "labelTitle": labelData.labelTitle,
+                        "resultMessage": labelData.resultMessage,
+                        "resultExplain": labelData.resultExplain,
+                        "age": labelData.age
+                       
+                    })
+                }
+
+                totalData.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+
+              
+
+                for (let i = 0; i < maxPredictions; i++) {
+                    const data = totalData[i];
+                    totalData[i].score = (data.probability.toFixed(2) * 100);
+                    labelBars += createLabel(data);
+                }
+                
+            
+                const resultAge = Math.round(totalData[0].score * totalData[0].age / 100);
+                console.log(resultAge);
+                imageWrap.append(image)
+                description.innerHTML = `<p>${totalData[0].resultMessage}</p><p>${totalData[0].resultExplain}</p> `
+                predictionAge.innerText = location.pathname === '/' ? `대략 ${resultAge} 세` : `${resultAge} years old`
+                labelContainer.innerHTML = labelBars;
+                reload.innerHTML = `<img src="${location.pathname === '/' ? "./" : "../" }assets/img/reload.svg" alt="aige reload">`;
+
+                predictWrapper.append(imageWrap);
+                predictWrapper.append(description);
+                predictWrapper.append(predictionAge);
+                predictWrapper.append(labelContainer);
+                predictWrapper.append(reload);
+
+                fileUploadBox.innerHTML = '';
+                fileUploadBox.append(predictWrapper);
 
           
+                
 
-            for (let i = 0; i < maxPredictions; i++) {
-                const data = totalData[i];
-                totalData[i].score = (data.probability.toFixed(2) * 100);
-                labelBars += createLabel(data);
+
+
             }
-            
-        
-            const resultAge = Math.round(totalData[0].score * totalData[0].age / 100);
-            console.log(resultAge);
-            imageWrap.append(image)
-            description.innerHTML = `<p>${totalData[0].resultMessage}</p><p>${totalData[0].resultExplain}</p> `
-            predictionAge.innerText = location.pathname === '/' ? `대략 ${resultAge} 세` : `${resultAge} years old`
-            labelContainer.innerHTML = labelBars;
-            reload.innerHTML = `<img src="${location.pathname === '/' ? "./" : "../" }assets/img/reload.svg" alt="aige reload">`;
-
-            predictWrapper.append(imageWrap);
-            predictWrapper.append(imageWrap); 
-            predictWrapper.append(description);
-            predictWrapper.append(predictionAge);
-            predictWrapper.append(labelContainer);
-            predictWrapper.append(reload);
-
-            fileUploadBox.innerHTML = '';
-            fileUploadBox.append(predictWrapper);
-
-      
-            
-
-
-
+        } catch (error) {
+            console.error('이미지 업로드 처리 중 오류:', error);
+            fileUploadBox.innerHTML = `<div class="error-message">
+                                        <p>
+                                        ${location.pathname === '/' 
+                                        ?"이미지 처리 중 오류가 발생했습니다. 다시 시도해주세요."
+                                        : "An error occurred while processing the image. Please try again."}
+                                        </p>
+                                      </div>`;
         }
     }
 }

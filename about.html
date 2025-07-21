@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53HXVB2652"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53HXVB2652');
+    </script>
+
+    <!-- Meta Tags -->
+    <meta name="title" content="AI 얼굴나이 테스트 소개" />
+    <meta name="description" content="AI 기반 얼굴나이 분석 테스트가 어떻게 작동하는지 알아보세요" />
+    <meta name="keywords" content="AI 얼굴나이, 인공지능, 머신러닝, 얼굴 분석, 나이 측정" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AI 얼굴나이 테스트 소개" />
+    <meta property="og:description" content="AI 기반 얼굴나이 분석 테스트에 대한 자세한 설명" />
+    <meta property="og:image" content="https://aige.netlify.app/assets/img/ai_age_test.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://aige.netlify.app/about.html" />
+
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="icon" href="./favicon.ico" />
+    
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/nav.css">
+    <link href="https://fonts.cdnfonts.com/css/leon-sans-2" rel="stylesheet">
+
+    <title>AI 얼굴나이 테스트 소개</title>
+    
+    <style>
+        .about-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            color: #2d3748;
+            line-height: 1.8;
+        }
+        
+        .about-content h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .about-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin: 40px 0 20px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .about-content h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+        
+        .about-content ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+        
+        .about-content li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: #4a5568;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .feature-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: #4a5568;
+            margin: 0;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 20px;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                padding: 40px 25px;
+            }
+            
+            .about-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-container">
+        <div class="nav-wrapper">
+            <div class="nav-left">
+                <div class="logo">AI Age</div>
+                <div class="nav-item">
+                    <a href="./index.html">홈</a>
+                </div>
+                <div class="nav-item">
+                    <a href="./info.html">개인정보 & 연락처</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div id="darkMode">
+                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="sun" d="M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50Z" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-container">
+        <div class="content-wrapper">
+            <section class="hero-section">
+                <h1 class="hero-title">AI 얼굴나이 테스트</h1>
+                <p class="hero-subtitle">첨단 AI 기술로 당신의 얼굴나이를 분석합니다</p>
+            </section>
+
+            <div class="about-content">
+                <h2>🤖 AI 얼굴나이 테스트란?</h2>
+                
+                <p>AI 얼굴나이 테스트는 최첨단 머신러닝 기술을 활용하여 업로드된 사진을 분석하고 얼굴의 외관상 나이를 추정하는 서비스입니다. 구글의 티처블 머신(Teachable Machine) 플랫폼을 기반으로 하여, 방대한 얼굴 데이터를 학습한 시스템이 정확한 나이 예측을 제공합니다.</p>
+
+                <h3>🎯 어떻게 작동하나요?</h3>
+                <p>저희 AI 시스템은 다음과 같은 과정을 통해 작동합니다:</p>
+                <ul>
+                    <li><strong>얼굴 감지:</strong> 업로드된 이미지에서 얼굴 영역을 자동으로 식별합니다</li>
+                    <li><strong>특징 분석:</strong> 주름, 피부 질감, 얼굴 윤곽 등 나이와 관련된 특성들을 분석합니다</li>
+                    <li><strong>AI 예측:</strong> 머신러닝 모델이 분석된 특징을 바탕으로 나이를 예측합니다</li>
+                    <li><strong>결과 표시:</strong> 예상 나이와 함께 연령대별 확률 그래프를 보여줍니다</li>
+                </ul>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🚀</span>
+                        <h4>빠른 분석</h4>
+                        <p>사진 업로드 후 몇 초 안에 결과를 확인할 수 있습니다</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🔒</span>
+                        <h4>개인정보 보호</h4>
+                        <p>업로드된 사진은 서버에 저장되지 않으며 분석 후 즉시 삭제됩니다</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📱</span>
+                        <h4>모든 기기 지원</h4>
+                        <p>PC, 태블릿, 스마트폰 등 모든 기기에서 사용 가능합니다</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🎨</span>
+                        <h4>직관적인 인터페이스</h4>
+                        <p>누구나 쉽게 사용할 수 있는 간단하고 아름다운 인터페이스</p>
+                    </div>
+                </div>
+
+                <h3>📊 결과 이해하기</h3>
+                <p>테스트 결과는 다음과 같이 제공됩니다:</p>
+                <ul>
+                    <li><strong>예상 나이:</strong> AI가 분석한 가장 가능성 높은 나이</li>
+                    <li><strong>연령대별 확률:</strong> 10대부터 50대까지 각 연령대에 속할 확률을 막대 그래프로 표시</li>
+                    <li><strong>특별 분류:</strong> '애기'와 같은 특별한 분류도 포함</li>
+                </ul>
+
+                <h3>⚠️ 주의사항</h3>
+                <ul>
+                    <li>이 테스트는 <strong>재미 목적</strong>으로 제작되었으며 의료용이나 법적 용도로 사용할 수 없습니다</li>
+                    <li>조명, 각도, 표정 등이 결과에 영향을 줄 수 있습니다</li>
+                    <li>가장 정확한 결과를 위해서는 밝은 곳에서 정면을 향한 사진을 사용해주세요</li>
+                    <li>한 번에 한 명의 얼굴만 있는 사진을 사용하는 것을 권장합니다</li>
+                </ul>
+
+                <h3>🔬 기술적 배경</h3>
+                <p>이 서비스는 구글의 티처블 머신 2.0 플랫폼을 기반으로 구축되었습니다. TensorFlow.js를 사용하여 브라우저에서 직접 실행되므로 사진이 서버로 전송되지 않아 개인정보가 안전하게 보호됩니다.</p>
+
+                <div class="cta-section">
+                    <h3>지금 바로 테스트해보세요!</h3>
+                    <p>당신의 얼굴나이가 궁금하다면 지금 바로 테스트를 시작해보세요.</p>
+                    <a href="./index.html" class="cta-button">테스트 시작하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/darkmode.js"></script>
+    <script src="./assets/js/language.js"></script>
+</body>
+
+</html> 

@@ -1,20 +1,21 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow-x: hidden;
-    background-color: rgb(247, 248, 251);
-    color: rgb(123, 154, 204);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #2d3748;
     font-size: 1rem;
-    font-family: 'Leon Sans', sans-serif;                                      
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
 }
 
 #darkMode{
- 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -27,74 +28,272 @@ body{
 
 .content-container{
     width: 100%;
-    padding-top: 70px;
+    min-height: 100vh;
+    padding-top: 90px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+.content-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.15"/><circle cx="20" cy="80" r="0.5" fill="white" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
 }
 
 .content-wrapper{
-    width: 60%;
+    width: 90%;
+    max-width: 800px;
     margin: 0 auto;
-    margin-top: 70px;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 .language{
     display: flex;
-    justify-content: right;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
-.language select{
-    border: none;
-    outline: none;
-    background: none;
-    border-bottom:1px solid gray;
-    /* background: rgb(242, 245, 253); 
-    padding: 8px;
-    border-radius: 10px;
- 
-    box-shadow: rgba(0,0,0,0.2) 2px 2px 5px 0px,
-                    white -4px -4px 5px 0px;   */
+.language-selector {
+    position: relative;
+    display: inline-block;
+    min-width: 160px;
 }
- 
- 
 
+.language-selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 12px 16px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+}
 
-.content-wrapper section p{
+.language-selected:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+.language-selected .flag {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.language-selected .language-text {
+    flex: 1;
     text-align: center;
-    margin-top: 10px;
 }
 
-.content-wrapper section p:nth-child(3){
-    font-size: 3em;
+.language-selected .dropdown-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.language-selected.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    margin-top: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.language-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #2d3748;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.language-option:not(:last-child) {
+    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.language-option:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+    color: #4a5568;
+}
+
+.language-option:first-child {
+    border-radius: 16px 16px 0 0;
+}
+
+.language-option:last-child {
+    border-radius: 0 0 16px 16px;
+}
+
+.language-option .flag {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.language-option .language-text {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.language-option.focused {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+    color: #2d3748;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    .language-selector {
+        min-width: 140px;
+    }
+    
+    .language-selected {
+        padding: 10px 14px;
+    }
+    
+    .language-selected .flag {
+        font-size: 1.1rem;
+    }
+    
+    .language-option {
+        padding: 14px 16px;
+    }
+    
+    .language-dropdown {
+        margin-top: 6px;
+    }
 }
 
 .content-container .file-upload{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(100% - 40px);
-    height: auto;
-    padding: 20px;
-    background-color: white;
-    margin-top: 30px;
-    border-radius: 12px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 2px 8px 0px;
- 
+    width: 100%;
+    padding: 0;
+    background: none;
+    margin-top: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .file-upload .image-upload-wrap{
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 98%;
-    height: 400px;
-    background-color: white;
-    border: 2px dashed rgb(123, 154, 204);
+    width: 100%;
+    min-height: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 3px dashed rgba(102, 126, 234, 0.3);
+    border-radius: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
+}
 
+.file-upload .image-upload-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.file-upload .image-upload-wrap:hover::before {
+    opacity: 1;
 }
 
 .file-upload .image-upload-wrap:hover{
-    background-color: rgba(235, 235, 235, 0.521);
-    border: 2px dashed rgb(60, 113, 197);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+}
+
+/* 다크모드일 때 추가 스타일 */
+body.dark .file-upload .image-upload-wrap {
+    background: rgba(74, 85, 104, 0.95);
+    border: 3px dashed rgba(102, 126, 234, 0.6);
+    color: #e2e8f0;
+}
+
+body.dark .file-upload .image-upload-wrap:hover {
+    background: rgba(74, 85, 104, 0.98);
+    border-color: rgba(102, 126, 234, 0.8);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+}
+
+/* 라이트모드 hover 개선 */
+body:not(.dark) .file-upload .image-upload-wrap:hover {
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(102, 126, 234, 0.6);
 }
 
 .file-upload-input{
@@ -102,16 +301,37 @@ body{
     z-index: 2;
     width: 100%;
     height: 100%;
-    border: 1px solid pink;
     opacity: 0;
     cursor: pointer;
 }
 
 .file-upload .image-upload-wrap p{
-    position: absolute;
+    position: relative;
     z-index: 1;
-    font-weight: bold;
-    padding: 14px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: inherit;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+.upload-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.upload-icon::before {
+    content: '📷';
+    font-size: 28px;
+    color: white;
 }
 
 .content-bottom {
@@ -119,117 +339,150 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 .content-bottom p{
-    border-radius: 5px;
-    padding: 8px;
-    background-color: rgba(255, 214, 214, 0.4);
-    color: rgb(250, 124, 124);
+    border-radius: 20px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #e53e3e;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(229, 62, 62, 0.2);
 }
 
 .predict-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
-    /* height: 90%; */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 40px;
+    margin-top: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 .predict-wrapper img{
-    border-radius: 4px;
+    border-radius: 16px;
     max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .predict-wrapper .image-wrap{
     width: 100%;
     text-align: center;
-    padding: 40px 0px 80px 0px;
+    padding: 40px 0px 40px 0px;
 }
 
 .description{
-    margin: 20px 0px 20px 0px;
- 
+    margin: 30px 0px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .prediction-age{
-    padding: 10px;  
-    border-radius: 15px;
-    font-weight: bold;
-    color: #4e4e4e;
-    background-color: #f8cfb3;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    margin-bottom: 30px;
 }
 
-
-
 .label-container{
-    width: 100% ;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 30px;
 }
 
 .label-container .label-wrap{
     width: 100%;
-    height: auto;
+    margin-bottom: 16px;
 }
 
 .label-wrap{
-
     width: 100%;
-    height: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
+}
+
+.label-wrap label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
 }
 
 .label-wrap #label-bar{
     width: 100%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #e0e8f5;
-    transition: all 0;
+    height: 12px;
+    border-radius: 20px;
+    background: rgba(226, 232, 240, 0.8);
+    overflow: hidden;
+    position: relative;
 }
 
 .label-wrap .progressbar{
-    transition: all 0;
     width: 0%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    color: black;
+    color: transparent;
     justify-content: center;
-     
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
 
+.label-wrap .progressbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 .baby div{
-    background-color: #ff86eb;
+    background: linear-gradient(135deg, #ff6b9d, #ffa8d8);
 }
 
 .one div{
-    background-color: #e97062;
+    background: linear-gradient(135deg, #ff8a80, #ffab91);
 }
 
 .two div{
-    background-color: rgb(236, 203, 143);
+    background: linear-gradient(135deg, #ffd54f, #ffcc02);
 }
 
 .three div{
-    background-color: rgb(255, 218, 218);
+    background: linear-gradient(135deg, #81c784, #aed581);
 }
 
 .four div{
-    background-color: #bae7af;
+    background: linear-gradient(135deg, #64b5f6, #42a5f5);
 }
 
 .five div{
-    background-color: rgb(182, 182, 255);
+    background: linear-gradient(135deg, #ba68c8, #ab47bc);
 }
 
-
 .addthis_inline_share_toolbox_wpne{
-    margin-bottom   : 30px;
+    margin: 40px 0;
 }
 
 .analyzing{
@@ -239,109 +492,119 @@ body{
     align-items: center;
     width: 100%;
     height: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
 }
 
 .reload{
-    width: 10%;
+    width: 60px;
+    height: 60px;
     margin-top: 40px;
-    padding: 2px;
-    text-align: center;
-    box-shadow: rgba(0,0,0,0.2) 0px 2px 8px 0px;
-    border-radius: 10px;
+    border-radius: 50%;
     cursor: pointer;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
 .reload:hover{
-    background-color: rgb(211, 211, 211);
+    transform: translateY(-4px) rotate(180deg);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
 }
 
-.reload p{
-    background-color:#949494;
-    color: white;
-    border-radius: 10px;
-    padding: 10px;
+.reload img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
 }
-
-
-
-
-
-
-
 
 .footer-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: rgb(78, 78, 78); */
     position: relative;
-    margin-top: 40px;
-    bottom: 0px;
-    width: 100%;
-    height: 100px;
+    margin-top: 60px;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
 }
 
 .footer-container p{
-    background-color: #dceaff;
-    padding: 8px;
-    border-radius: 5px;
-    color: #3e6fff;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 24px;
+    border-radius: 20px;
+    color: #4a5568;
     margin-bottom: 10px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
 }
-
- 
-
-
 
 /* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/ 
 @media all and (min-width:1300px) { 
     .content-wrapper{
-        width: 40%;
-        margin: 0 auto;
+        width: 70%;
+        max-width: 900px;
     }
     .reload{
-        width: 7%;
+        width: 70px;
+        height: 70px;
     }
-  } 
+} 
 
 /* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/ 
 @media all and (min-width:768px) and (max-width:1023px) { 
     .content-wrapper{
-        width: 80%;
-        margin: 0 auto;
+        width: 85%;
     }
-    .reload{
-        width: 7%;
-    }
-  } 
+} 
  
 /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
 @media all and (min-width:480px) and (max-width:767px) {
     .content-wrapper{
         width: 90%;
-        margin: 0 auto;
     }
-  } 
+    
+    .predict-wrapper{
+        padding: 30px 20px;
+    }
+} 
   
 /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/ 
 @media all and (max-width:479px) {
-    .content-wrapper{
-        width: 90%;
-        margin: 0 auto;
+    .content-container{
+        padding-top: 80px;
     }
-
-    .nav-container .nav-wrapper{
-        width: 100%;
-        font-size: 0.7em;
+    
+    .content-wrapper{
+        width: 95%;
+        padding: 40px 15px;
     }
 
     .predict-wrapper{
         width: 100%;
+        padding: 25px 15px;
+        margin-top: 30px;
     }
 
     .content-container .file-upload{
-        width: calc(100% - 20px);
-        padding: 10px;
+        width: 100%;
     }
-  }
+    
+    .file-upload .image-upload-wrap{
+        min-height: 250px;
+        border-radius: 20px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
