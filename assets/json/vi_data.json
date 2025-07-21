@@ -1,0 +1,55 @@
+[{
+
+        "className": "baby",
+        "age": 5,
+        "labelTitle": "em bé",
+        "resultMessage": "Em bé dễ thương",
+        "resultExplain": "Nếu bạn không phải là em bé thật thì có lẽ bạn dễ thương như em bé vậy٩(ˊωˋ*)و✧"
+
+    },
+    {
+
+        "className": "one",
+        "age": 15,
+        "labelTitle": "tuổi teen",
+        "resultMessage": "Tuổi teen với mục tiêu thực hiện ước mơ!!",
+        "resultExplain": "Mục tiêu của bạn không phải là ghi lại ước mơ mà là thực hiện ước mơ ở độ tuổi teen~!"
+
+    },
+    {
+
+        "className": "two",
+        "age": 25,
+        "labelTitle": "đôi mươi",
+        "resultMessage": "Độ tuổi đôi mươi với tương lai tươi sáng và vô vàn khả năng!",
+        "resultExplain": "Nếu bạn có những giấc mơ không thể tưởng tượng được, hãy nỗ lực không thể tưởng tượng được để thực hiện chúng ở độ tuổi này!"
+
+    },
+    {
+
+        "className": "three",
+        "age": 35,
+        "labelTitle": "ba mươi",
+        "resultMessage": "Độ tuổi ba mươi với sức cạnh tranh tối đa!",
+        "resultExplain": "Sức cạnh tranh tốt nhất có thể là việc học tập, nhưng điều quan trọng nhất là niềm đam mê mà bạn có~!"
+
+    },
+    {
+
+        "className": "four",
+        "age": 45,
+        "labelTitle": "bốn mươi",
+        "resultMessage": "Độ tuổi bốn mươi - bậc thầy của thời gian~!",
+        "resultExplain": "Điều duy nhất chúng ta thực sự sở hữu chỉ có thời gian, và ngay cả những người không có gì khác cũng có thời gian. Bạn là người có thể điều khiển thời gian~!"
+
+    },
+    {
+
+        "className": "five",
+        "age": 55,
+        "labelTitle": "năm mười",
+        "resultMessage": "Độ tuổi năm mười - khởi đầu tốt là nửa thành công~~!",
+        "resultExplain": "Khoảnh khắc mà sâu bướm nghĩ rằng thế giới sắp kết thúc chính là lúc nó biến thành bướm~~!"
+
+    }
+] 

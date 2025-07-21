@@ -1,0 +1,55 @@
+[{
+
+        "className": "baby",
+        "age": 5,
+        "labelTitle": "赤ちゃん",
+        "resultMessage": "可愛い赤ちゃん",
+        "resultExplain": "もし実際の赤ちゃんでなければ、それほど可愛らしさを持っているということですね٩(ˊωˋ*)و✧"
+
+    },
+    {
+
+        "className": "one",
+        "age": 15,
+        "labelTitle": "10代",
+        "resultMessage": "夢を実現することが目標の10代！！",
+        "resultExplain": "夢を記録することが目標ではなく、夢を実現することが私の目標の10代～！"
+
+    },
+    {
+
+        "className": "two",
+        "age": 25,
+        "labelTitle": "20代",
+        "resultMessage": "前途洋々で無限の可能性を秘めた20代！",
+        "resultExplain": "想像できない夢を抱いているなら、想像できない努力をすれば叶えることができる年齢！"
+
+    },
+    {
+
+        "className": "three",
+        "age": 35,
+        "labelTitle": "30代",
+        "resultMessage": "最高の競争力を持つ30代！",
+        "resultExplain": "最高の競争力は勉強かもしれませんが、最も重要な情熱を持つあなた～！"
+
+    },
+    {
+
+        "className": "four",
+        "age": 45,
+        "labelTitle": "40代",
+        "resultMessage": "時間の能力者40代～！",
+        "resultExplain": "私たちが真に所有するものは時間だけで、他に何も持たない人にも時間はあります。あなたは時間を自在に操れる人です～！"
+
+    },
+    {
+
+        "className": "five",
+        "age": 55,
+        "labelTitle": "50代",
+        "resultMessage": "始まりが半分の50代～～！",
+        "resultExplain": "青虫が世界の終わりだと思う瞬間、蝶に変わる瞬間～～！"
+
+    }
+] 

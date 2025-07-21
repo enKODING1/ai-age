@@ -1,0 +1,55 @@
+[{
+
+        "className": "baby",
+        "age": 5,
+        "labelTitle": "婴儿",
+        "resultMessage": "可爱的小宝贝",
+        "resultExplain": "如果你不是真的小宝贝，那一定是拥有婴儿般的可爱魅力哦٩(ˊωˋ*)و✧"
+
+    },
+    {
+
+        "className": "one",
+        "age": 15,
+        "labelTitle": "十几岁",
+        "resultMessage": "以实现梦想为目标的十几岁！",
+        "resultExplain": "不是记录梦想，而是实现梦想才是你的目标！十几岁的青春年华~!"
+
+    },
+    {
+
+        "className": "two",
+        "age": 25,
+        "labelTitle": "二十几岁",
+        "resultMessage": "前途光明，能成就无数事业的二十几岁！",
+        "resultExplain": "如果你有无法想象的梦想，通过无法想象的努力就能实现的年纪！"
+
+    },
+    {
+
+        "className": "three",
+        "age": 35,
+        "labelTitle": "三十几岁",
+        "resultMessage": "拥有最强竞争力的三十几岁！",
+        "resultExplain": "最强的竞争力可能是学习，但最重要的是拥有热情的你~！"
+
+    },
+    {
+
+        "className": "four",
+        "age": 45,
+        "labelTitle": "四十几岁",
+        "resultMessage": "时间掌控者四十几岁~！",
+        "resultExplain": "我们真正拥有的只有时间，即使身无长物的人也拥有时间。你是能够自由支配时间的人~！"
+
+    },
+    {
+
+        "className": "five",
+        "age": 55,
+        "labelTitle": "五十几岁",
+        "resultMessage": "好的开始是成功一半的五十几岁~~！",
+        "resultExplain": "毛毛虫以为世界末日的那一刻，正是蜕变成蝴蝶的瞬间~~！"
+
+    }
+] 

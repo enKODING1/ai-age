@@ -32,37 +32,62 @@ function selectLanguage(value, flag, text) {
     isDropdownOpen = false;
     
     // Navigate to appropriate page
-    if (value === 'en') {
-        // 현재 페이지가 루트에 있는지 en 폴더에 있는지 확인
-        const currentPath = window.location.pathname;
-        if (currentPath.includes('/en/')) {
-            // 이미 영어 페이지에 있으면 그대로 유지
-            return;
-        } else {
-            // 한국어 페이지에서 영어 페이지로 이동
-            if (currentPath.includes('about.html')) {
-                window.location.href = './en/about.html';
-            } else if (currentPath.includes('info.html')) {
-                window.location.href = './en/info.html';
-            } else {
-                window.location.href = './en/index.html';
-            }
+    const currentPath = window.location.pathname;
+    const currentFileName = currentPath.split('/').pop() || 'index.html';
+    
+    if (value === 'kr') {
+        // 한국어 페이지로 이동 (루트)
+        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
+            currentPath.includes('/th/') || currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
+            window.location.href = '../' + currentFileName;
         }
-    } else if (value === 'kr') {
-        // 현재 페이지가 en 폴더에 있는지 확인
-        const currentPath = window.location.pathname;
-        if (currentPath.includes('/en/')) {
-            // 영어 페이지에서 한국어 페이지로 이동
-            if (currentPath.includes('about.html')) {
-                window.location.href = '../about.html';
-            } else if (currentPath.includes('info.html')) {
-                window.location.href = '../info.html';
-            } else {
-                window.location.href = '../index.html';
-            }
-        } else {
-            // 이미 한국어 페이지에 있으면 그대로 유지
-            return;
+    } else if (value === 'en') {
+        // 영어 페이지로 이동
+        if (currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
+            currentPath.includes('/th/') || currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
+            window.location.href = '../en/' + currentFileName;
+        } else if (!currentPath.includes('/en/')) {
+            window.location.href = './en/' + currentFileName;
+        }
+    } else if (value === 'zh') {
+        // 중국어 페이지로 이동
+        if (currentPath.includes('/en/') || currentPath.includes('/ja/') || 
+            currentPath.includes('/th/') || currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
+            window.location.href = '../zh/' + currentFileName;
+        } else if (!currentPath.includes('/zh/')) {
+            window.location.href = './zh/' + currentFileName;
+        }
+    } else if (value === 'ja') {
+        // 일본어 페이지로 이동
+        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || 
+            currentPath.includes('/th/') || currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
+            window.location.href = '../ja/' + currentFileName;
+        } else if (!currentPath.includes('/ja/')) {
+            window.location.href = './ja/' + currentFileName;
+        }
+    } else if (value === 'th') {
+        // 태국어 페이지로 이동
+        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
+            currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
+            window.location.href = '../th/' + currentFileName;
+        } else if (!currentPath.includes('/th/')) {
+            window.location.href = './th/' + currentFileName;
+        }
+    } else if (value === 'vi') {
+        // 베트남어 페이지로 이동
+        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
+            currentPath.includes('/th/') || currentPath.includes('/hi/')) {
+            window.location.href = '../vi/' + currentFileName;
+        } else if (!currentPath.includes('/vi/')) {
+            window.location.href = './vi/' + currentFileName;
+        }
+    } else if (value === 'hi') {
+        // 힌디어 페이지로 이동
+        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
+            currentPath.includes('/th/') || currentPath.includes('/vi/')) {
+            window.location.href = '../hi/' + currentFileName;
+        } else if (!currentPath.includes('/hi/')) {
+            window.location.href = './hi/' + currentFileName;
         }
     }
 }
@@ -148,6 +173,26 @@ document.addEventListener('DOMContentLoaded', function() {
         // 영어 페이지
         flagSpan.textContent = '🇺🇸';
         textSpan.textContent = 'English';
+    } else if (currentPath.includes('/zh/')) {
+        // 중국어 페이지
+        flagSpan.textContent = '🇨🇳';
+        textSpan.textContent = '中文';
+    } else if (currentPath.includes('/ja/')) {
+        // 일본어 페이지
+        flagSpan.textContent = '🇯🇵';
+        textSpan.textContent = '日本語';
+    } else if (currentPath.includes('/th/')) {
+        // 태국어 페이지
+        flagSpan.textContent = '🇹🇭';
+        textSpan.textContent = 'ไทย';
+    } else if (currentPath.includes('/vi/')) {
+        // 베트남어 페이지
+        flagSpan.textContent = '🇻🇳';
+        textSpan.textContent = 'Tiếng Việt';
+    } else if (currentPath.includes('/hi/')) {
+        // 힌디어 페이지
+        flagSpan.textContent = '🇮🇳';
+        textSpan.textContent = 'हिन्दी';
     } else {
         // 한국어 페이지
         flagSpan.textContent = '🇰🇷';
