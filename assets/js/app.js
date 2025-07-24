@@ -104,16 +104,29 @@ window.onload = async () => {
 
     let data_url = '';
 
-    if(location.pathname === '/' || location.pathname.includes('index.html')){
-        data_url = '/assets/json/kr_data.json';
-    }
-    else if(location.pathname === '/en/' || location.pathname.includes('/en/')){
+    
+    if(location.pathname === '/en/' || location.pathname.includes('/en/')){
         data_url = '/assets/json/en_data.json';
+    }
+    else if(location.pathname === '/zh/' || location.pathname.includes('/zh/')){
+        data_url = '/assets/json/zh_data.json';
+        console.log("this is chinese");
+    }
+    else if(location.pathname === '/ja/' || location.pathname.includes('/ja/')){
+        data_url = '/assets/json/ja_data.json';
+    }
+    else if(location.pathname === '/th/' || location.pathname.includes('/th/')){
+        data_url = '/assets/json/th_data.json';
+    }
+    else if(location.pathname === '/vi/' || location.pathname.includes('/vi/')){
+        data_url = '/assets/json/vi_data.json';
+    }
+    else if(location.pathname === '/hi/' || location.pathname.includes('/hi/')){
+        data_url = '/assets/json/hi_data.json';
     }
     else {
         data_url = '/assets/json/kr_data.json'; // 기본값
     }
-
     const dataFile = await fetch(data_url)
         .then((res) => {
             if (!res.ok) {
@@ -135,12 +148,23 @@ window.onload = async () => {
             labelBars = '';
             totalData = [];
             
+            let analyzingText = "분석 중.."; // 기본값 (한국어)
+            if(location.pathname.includes('/en/')) {
+                analyzingText = "Analyzing..";
+            } else if(location.pathname.includes('/zh/')) {
+                analyzingText = "分析中..";
+            } else if(location.pathname.includes('/ja/')) {
+                analyzingText = "分析中..";
+            } else if(location.pathname.includes('/th/')) {
+                analyzingText = "กำลังวิเคราะห์..";
+            } else if(location.pathname.includes('/vi/')) {
+                analyzingText = "Đang phân tích..";
+            } else if(location.pathname.includes('/hi/')) {
+                analyzingText = "विश्लेषण कर रहे हैं..";
+            }
+
             fileUploadBox.innerHTML = `<div class="analyzing">
-                                        <p>
-                                        ${location.pathname === '/' 
-                                        ?"분석 중.."
-                                        : "Analyzing.."}
-                                        </p>
+                                        <p>${analyzingText}</p>
                                         ${createLoading()}</div>`;
 
             if (input.target.files && input.target.files[0]) {
@@ -159,7 +183,6 @@ window.onload = async () => {
                 if (!dataFile || dataFile.length === 0) {
                     throw new Error('데이터 파일을 로드할 수 없습니다.');
                 }
-
                 for (let i = 0; i < maxPredictions; i++) {
                     const predictionData = prediction[i];
                     const labelData = dataFile[i];
@@ -195,7 +218,21 @@ window.onload = async () => {
                 console.log(resultAge);
                 imageWrap.append(image)
                 description.innerHTML = `<p>${totalData[0].resultMessage}</p><p>${totalData[0].resultExplain}</p> `
-                predictionAge.innerText = location.pathname === '/' ? `대략 ${resultAge} 세` : `${resultAge} years old`
+                let ageText = `대략 ${resultAge} 세`; // 기본값 (한국어)
+                if(location.pathname.includes('/en/')) {
+                    ageText = `${resultAge} years old`;
+                } else if(location.pathname.includes('/zh/')) {
+                    ageText = `大约 ${resultAge} 岁`;
+                } else if(location.pathname.includes('/ja/')) {
+                    ageText = `約 ${resultAge} 歳`;
+                } else if(location.pathname.includes('/th/')) {
+                    ageText = `ประมาณ ${resultAge} ปี`;
+                } else if(location.pathname.includes('/vi/')) {
+                    ageText = `Khoảng ${resultAge} tuổi`;
+                } else if(location.pathname.includes('/hi/')) {
+                    ageText = `लगभग ${resultAge} साल`;
+                }
+                predictionAge.innerText = ageText
                 labelContainer.innerHTML = labelBars;
                 reload.innerHTML = `<img src="${location.pathname === '/' ? "./" : "../" }assets/img/reload.svg" alt="aige reload">`;
 
@@ -216,12 +253,24 @@ window.onload = async () => {
             }
         } catch (error) {
             console.error('이미지 업로드 처리 중 오류:', error);
+            
+            let errorText = "이미지 처리 중 오류가 발생했습니다. 다시 시도해주세요."; // 기본값 (한국어)
+            if(location.pathname.includes('/en/')) {
+                errorText = "An error occurred while processing the image. Please try again.";
+            } else if(location.pathname.includes('/zh/')) {
+                errorText = "处理图片时发生错误。请重试。";
+            } else if(location.pathname.includes('/ja/')) {
+                errorText = "画像処理中にエラーが発生しました。もう一度お試しください。";
+            } else if(location.pathname.includes('/th/')) {
+                errorText = "เกิดข้อผิดพลาดในการประมวลผลภาพ กรุณาลองใหม่อีกครั้ง";
+            } else if(location.pathname.includes('/vi/')) {
+                errorText = "Đã xảy ra lỗi khi xử lý hình ảnh. Vui lòng thử lại.";
+            } else if(location.pathname.includes('/hi/')) {
+                errorText = "छवि प्रसंस्करण में त्रुटि हुई। कृपया पुनः प्रयास करें।";
+            }
+
             fileUploadBox.innerHTML = `<div class="error-message">
-                                        <p>
-                                        ${location.pathname === '/' 
-                                        ?"이미지 처리 중 오류가 발생했습니다. 다시 시도해주세요."
-                                        : "An error occurred while processing the image. Please try again."}
-                                        </p>
+                                        <p>${errorText}</p>
                                       </div>`;
         }
     }
