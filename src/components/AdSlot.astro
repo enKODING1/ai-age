@@ -1,5 +1,5 @@
 ---
-import { KAKAO_AD_UNIT } from '../consts';
+import { KAKAO_AD } from '../consts';
 ---
 
 <!-- 광고가 늦게 로드돼도 본문이 밀리지 않도록(CLS) 광고 크기만큼 자리를 미리 잡아 둔다 -->
@@ -7,9 +7,9 @@ import { KAKAO_AD_UNIT } from '../consts';
     <ins
         class="kakao_ad_area"
         style="display: none"
-        data-ad-unit={KAKAO_AD_UNIT}
-        data-ad-width="320"
-        data-ad-height="50"></ins>
+        data-ad-unit={KAKAO_AD.unit}
+        data-ad-width={String(KAKAO_AD.width)}
+        data-ad-height={String(KAKAO_AD.height)}></ins>
 </aside>
 
 <script>
@@ -20,7 +20,7 @@ import { KAKAO_AD_UNIT } from '../consts';
 
         document.querySelectorAll('script[data-kakao-adfit]').forEach((el) => el.remove());
         const script = document.createElement('script');
-        script.src = 'https://t1.daumcdn.net/kas/static/ba.min.js';
+        script.src = 'https://t1.kakaocdn.net/kas/static/ba.min.js';
         script.async = true;
         script.dataset.kakaoAdfit = '';
         document.body.append(script);
