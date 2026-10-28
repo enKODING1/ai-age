@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-item a');
 
+    if (!mobileMenuToggle || !mobileMenu) return;
+
     // 햄버거 버튼 클릭 이벤트
     mobileMenuToggle.addEventListener('click', function() {
         toggleMobileMenu();
