@@ -159,10 +159,10 @@
     ]
   },
   "about": {
-    "title": "🤖 What is AI Face Age Test?",
+    "title": "What is AI Face Age Test?",
     "intro": "The AI Face Age Test is a service that uses cutting-edge machine learning technology to analyze uploaded photos and estimate the apparent age of faces. Built on Google's Teachable Machine platform, this system has been trained on extensive facial data to provide accurate age predictions.",
     "how": {
-      "title": "🎯 How Does It Work?",
+      "title": "How Does It Work?",
       "lead": "Our AI system operates through the following process:",
       "items": [
         "<strong>Face Detection:</strong> Automatically identifies facial regions in uploaded images",
@@ -173,28 +173,24 @@
     },
     "features": [
       {
-        "icon": "🚀",
         "title": "Fast Analysis",
         "text": "Get results within seconds after uploading your photo"
       },
       {
-        "icon": "🔒",
         "title": "Privacy Protection",
         "text": "Uploaded photos are not stored on servers and are immediately deleted after analysis"
       },
       {
-        "icon": "📱",
         "title": "All Device Support",
         "text": "Works on PC, tablets, smartphones, and all devices"
       },
       {
-        "icon": "🎨",
         "title": "Intuitive Interface",
         "text": "Simple and beautiful interface that anyone can easily use"
       }
     ],
     "results": {
-      "title": "📊 Understanding Results",
+      "title": "Understanding Results",
       "lead": "Test results are provided as follows:",
       "items": [
         "<strong>Estimated Age:</strong> The most likely age as analyzed by AI",
@@ -203,7 +199,7 @@
       ]
     },
     "caution": {
-      "title": "⚠️ Important Notes",
+      "title": "Important Notes",
       "items": [
         "This test is created <strong>for entertainment purposes</strong> and cannot be used for medical or legal purposes",
         "Lighting, angle, and facial expression may affect results",
@@ -212,7 +208,7 @@
       ]
     },
     "tech": {
-      "title": "🔬 Technical Background",
+      "title": "Technical Background",
       "text": "This service is built on Google's Teachable Machine 2.0 platform. Using TensorFlow.js, it runs directly in the browser, so photos are not sent to servers, ensuring your privacy is safely protected."
     },
     "cta": {
