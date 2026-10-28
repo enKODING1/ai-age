@@ -140,7 +140,9 @@ const canonical = localized ? absoluteUrl(localePath(locale, page)) : absoluteUr
 
         {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
-        <ClientRouter />
+        <!-- View Transitions 를 지원하지 않는 브라우저(iOS 18 미만 Safari 등)에서는 애니메이션을 흉내내지 않는다.
+             흉내낸 슬라이드는 본문을 실제로 화면 밖으로 밀어내 모바일에서 페이지가 넓어진다 -->
+        <ClientRouter fallback="swap" />
     </head>
     <body>
         <Header locale={locale} page={page} />

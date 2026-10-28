@@ -68,9 +68,23 @@
     word-break: keep-all;
 }
 
+/* 어떤 요소(광고, 전환 애니메이션 등)가 잠깐 화면 밖으로 나가도
+   모바일 브라우저가 페이지 폭을 넓혀 화면을 축소하지 않도록 가로 넘침을 막는다 */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@supports (overflow-x: clip) {
+    html,
+    body {
+        overflow-x: clip;
+    }
+}
+
 body {
     min-height: 100vh;
-    overflow-x: hidden;
     overflow-wrap: break-word;
     font-family: var(--font-body);
     font-size: 1rem;
@@ -1044,6 +1058,9 @@ button {
 .toast {
     position: fixed;
     left: 50%;
+    width: max-content;
+    max-width: calc(100vw - 32px);
+    text-align: center;
     bottom: calc(24px + env(safe-area-inset-bottom));
     z-index: 200;
     padding: 12px 20px;
@@ -1068,6 +1085,17 @@ button {
     max-width: 100%;
     min-height: 200px;
     margin: 40px auto 0;
+    overflow: hidden;
+}
+
+/* 320px 광고가 본문 폭보다 넓은 작은 화면에서는 좌우 여백까지 써서 화면 폭에 맞춘다 */
+@media (max-width: 359px) {
+    .ad-slot {
+        width: calc(100% + 32px);
+        max-width: none;
+        margin-left: -16px;
+        margin-right: -16px;
+    }
 }
 
 /* ===== Home: how it works / FAQ ===== */
