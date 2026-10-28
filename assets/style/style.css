@@ -36,6 +36,11 @@ body:lang(ko) {
     --display-weight: 400;
 }
 
+/* 한국어만 어절 단위 줄바꿈. 띄어쓰기가 없는 중국어·일본어에 적용하면 줄이 넘친다 */
+body:lang(ko) {
+    word-break: keep-all;
+}
+
 body.dark {
     --bg: #141414;
     --surface: #222222;
@@ -58,6 +63,7 @@ body{
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+    overflow-wrap: break-word;
     background-color: var(--bg);
     background-image:
         linear-gradient(var(--grid) 1px, transparent 1px),
@@ -108,7 +114,6 @@ body{
     font-weight: var(--display-weight);
     line-height: 1.15;
     letter-spacing: -0.02em;
-    word-break: keep-all;
     color: var(--on-accent);
     background: var(--yellow);
     border: var(--border);
@@ -122,7 +127,6 @@ body{
     font-size: clamp(1rem, 2.4vw, 1.2rem);
     font-weight: 500;
     line-height: 1.5;
-    word-break: keep-all;
 }
 
 /* ===== Language selector ===== */
@@ -320,7 +324,6 @@ body{
     font-weight: 700;
     line-height: 1.4;
     text-align: center;
-    word-break: keep-all;
 }
 
 /* ===== Analyzing / Error ===== */
@@ -352,7 +355,6 @@ body{
     padding: 40px 32px;
     font-weight: 700;
     text-align: center;
-    word-break: keep-all;
     color: var(--on-accent);
     background: var(--pink);
     border: var(--border);
@@ -389,7 +391,6 @@ body{
 .description{
     margin-bottom: 28px;
     text-align: center;
-    word-break: keep-all;
 }
 
 .description p:first-child{

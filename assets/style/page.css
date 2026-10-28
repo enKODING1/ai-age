@@ -18,7 +18,6 @@
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     font-weight: var(--display-weight);
     line-height: 1.25;
-    word-break: keep-all;
     border-bottom: var(--border);
 }
 
