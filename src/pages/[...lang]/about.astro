@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { localePath, localeStaticPaths, t, type Locale } from '../../i18n';
+import { pageJsonLd } from '../../seo/jsonld';
+
+export const getStaticPaths = localeStaticPaths;
+
+const { locale } = Astro.props as { locale: Locale };
+const d = t(locale);
+const a = d.about;
+---
+
+<BaseLayout
+    locale={locale}
+    page="about"
+    title={d.meta.about.title}
+    description={d.meta.about.description}
+    ogTitle={d.meta.about.ogTitle}
+    ogDescription={d.meta.about.ogDescription}
+    jsonLd={pageJsonLd(locale, 'about')}
+>
+    <PageHero title={d.hero.about.title} subtitle={d.hero.about.subtitle} />
+
+    <article class="prose-card">
+        <h2>{a.title}</h2>
+        <p set:html={a.intro} />
+
+        <h3>{a.how.title}</h3>
+        <p set:html={a.how.lead} />
+        <ul>{a.how.items.map((item) => <li set:html={item} />)}</ul>
+
+        <div class="feature-grid">
+            {
+                a.features.map((feature) => (
+                    <div class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">{feature.icon}</span>
+                        <h4>{feature.title}</h4>
+                        <p set:html={feature.text} />
+                    </div>
+                ))
+            }
+        </div>
+
+        <h3>{a.results.title}</h3>
+        <p set:html={a.results.lead} />
+        <ul>{a.results.items.map((item) => <li set:html={item} />)}</ul>
+
+        <h3>{a.caution.title}</h3>
+        <ul>{a.caution.items.map((item) => <li set:html={item} />)}</ul>
+
+        <h3>{a.tech.title}</h3>
+        <p set:html={a.tech.text} />
+
+        <div class="cta-section">
+            <h3>{a.cta.title}</h3>
+            <p set:html={a.cta.text} />
+            <a href={localePath(locale)} class="cta-button">{a.cta.button}</a>
+        </div>
+    </article>
+</BaseLayout>

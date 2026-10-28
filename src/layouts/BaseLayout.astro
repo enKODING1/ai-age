@@ -1,0 +1,139 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import {
+    ADSENSE_CLIENT,
+    GA_ID,
+    GOOGLE_SITE_VERIFICATION,
+    NAVER_SITE_VERIFICATION,
+    OG_IMAGE,
+    absoluteUrl,
+} from '../consts';
+import {
+    FALLBACK_LOCALE,
+    LOCALE_INFO,
+    LOCALES,
+    isLocalizedPage,
+    localePath,
+    t,
+    type Locale,
+    type Page,
+} from '../i18n';
+import '../styles/global.css';
+
+interface Props {
+    locale: Locale;
+    page: Page;
+    title: string;
+    description: string;
+    ogTitle?: string;
+    ogDescription?: string;
+    jsonLd?: object;
+    noindex?: boolean;
+}
+
+const { locale, page, title, description, ogTitle, ogDescription, jsonLd, noindex = false } = Astro.props;
+const d = t(locale);
+const info = LOCALE_INFO[locale];
+const localized = isLocalizedPage(page);
+const canonical = localized ? absoluteUrl(localePath(locale, page)) : absoluteUrl(`/${page}/`);
+---
+
+<!doctype html>
+<html lang={info.htmlLang}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+
+        {
+            localized && (
+                <>
+                    {LOCALES.map((l) => (
+                        <link rel="alternate" hreflang={LOCALE_INFO[l].htmlLang} href={absoluteUrl(localePath(l, page))} />
+                    ))}
+                    <link rel="alternate" hreflang="x-default" href={absoluteUrl(localePath(FALLBACK_LOCALE, page))} />
+                </>
+            )
+        }
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={d.meta.home.siteName} />
+        <meta property="og:title" content={ogTitle ?? title} />
+        <meta property="og:description" content={ogDescription ?? description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={absoluteUrl(OG_IMAGE.path)} />
+        <meta property="og:image:width" content={String(OG_IMAGE.width)} />
+        <meta property="og:image:height" content={String(OG_IMAGE.height)} />
+        <meta property="og:image:alt" content={d.meta.home.imageAlt} />
+        <meta property="og:locale" content={info.ogLocale} />
+        {
+            localized &&
+                LOCALES.filter((l) => l !== locale).map((l) => (
+                    <meta property="og:locale:alternate" content={LOCALE_INFO[l].ogLocale} />
+                ))
+        }
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta name="theme-color" content="#FFF4D6" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)" />
+        <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
+        <meta name="naver-site-verification" content={NAVER_SITE_VERIFICATION} />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
+        />
+
+        <!-- 첫 페인트 전에 테마를 적용하고, 페이지 전환 후에도 다시 적용한다 -->
+        <script is:inline>
+            (() => {
+                const applyTheme = () => {
+                    let saved = null;
+                    try {
+                        saved = localStorage.getItem('darkMode');
+                    } catch (e) {}
+                    const dark = saved ? saved === 'enabled' : matchMedia('(prefers-color-scheme: dark)').matches;
+                    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+                };
+                applyTheme();
+                document.addEventListener('astro:after-swap', applyTheme);
+            })();
+        </script>
+
+        <!-- GA4: 페이지 전환(history 변경)은 GA4 향상된 측정이 page_view 로 집계한다 -->
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+        <script is:inline define:vars={{ GA_ID }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', GA_ID);
+        </script>
+        <script
+            is:inline
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+            crossorigin="anonymous"></script>
+
+        {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+        <ClientRouter />
+    </head>
+    <body>
+        <Header locale={locale} page={page} />
+        <main id="main" class="content-wrapper">
+            <slot />
+        </main>
+        <Footer locale={locale} />
+    </body>
+</html>

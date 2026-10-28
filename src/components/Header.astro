@@ -1,0 +1,135 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { localePath, t, type Locale, type Page } from '../i18n';
+
+interface Props {
+    locale: Locale;
+    page: Page;
+}
+
+const { locale, page } = Astro.props;
+const d = t(locale);
+
+const links = [
+    { key: 'home', href: localePath(locale), label: d.nav.home },
+    { key: 'about', href: localePath(locale, 'about'), label: d.nav.about },
+    { key: 'info', href: localePath(locale, 'info'), label: d.nav.info },
+    { key: 'external', href: 'https://egen-teto.vercel.app/', label: 'Egen Teto', external: true },
+];
+---
+
+<header class="nav-container">
+    <nav class="nav-wrapper">
+        <div class="nav-left">
+            <a class="logo" href={localePath(locale)}>AI Age</a>
+            <ul class="nav-items desktop-nav">
+                {
+                    links.map((link) => (
+                        <li class="nav-item">
+                            <a
+                                href={link.href}
+                                aria-current={link.key === page ? 'page' : undefined}
+                                target={link.external ? '_blank' : undefined}
+                                rel={link.external ? 'noopener' : undefined}
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+        <div class="nav-right">
+            <LanguageSwitcher locale={locale} page={page} />
+            <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label={d.ui.theme}>
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle class="sun" cx="50" cy="50" r="46"></circle>
+                    <path
+                        class="moon"
+                        d="M31.5 50C31.5 77.6142 50 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C50 0 31.5 22.3858 31.5 50Z"
+                        transform="translate(22 0)"></path>
+                </svg>
+            </button>
+            <button
+                class="icon-button mobile-menu-toggle"
+                type="button"
+                data-menu-toggle
+                aria-label={d.ui.menu}
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu-items">
+            {
+                links.map((link) => (
+                    <li class="mobile-nav-item">
+                        <a
+                            href={link.href}
+                            aria-current={link.key === page ? 'page' : undefined}
+                            target={link.external ? '_blank' : undefined}
+                            rel={link.external ? 'noopener' : undefined}
+                        >
+                            {link.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</header>
+
+<script>
+    function setMenuOpen(open: boolean) {
+        const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+        const menu = document.getElementById('mobile-menu');
+        if (!toggle || !menu) return;
+
+        toggle.classList.toggle('active', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.classList.toggle('active', open);
+        // 메뉴가 열려 있는 동안 본문 스크롤 방지
+        document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    document.addEventListener('astro:page-load', () => {
+        document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+            const dark = document.documentElement.dataset.theme !== 'dark';
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+            try {
+                localStorage.setItem('darkMode', dark ? 'enabled' : 'disabled');
+            } catch {
+                // 저장소를 쓸 수 없는 환경(시크릿 모드 등)에서는 현재 페이지에만 적용
+            }
+        });
+
+        document.querySelector('[data-menu-toggle]')?.addEventListener('click', () => {
+            setMenuOpen(!document.getElementById('mobile-menu')?.classList.contains('active'));
+        });
+    });
+
+    // 문서 단위 리스너는 페이지 전환마다 쌓이지 않도록 한 번만 등록한다
+    document.addEventListener('click', (event) => {
+        const target = event.target as Node;
+        const toggle = document.querySelector('[data-menu-toggle]');
+        const menu = document.getElementById('mobile-menu');
+        if (menu?.classList.contains('active') && !menu.contains(target) && !toggle?.contains(target)) {
+            setMenuOpen(false);
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') setMenuOpen(false);
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) setMenuOpen(false);
+    });
+
+    document.addEventListener('astro:before-swap', () => setMenuOpen(false));
+</script>

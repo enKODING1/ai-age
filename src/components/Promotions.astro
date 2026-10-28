@@ -1,0 +1,32 @@
+---
+import { KAKAO_AD_UNIT } from '../consts';
+---
+
+<aside class="content-bottom">
+    <a class="soundok-banner" href="https://soundok.koivis.com/app" target="_blank" rel="noopener">
+        <img src="/images/soundok-logo.png" alt="soundok" width="160" height="47" loading="lazy" />
+    </a>
+    <div class="ad-wrap" data-kakao-ad>
+        <ins
+            class="kakao_ad_area"
+            style="display: none"
+            data-ad-unit={KAKAO_AD_UNIT}
+            data-ad-width="320"
+            data-ad-height="50"></ins>
+    </div>
+</aside>
+
+<script>
+    // 카카오 애드핏은 스크립트가 로드될 때 광고 영역을 찾는다.
+    // SPA 전환으로 새 영역이 생기면 스크립트를 다시 붙여 광고를 채운다.
+    document.addEventListener('astro:page-load', () => {
+        if (!document.querySelector('[data-kakao-ad] .kakao_ad_area')) return;
+
+        document.querySelectorAll('script[data-kakao-adfit]').forEach((el) => el.remove());
+        const script = document.createElement('script');
+        script.src = 'https://t1.daumcdn.net/kas/static/ba.min.js';
+        script.async = true;
+        script.dataset.kakaoAdfit = '';
+        document.body.append(script);
+    });
+</script>

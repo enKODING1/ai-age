@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { CONTACT_EMAIL } from '../../consts';
+import { localePath, localeStaticPaths, t, type Locale } from '../../i18n';
+import { pageJsonLd } from '../../seo/jsonld';
+
+export const getStaticPaths = localeStaticPaths;
+
+const { locale } = Astro.props as { locale: Locale };
+const d = t(locale);
+const i = d.info;
+---
+
+<BaseLayout
+    locale={locale}
+    page="info"
+    title={d.meta.info.title}
+    description={d.meta.info.description}
+    ogTitle={d.meta.info.ogTitle}
+    ogDescription={d.meta.info.ogDescription}
+    jsonLd={pageJsonLd(locale, 'info')}
+>
+    <PageHero title={d.hero.info.title} subtitle={d.hero.info.subtitle} />
+
+    <article class="prose-card">
+        <h2>{i.title}</h2>
+        <p class="privacy-highlight">{i.highlight}</p>
+
+        <h3>{i.photo.title}</h3>
+        <p set:html={i.photo.lead} />
+        <ul>{i.photo.items.map((item) => <li set:html={item} />)}</ul>
+
+        <h3>{i.cookies.title}</h3>
+        <ul>{i.cookies.items.map((item) => <li set:html={item} />)}</ul>
+
+        <h3>{i.security.title}</h3>
+        <ul>{i.security.items.map((item) => <li set:html={item} />)}</ul>
+
+        <div class="contact-card">
+            <h4>{i.contact.title}</h4>
+            <p>{i.contact.text}</p>
+            <a href={`mailto:${CONTACT_EMAIL}`} class="contact-email">{CONTACT_EMAIL}</a>
+        </div>
+
+        <h3>{i.terms.title}</h3>
+        <ul>{i.terms.items.map((item) => <li set:html={item} />)}</ul>
+
+        <h3>{i.updates.title}</h3>
+        <p set:html={i.updates.text} />
+
+        <div class="copyright-section">
+            <h3>{i.copyright.title}</h3>
+            {i.copyright.lines.map((line) => <p set:html={line} />)}
+        </div>
+
+        <div class="back-to-home">
+            <a href={localePath(locale)} class="back-button">{i.back}</a>
+        </div>
+    </article>
+</BaseLayout>

@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# AI 검색·답변 엔진 크롤러 허용 (GEO)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://aige.netlify.app/sitemap.xml

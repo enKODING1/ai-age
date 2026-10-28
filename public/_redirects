@@ -1,0 +1,11 @@
+# 기존 .html 주소 → 새 주소 (검색 순위 유지를 위한 301)
+/index.html                   /                     301
+/about.html                   /about/               301
+/info.html                    /info/                301
+/privacy.html                 /privacy/             301
+/terms.html                   /terms/               301
+/:lang/index.html             /:lang/               301
+/:lang/about.html             /:lang/about/         301
+/:lang/info.html              /:lang/info/          301
+/assets/img/ai_age_test.png   /og/ai-age-test.jpg   301
+/Ads.txt                      /ads.txt              301

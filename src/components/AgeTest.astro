@@ -1,0 +1,55 @@
+---
+import { MODEL_URL } from '../consts';
+import { t, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const d = t(locale);
+const config = { modelUrl: MODEL_URL, text: d.test, results: d.results };
+const reloadIcon =
+    'M14.66 15.66A8 8 0 1 1 17 10h-2a6 6 0 1 0-1.76 4.24l1.42 1.42zM12 10h8l-4 4-4-4z';
+---
+
+<section class="age-test" data-age-test aria-live="polite">
+    <script is:inline type="application/json" data-age-test-config set:html={JSON.stringify(config)} />
+
+    <label class="image-upload-wrap" data-view="idle">
+        <input class="file-upload-input" type="file" accept="image/*" />
+        <span class="upload-icon" aria-hidden="true"></span>
+        <span class="upload-text">{d.test.upload}</span>
+    </label>
+
+    <div class="analyzing" data-view="loading" hidden>
+        <p>{d.test.analyzing}</p>
+        <div class="lds-ellipsis" aria-hidden="true"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <div class="predict-wrapper" data-view="result" hidden>
+        <div class="image-wrap"><img data-result-image alt="" /></div>
+        <div class="description">
+            <p data-result-message></p>
+            <p data-result-explain></p>
+        </div>
+        <p class="prediction-age" data-result-age></p>
+        <div class="label-container" data-result-labels></div>
+        <button class="reload" type="button" data-reset aria-label={d.test.retry}>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d={reloadIcon}></path></svg>
+        </button>
+    </div>
+
+    <div class="error-message" data-view="error" hidden>
+        <p>{d.test.error}</p>
+        <button class="reload" type="button" data-reset aria-label={d.test.retry}>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d={reloadIcon}></path></svg>
+        </button>
+    </div>
+</section>
+
+<script>
+    import { initAgeTest } from '../scripts/age-test';
+
+    document.addEventListener('astro:page-load', initAgeTest);
+</script>

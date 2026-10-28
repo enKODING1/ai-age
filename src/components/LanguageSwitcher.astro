@@ -1,0 +1,49 @@
+---
+import { LOCALE_INFO, LOCALES, isLocalizedPage, localePath, t, type Locale, type Page } from '../i18n';
+
+interface Props {
+    locale: Locale;
+    page: Page;
+}
+
+const { locale, page } = Astro.props;
+// 한국어 전용 페이지(약관 등)에서는 각 언어의 홈으로 이동
+const target = isLocalizedPage(page) ? page : 'home';
+---
+
+<details class="lang-switcher" data-lang-switcher>
+    <summary aria-label={t(locale).ui.language}>
+        <span class="flag" aria-hidden="true">{LOCALE_INFO[locale].flag}</span>
+        <span class="lang-code">{locale.toUpperCase()}</span>
+    </summary>
+    <ul class="lang-menu">
+        {
+            LOCALES.map((l) => (
+                <li>
+                    <a
+                        href={localePath(l, target)}
+                        hreflang={LOCALE_INFO[l].htmlLang}
+                        lang={LOCALE_INFO[l].htmlLang}
+                        aria-current={l === locale ? 'true' : undefined}
+                    >
+                        <span class="flag" aria-hidden="true">{LOCALE_INFO[l].flag}</span>
+                        {LOCALE_INFO[l].label}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</details>
+
+<script>
+    const closeSwitchers = (except?: Node) => {
+        document.querySelectorAll<HTMLDetailsElement>('[data-lang-switcher][open]').forEach((el) => {
+            if (!except || !el.contains(except)) el.open = false;
+        });
+    };
+
+    document.addEventListener('click', (event) => closeSwitchers(event.target as Node));
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeSwitchers();
+    });
+</script>
