@@ -1,4 +1,4 @@
-import { OG_IMAGE, SITE_NAME, SITE_URL, UPDATED_AT, absoluteUrl } from '../consts';
+import { SITE_NAME, SITE_URL, UPDATED_AT, absoluteUrl, ogImagePath } from '../consts';
 import { LOCALE_INFO, LOCALES, localePath, t, type Locale, type LocalizedPage } from '../i18n';
 
 type Thing = Record<string, unknown>;
@@ -47,7 +47,7 @@ export function homeJsonLd(locale: Locale) {
                 alternateName: d.meta.home.siteName,
                 description: d.meta.home.description,
                 url,
-                image: absoluteUrl(OG_IMAGE.path),
+                image: absoluteUrl(ogImagePath(locale)),
                 inLanguage,
                 applicationCategory: 'EntertainmentApplication',
                 operatingSystem: 'Any',

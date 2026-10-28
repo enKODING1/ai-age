@@ -7,7 +7,8 @@
 /:lang/index.html             /:lang/               301
 /:lang/about.html             /:lang/about/         301
 /:lang/info.html              /:lang/privacy/       301
-/assets/img/ai_age_test.png   /og/ai-age-test.jpg   301
+/assets/img/ai_age_test.png   /og/ko.jpg            301
+/og/ai-age-test.jpg           /og/ko.jpg            301
 /Ads.txt                      /ads.txt              301
 
 # 개인정보 & 연락처 페이지를 개인정보 처리방침으로 통합
