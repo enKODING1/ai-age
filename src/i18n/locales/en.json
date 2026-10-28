@@ -72,7 +72,9 @@
     "capture": "Save this moment",
     "share": "Share result",
     "shareText": "AI thinks I look {age}! Try it yourself",
-    "copied": "Link copied"
+    "copied": "Link copied",
+    "loadingHint": "This download happens only once. Next time it starts instantly.",
+    "faceLoading": "Preparing face tracking.."
   },
   "results": [
     {

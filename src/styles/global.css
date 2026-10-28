@@ -822,6 +822,66 @@ button {
     text-transform: uppercase;
 }
 
+/* 모델 다운로드 진행률 (실제 바이트 기준) */
+.load-progress {
+    width: min(320px, 100%);
+    height: 18px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 3px solid #111111;
+    box-shadow: 3px 3px 0 #111111;
+}
+
+.load-progress span {
+    display: block;
+    width: calc(var(--progress, 0) * 100%);
+    height: 100%;
+    background: repeating-linear-gradient(-45deg, #111111 0 10px, #3D3D3D 10px 20px);
+    background-size: 28px 28px;
+    transition: width 0.25s var(--ease-out);
+    animation: stripes 0.8s linear infinite;
+}
+
+@keyframes stripes {
+    to { background-position: 28px 0; }
+}
+
+.load-hint {
+    max-width: 360px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.camera-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    text-align: center;
+    color: #111111;
+    background: var(--yellow);
+}
+
+.camera-loading-text {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.load-percent {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
 /* 얼굴을 찾으면 노란 프레임이 조여 들며 고정된다 */
 .face-box {
     position: absolute;

@@ -72,7 +72,9 @@
     "capture": "Lưu khoảnh khắc này",
     "share": "Chia sẻ kết quả",
     "shareText": "AI nói mình trông {age} tuổi! Bạn thử xem",
-    "copied": "Đã sao chép liên kết"
+    "copied": "Đã sao chép liên kết",
+    "loadingHint": "Chỉ tải về lần đầu. Lần sau sẽ bắt đầu ngay.",
+    "faceLoading": "Đang chuẩn bị nhận diện khuôn mặt.."
   },
   "results": [
     {

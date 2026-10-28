@@ -72,7 +72,9 @@
     "capture": "이 순간 저장",
     "share": "결과 공유하기",
     "shareText": "AI가 본 내 나이는 {age}세! 너도 해봐",
-    "copied": "링크를 복사했어요"
+    "copied": "링크를 복사했어요",
+    "loadingHint": "처음 한 번만 받아요. 다음부터는 바로 시작돼요.",
+    "faceLoading": "얼굴 인식 준비 중.."
   },
   "results": [
     {

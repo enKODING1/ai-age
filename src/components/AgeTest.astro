@@ -60,6 +60,12 @@ const [agePrefix, ageSuffix] = text.age.split('{age}');
                         <canvas class="face-overlay" data-camera-overlay></canvas>
                     </div>
                     <div class="scan-line" aria-hidden="true"></div>
+                    <div class="camera-loading" data-camera-loading hidden>
+                        <p class="camera-loading-text">{text.loadingModel}</p>
+                        <div class="load-progress" aria-hidden="true"><span></span></div>
+                        <p class="load-percent" data-load-percent>0%</p>
+                        <p class="load-hint">{text.loadingHint}</p>
+                    </div>
                     <p class="camera-status" data-camera-status>{text.cameraStarting}</p>
                     <p class="live-age">
                         <span class="live-age-label">{text.liveLabel}</span>
@@ -81,6 +87,8 @@ const [agePrefix, ageSuffix] = text.age.split('{age}');
                 <div class="scan-line" aria-hidden="true"></div>
             </div>
             <p class="analyzing-text" data-loading-text role="status">{text.loadingModel}</p>
+            <div class="load-progress" data-load-progress aria-hidden="true"><span></span></div>
+            <p class="load-hint" data-load-hint hidden>{text.loadingHint}</p>
         </div>
 
         <div class="test-view result" data-view="result" hidden>

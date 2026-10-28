@@ -2,7 +2,9 @@ import {
     findFace,
     loadAgeModel,
     loadFaceDetector,
+    onAgeModelProgress,
     predictProbabilities,
+    readyFaceDetector,
     summarize,
     toModelInput,
     type AgeResult,
@@ -24,6 +26,20 @@ type View = Mode | 'loading' | 'result' | 'error';
 const LIVE_INTERVAL = 200; // 실시간 분석은 초당 5회로 제한해 발열·배터리 소모를 줄인다
 const SMOOTHING = 0.35; // 실시간 확률의 지수이동평균 가중치 (숫자가 튀지 않게)
 const MAX_IMAGE_SIZE = 1280;
+
+const whenIdle = (callback: () => void) =>
+    'requestIdleCallback' in window ? requestIdleCallback(callback, { timeout: 4000 }) : setTimeout(callback, 2000);
+
+// 진행 막대와 퍼센트를 모델 다운로드 진행률에 연결한다
+const bindProgress = (container: Element) =>
+    onAgeModelProgress((value) => {
+        container.querySelectorAll<HTMLElement>('.load-progress').forEach((bar) => {
+            bar.style.setProperty('--progress', String(value));
+            bar.hidden = value >= 1;
+        });
+        const percent = container.querySelector('[data-load-percent]');
+        if (percent) percent.textContent = `${Math.round(value * 100)}%`;
+    });
 
 const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -164,6 +180,9 @@ export function initAgeTest() {
     const liveLabels = $('[data-live-labels]');
     const captureButton = $<HTMLButtonElement>('[data-camera-capture]');
     const toast = $('[data-toast]');
+    const loadingView = $('[data-view="loading"]');
+    const loadHint = $('[data-load-hint]');
+    const cameraLoading = $('[data-camera-loading]');
 
     let mode: Mode = 'upload';
     let lastAge = 0;
@@ -212,14 +231,14 @@ export function initAgeTest() {
         });
     });
 
-    // 업로드하려는 기미가 보이면 모델을 미리 받아 둔다
-    const warmUp = () => {
-        loadAgeModel(config.modelUrl).catch(() => {});
-        loadFaceDetector();
-    };
-    $('.test-card').addEventListener('pointerenter', warmUp, { once: true });
-    $('.test-card').addEventListener('focusin', warmUp, { once: true });
-    $('.test-card').addEventListener('touchstart', warmUp, { once: true, passive: true });
+    // 테스트하려는 기미(탭·업로드 영역 터치, 포커스)가 보이면 나이 모델을 미리 받는다
+    const warmUp = () => loadAgeModel(config.modelUrl).catch(() => {});
+    for (const type of ['pointerover', 'pointerdown', 'touchstart', 'focusin']) {
+        root.addEventListener(type, warmUp, { once: true, passive: true });
+    }
+    // 빠른 회선이고 데이터 절약 모드가 아니면 페이지가 한가할 때 미리 받아 둔다
+    const connection = (navigator as Navigator & { connection?: { effectiveType?: string; saveData?: boolean } }).connection;
+    if (connection?.effectiveType === '4g' && !connection.saveData) whenIdle(warmUp);
 
     // ---------- 결과 ----------
     const renderResult = (estimate: Estimate, src: string, face: FaceBox | null, width: number, height: number) => {
@@ -270,16 +289,27 @@ export function initAgeTest() {
         scanImage.src = imageUrl!;
         track('age_test_start', { mode: 'upload' });
 
+        const unbindProgress = bindProgress(loadingView);
+        const hintTimer = setTimeout(() => (loadHint.hidden = false), 2500);
         try {
             await scanImage.decode();
-            const [model, detector] = await Promise.all([loadAgeModel(config.modelUrl), loadFaceDetector()]);
+            const model = await loadAgeModel(config.modelUrl);
+            unbindProgress();
+            clearTimeout(hintTimer);
+            loadHint.hidden = true;
             const source = imageToCanvas(scanImage);
 
-            loadingText.textContent = text.findingFace;
-            const face = detector ? findFace(detector, source) : null;
-            placeFaceBox(scanFace, face, source.width, source.height);
-            // 얼굴을 찾는 과정을 잠깐 보여준다 (작업 과정이 보이면 결과를 더 신뢰한다: labor illusion)
-            if (!reducedMotion()) await wait(700);
+            // 얼굴 검출기는 결과를 늦추지 않도록 이미 준비돼 있을 때만 쓰고, 아니면 다음을 위해 뒤에서 받는다
+            loadFaceDetector();
+            const detector = readyFaceDetector();
+            let face: FaceBox | null = null;
+            if (detector) {
+                loadingText.textContent = text.findingFace;
+                face = findFace(detector, source);
+                placeFaceBox(scanFace, face, source.width, source.height);
+                // 얼굴을 찾는 과정을 잠깐 보여준다 (작업 과정이 보이면 결과를 더 신뢰한다: labor illusion)
+                if (!reducedMotion()) await wait(700);
+            }
 
             loadingText.textContent = text.analyzing;
             toModelInput(source, source.width, source.height, cropCanvas);
@@ -288,6 +318,10 @@ export function initAgeTest() {
         } catch (error) {
             console.error('이미지 처리 중 오류:', error);
             show('error');
+        } finally {
+            unbindProgress();
+            clearTimeout(hintTimer);
+            loadHint.hidden = true;
         }
     });
 
@@ -349,7 +383,11 @@ export function initAgeTest() {
         drawBrackets(overlayCtx, drawnBox, Math.max(4, overlay.width * 0.01));
     };
 
-    const analyzeFrame = async (model: Awaited<ReturnType<typeof loadAgeModel>>, detector: Awaited<ReturnType<typeof loadFaceDetector>>) => {
+    const analyzeFrame = async (
+        model: Awaited<ReturnType<typeof loadAgeModel>>,
+        detector: Awaited<ReturnType<typeof loadFaceDetector>>,
+        detectorPending: boolean,
+    ) => {
         const { videoWidth: width, videoHeight: height } = video;
         if (frame.width !== width || frame.height !== height) {
             frame.width = width;
@@ -376,7 +414,7 @@ export function initAgeTest() {
         estimateFace = face;
         countUp(liveAge, estimate.age, 300);
         renderLiveBars(estimate);
-        setStatus(detector ? text.faceFound : text.analyzing, 'tracking');
+        setStatus(detector ? text.faceFound : detectorPending ? text.faceLoading : text.analyzing, 'tracking');
         captureButton.disabled = false;
     };
 
@@ -396,6 +434,10 @@ export function initAgeTest() {
         setStatus(text.cameraStarting, 'searching');
         track('age_test_start', { mode: 'camera' });
 
+        // 권한 요청과 동시에 모델을 받기 시작한다
+        const modelPromise = loadAgeModel(config.modelUrl);
+        modelPromise.catch(() => {});
+
         // 브라우저 권한 요청은 사용자가 '카메라 켜기'를 누른 이 시점에만 띄운다
         try {
             stream = await navigator.mediaDevices.getUserMedia({
@@ -414,17 +456,33 @@ export function initAgeTest() {
         overlay.width = video.videoWidth;
         overlay.height = video.videoHeight;
 
-        setStatus(text.loadingModel, 'searching');
+        // 모델이 준비될 때까지 카메라 화면 위에 실제 진행률을 보여준다
+        cameraLoading.hidden = false;
+        cameraStatus.hidden = true;
+        const unbindProgress = bindProgress(cameraLoading);
         let model: Awaited<ReturnType<typeof loadAgeModel>>;
-        let detector: Awaited<ReturnType<typeof loadFaceDetector>>;
         try {
-            [model, detector] = await Promise.all([loadAgeModel(config.modelUrl), loadFaceDetector()]);
+            model = await modelPromise;
         } catch (error) {
             console.error('모델 로드 오류:', error);
             stopCamera();
             return show('error');
+        } finally {
+            unbindProgress();
+            cameraLoading.hidden = true;
+            cameraStatus.hidden = false;
         }
         if (!stream) return;
+
+        // 얼굴 검출기(약 3.5MB)는 기다리지 않고 바로 측정을 시작하고, 준비되면 얼굴 추적을 붙인다
+        let detector = readyFaceDetector();
+        let detectorPending = !detector;
+        if (!detector) {
+            loadFaceDetector().then((loaded) => {
+                detector = loaded;
+                detectorPending = false;
+            });
+        }
 
         let lastRun = 0;
         let busy = false;
@@ -434,7 +492,7 @@ export function initAgeTest() {
             if (busy || now - lastRun < LIVE_INTERVAL || video.readyState < 2) return;
             lastRun = now;
             busy = true;
-            analyzeFrame(model, detector)
+            analyzeFrame(model, detector, detectorPending)
                 .catch((error) => console.error('실시간 분석 오류:', error))
                 .finally(() => (busy = false));
         };
