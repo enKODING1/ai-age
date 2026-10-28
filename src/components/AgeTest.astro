@@ -13,6 +13,7 @@ const text = d.test;
 const config = {
     modelUrl: MODEL_URL,
     shareUrl: absoluteUrl(localePath(locale)),
+    title: d.hero.home.title,
     text,
     results: d.results,
 };
@@ -104,7 +105,8 @@ const [agePrefix, ageSuffix] = text.age.split('{age}');
             </div>
             <div class="label-container" data-result-labels></div>
             <div class="button-row">
-                <button class="button button-primary" type="button" data-share><Icon name="share-network" />{text.share}</button>
+                <button class="button button-primary" type="button" data-story-share><Icon name="instagram-logo" />{text.storyShare}</button>
+                <button class="button button-secondary" type="button" data-share><Icon name="share-network" />{text.share}</button>
                 <button class="button button-secondary" type="button" data-reset>
                     <Icon name="arrow-counter-clockwise" />
                     {text.retry}

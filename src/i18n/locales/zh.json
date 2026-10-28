@@ -74,7 +74,10 @@
     "shareText": "AI觉得我看起来{age}岁！你也来试试",
     "copied": "链接已复制",
     "loadingHint": "仅首次需要下载，之后会立即启动。",
-    "faceLoading": "正在准备人脸追踪.."
+    "faceLoading": "正在准备人脸追踪..",
+    "storyShare": "分享到快拍",
+    "storySaved": "图片已保存，发到快拍吧！",
+    "storyCta": "你也来试试"
   },
   "results": [
     {

@@ -12,10 +12,12 @@ import {
     type FaceBox,
     type ScoredResult,
 } from './age-model';
+import { createStoryCard } from './story-card';
 
 interface AgeTestConfig {
     modelUrl: string;
     shareUrl: string;
+    title: string;
     text: Record<string, string>;
     results: AgeResult[];
 }
@@ -251,9 +253,63 @@ export function initAgeTest() {
         countUp(resultAge, estimate.age, 900);
         resultLabels.replaceChildren(...estimate.results.map(createLabel));
         lastAge = estimate.age;
+        prepareStory(estimate, face, width, height);
         track('age_test_complete', { mode, age: estimate.age });
         root.querySelector('[data-view="result"]')!.scrollIntoView({ block: 'nearest', behavior: reducedMotion() ? 'auto' : 'smooth' });
     };
+
+    // 아이폰 Safari 는 버튼을 누른 직후에만 공유 시트를 열 수 있으므로 스토리 이미지를 미리 만들어 둔다
+    let storyFile: File | undefined;
+    let storyPromise: Promise<File | undefined> | undefined;
+
+    const prepareStory = (estimate: Estimate, face: FaceBox | null, width: number, height: number) => {
+        storyFile = undefined;
+        const shareUrl = new URL(config.shareUrl);
+        storyPromise = (async () => {
+            if (!resultImage.complete) await resultImage.decode();
+            const scale = resultImage.naturalWidth / width;
+            const file = await createStoryCard({
+                lang: document.documentElement.lang,
+                photo: resultImage,
+                face: face && { x: face.x * scale, y: face.y * scale, width: face.width * scale, height: face.height * scale },
+                title: config.title,
+                label: text.resultLabel,
+                ageText: text.age.replace('{age}', String(estimate.age)),
+                message: estimate.results[0].message,
+                results: estimate.results,
+                cta: text.storyCta,
+                url: (shareUrl.host + shareUrl.pathname).replace(/\/$/, ''),
+            });
+            storyFile = file;
+            return file;
+        })().catch((error) => {
+            console.error('스토리 이미지 생성 오류:', error);
+            return undefined;
+        });
+    };
+
+    $('[data-story-share]').addEventListener('click', async () => {
+        const file = storyFile ?? (await storyPromise);
+        if (!file) return;
+        track('share', { method: 'story' });
+        // 휴대폰: OS 공유 시트 → 인스타그램·페이스북 스토리 선택
+        if (navigator.canShare?.({ files: [file] })) {
+            try {
+                await navigator.share({ files: [file], title: document.title });
+                return;
+            } catch (error) {
+                if ((error as DOMException).name === 'AbortError') return;
+            }
+        }
+        // 공유 시트가 없으면 이미지를 저장해 직접 올리게 한다
+        const url = URL.createObjectURL(file);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = file.name;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        showToast(text.storySaved);
+    });
 
     $('[data-share]').addEventListener('click', async () => {
         const message = text.shareText.replace('{age}', String(lastAge));

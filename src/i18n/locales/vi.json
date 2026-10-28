@@ -74,7 +74,10 @@
     "shareText": "AI nói mình trông {age} tuổi! Bạn thử xem",
     "copied": "Đã sao chép liên kết",
     "loadingHint": "Chỉ tải về lần đầu. Lần sau sẽ bắt đầu ngay.",
-    "faceLoading": "Đang chuẩn bị nhận diện khuôn mặt.."
+    "faceLoading": "Đang chuẩn bị nhận diện khuôn mặt..",
+    "storyShare": "Chia sẻ lên story",
+    "storySaved": "Đã lưu ảnh. Đăng lên story ngay nhé!",
+    "storyCta": "Thử ngay"
   },
   "results": [
     {

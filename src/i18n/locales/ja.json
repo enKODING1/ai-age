@@ -74,7 +74,10 @@
     "shareText": "AIが見た私の年齢は{age}歳！あなたも試してみて",
     "copied": "リンクをコピーしました",
     "loadingHint": "ダウンロードは初回のみです。次回からはすぐに始まります。",
-    "faceLoading": "顔追跡を準備中.."
+    "faceLoading": "顔追跡を準備中..",
+    "storyShare": "ストーリーズでシェア",
+    "storySaved": "画像を保存しました。ストーリーズに投稿してみよう！",
+    "storyCta": "あなたも試してみて"
   },
   "results": [
     {

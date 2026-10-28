@@ -6,6 +6,7 @@ import cpu from '@phosphor-icons/core/assets/bold/cpu-bold.svg?raw';
 import deviceMobile from '@phosphor-icons/core/assets/bold/device-mobile-bold.svg?raw';
 import globeSimple from '@phosphor-icons/core/assets/bold/globe-simple-bold.svg?raw';
 import imageSquare from '@phosphor-icons/core/assets/bold/image-square-bold.svg?raw';
+import instagramLogo from '@phosphor-icons/core/assets/bold/instagram-logo-bold.svg?raw';
 import lightning from '@phosphor-icons/core/assets/bold/lightning-bold.svg?raw';
 import lockSimple from '@phosphor-icons/core/assets/bold/lock-simple-bold.svg?raw';
 import magnifyingGlass from '@phosphor-icons/core/assets/bold/magnifying-glass-bold.svg?raw';
@@ -28,6 +29,7 @@ export const ICONS = {
     'device-mobile': deviceMobile,
     'globe-simple': globeSimple,
     'image-square': imageSquare,
+    'instagram-logo': instagramLogo,
     lightning,
     'lock-simple': lockSimple,
     'magnifying-glass': magnifyingGlass,

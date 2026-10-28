@@ -74,7 +74,10 @@
     "shareText": "AI thinks I look {age}! Try it yourself",
     "copied": "Link copied",
     "loadingHint": "This download happens only once. Next time it starts instantly.",
-    "faceLoading": "Preparing face tracking.."
+    "faceLoading": "Preparing face tracking..",
+    "storyShare": "Share to story",
+    "storySaved": "Image saved. Post it to your story!",
+    "storyCta": "Try it yourself"
   },
   "results": [
     {
