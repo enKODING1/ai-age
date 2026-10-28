@@ -8,6 +8,7 @@ export const ADSENSE_CLIENT = 'ca-pub-5207006250876379';
 export const KAKAO_AD_UNIT = 'DAN-rCnk2z6YiPGVPPbO';
 export const GOOGLE_SITE_VERIFICATION = 'Yk2euFjnay1FF1dBlJSE71D2TtMojzDKIY7scno9tg8';
 export const NAVER_SITE_VERIFICATION = '7aa6331705a17931b2bd844bd5285ea03a77210b';
+export const BING_SITE_VERIFICATION = '4F1C7887D159E213D7B4251E74ECD43D';
 
 // 언어별 SNS 공유 섬네일 (public/og/{언어}.jpg)
 export const OG_IMAGE_SIZE = { width: 1200, height: 630 };

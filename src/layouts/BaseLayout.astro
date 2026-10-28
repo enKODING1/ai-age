@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import {
     ADSENSE_CLIENT,
+    BING_SITE_VERIFICATION,
     GA_ID,
     GOOGLE_SITE_VERIFICATION,
     NAVER_SITE_VERIFICATION,
@@ -83,6 +84,7 @@ const canonical = localized ? absoluteUrl(localePath(locale, page)) : absoluteUr
         <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)" />
         <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
         <meta name="naver-site-verification" content={NAVER_SITE_VERIFICATION} />
+        <meta name="msvalidate.01" content={BING_SITE_VERIFICATION} />
         <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
         <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
