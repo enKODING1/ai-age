@@ -29,9 +29,6 @@ const LIVE_INTERVAL = 200; // 실시간 분석은 초당 5회로 제한해 발�
 const SMOOTHING = 0.35; // 실시간 확률의 지수이동평균 가중치 (숫자가 튀지 않게)
 const MAX_IMAGE_SIZE = 1280;
 
-const whenIdle = (callback: () => void) =>
-    'requestIdleCallback' in window ? requestIdleCallback(callback, { timeout: 4000 }) : setTimeout(callback, 2000);
-
 // 진행 막대와 퍼센트를 모델 다운로드 진행률에 연결한다
 const bindProgress = (container: Element) =>
     onAgeModelProgress((value) => {
@@ -238,9 +235,6 @@ export function initAgeTest() {
     for (const type of ['pointerover', 'pointerdown', 'touchstart', 'focusin']) {
         root.addEventListener(type, warmUp, { once: true, passive: true });
     }
-    // 빠른 회선이고 데이터 절약 모드가 아니면 페이지가 한가할 때 미리 받아 둔다
-    const connection = (navigator as Navigator & { connection?: { effectiveType?: string; saveData?: boolean } }).connection;
-    if (connection?.effectiveType === '4g' && !connection.saveData) whenIdle(warmUp);
 
     // ---------- 결과 ----------
     const renderResult = (estimate: Estimate, src: string, face: FaceBox | null, width: number, height: number) => {

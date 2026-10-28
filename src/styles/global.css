@@ -107,6 +107,14 @@ button {
     color: inherit;
 }
 
+/* 더블탭 확대를 기다리지 않고 탭에 바로 반응 */
+a,
+button,
+summary,
+label {
+    touch-action: manipulation;
+}
+
 .icon {
     flex-shrink: 0;
     width: 1.25em;
@@ -1607,7 +1615,7 @@ button {
 
 /* 페이지 전환 때 제목 스티커가 튕기듯 이어진다 */
 ::view-transition-group(hero-title) {
-    animation-duration: 0.45s;
+    animation-duration: 0.25s;
     animation-timing-function: var(--ease-snap);
 }
 
