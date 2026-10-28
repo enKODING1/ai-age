@@ -1,0 +1,55 @@
+import type { APIRoute } from 'astro';
+import { SITE_NAME, absoluteUrl } from '../consts';
+import { LOCALE_INFO, LOCALES, localePath, t } from '../i18n';
+
+// AI 답변 엔진이 사이트를 요약·인용할 수 있도록 핵심 사실과 페이지 목록을 제공한다 (llms.txt)
+export const GET: APIRoute = () => {
+    const en = t('en');
+
+    const languages = LOCALES.map((locale) => {
+        const d = t(locale);
+        return `- [${LOCALE_INFO[locale].label}](${absoluteUrl(localePath(locale))}): ${d.meta.home.title}`;
+    }).join('\n');
+
+    const pages = LOCALES.flatMap((locale) => {
+        const d = t(locale);
+        return [
+            `- [${d.meta.about.title}](${absoluteUrl(localePath(locale, 'about'))}) (${LOCALE_INFO[locale].label})`,
+            `- [${d.meta.info.title}](${absoluteUrl(localePath(locale, 'info'))}) (${LOCALE_INFO[locale].label})`,
+        ];
+    }).join('\n');
+
+    const faq = en.home.faq.map((item) => `### ${item.q}\n${item.a}`).join('\n\n');
+    const steps = en.home.steps.map((step, i) => `${i + 1}. **${step.title}**: ${step.text}`).join('\n');
+
+    const body = `# ${SITE_NAME}: ${en.hero.about.title}
+
+> A free browser-based test that estimates how old a face looks from a single photo, available in ${LOCALES.length} languages with no sign-up. Photos are analyzed on-device with TensorFlow.js and are never uploaded. For entertainment only.
+
+## Key facts
+
+- Model: image classifier trained with Google Teachable Machine, run in the browser with TensorFlow.js.
+- Output: probabilities for six age groups (baby, teens, twenties, thirties, forties, fifties).
+- Estimated age: probability-weighted average of each group's representative age (5, 15, 25, 35, 45, 55).
+- Privacy: the photo never leaves the device; nothing is stored.
+- Not for medical, legal or identity verification use.
+
+## How it works
+
+${steps}
+
+## Test (by language)
+
+${languages}
+
+## About and privacy pages
+
+${pages}
+
+## FAQ
+
+${faq}
+`;
+
+    return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+};
