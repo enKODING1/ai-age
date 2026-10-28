@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "home": {
+      "title": "AI Face Age Test - Artificial Intelligence Age Analysis Service",
+      "description": "Analyze your face photo with AI technology to determine your estimated age. Free online face age test service that detects aging signs.",
+      "ogTitle": "AI Face Age Test - Artificial Intelligence Age Analysis",
+      "ogDescription": "Analyze your face photo with AI technology to determine your estimated age. Free online face age test service.",
+      "siteName": "AI Age - Face Age Test",
+      "imageAlt": "AI Face Age Test Service Thumbnail"
+    },
+    "about": {
+      "title": "AI Face Age Test Introduction",
+      "description": "Learn about our AI-powered face age analysis test and how it works",
+      "ogTitle": "AI Face Age Test Introduction",
+      "ogDescription": "Detailed explanation of our AI-powered face age analysis test"
+    },
+    "info": {
+      "title": "Privacy & Contact - AI Face Age Test",
+      "description": "Privacy policy, contact information and copyright details for AI Face Age Test",
+      "ogTitle": "AI Face Age Test - Privacy Policy & Contact",
+      "ogDescription": "Privacy policy and contact information"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Test",
+    "info": "Privacy & Contact"
+  },
+  "ui": {
+    "language": "Choose language",
+    "theme": "Toggle dark mode",
+    "menu": "Menu",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "notFound": "Page not found",
+    "backHome": "Back to home"
+  },
+  "hero": {
+    "home": {
+      "title": "What is my age in AI's eyes?",
+      "subtitle": "AI analyzes your face and tells you your estimated age"
+    },
+    "about": {
+      "title": "AI Face Age Test",
+      "subtitle": "Advanced AI technology to analyze your facial age"
+    },
+    "info": {
+      "title": "Privacy & Contact",
+      "subtitle": "Information for safe and reliable service operation"
+    }
+  },
+  "test": {
+    "upload": "Drag & Drop or click to upload your picture",
+    "analyzing": "Analyzing..",
+    "age": "{age} years old",
+    "error": "An error occurred while processing the image. Please try again.",
+    "retry": "Try again"
+  },
+  "results": [
+    {
+      "className": "baby",
+      "age": 5,
+      "label": "baby",
+      "message": "Cute baby",
+      "explain": "If you're not an actual baby, you must have that excessive cuteness of a baby  ٩(ˊωˋ*)و✧"
+    },
+    {
+      "className": "one",
+      "age": 15,
+      "label": "teens",
+      "message": "Ambitious teen",
+      "explain": "Your goal is to realize your dream, not recording it~!"
+    },
+    {
+      "className": "two",
+      "age": 25,
+      "label": "twenties",
+      "message": "Twenties, an age with enormous possibilities",
+      "explain": "If your dream is beyond imagination, you can achieve it with unimaginable efforts!"
+    },
+    {
+      "className": "three",
+      "age": 35,
+      "label": "thirties",
+      "message": "Thirties, an age with the maximum competency",
+      "explain": "What really matters in the end is you passion~!"
+    },
+    {
+      "className": "four",
+      "age": 45,
+      "label": "forties",
+      "message": "Forties, when you have the most time",
+      "explain": "The only thing we truly possess is time, and even those who have nothing else have time. You are a person who can manage your time without any restraints~!"
+    },
+    {
+      "className": "five",
+      "age": 55,
+      "label": "fifties",
+      "message": "Fifties, when a good beginning is half battle won~~!",
+      "explain": "The moment when a caterpillar thinks the world is over, it will turn into a butterfly~~!"
+    }
+  ],
+  "home": {
+    "howTitle": "How the AI face age test works",
+    "steps": [
+      {
+        "title": "Upload a photo",
+        "text": "Pick a clear, front-facing photo with one face. Drag and drop it or tap the box to choose a file."
+      },
+      {
+        "title": "AI analyzes it in your browser",
+        "text": "A TensorFlow.js model trained with Google Teachable Machine compares the photo with six age groups. The photo never leaves your device."
+      },
+      {
+        "title": "See your estimated age",
+        "text": "You get an estimated age and the probability for each group, from baby to fifties."
+      }
+    ],
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "How is my age estimated?",
+        "a": "The model gives a probability for six age groups (baby, teens, twenties, thirties, forties, fifties). Your estimated age is the average of each group’s representative age (5, 15, 25, 35, 45, 55) weighted by those probabilities."
+      },
+      {
+        "q": "Is my photo uploaded or stored?",
+        "a": "No. The photo is analyzed entirely in your browser with TensorFlow.js. It is never sent to a server or saved, and it is gone when you leave the page."
+      },
+      {
+        "q": "How accurate is the result?",
+        "a": "It is a test for fun, not a medical or legal age assessment. Lighting, camera angle, makeup and facial expression can all change the result."
+      },
+      {
+        "q": "What kind of photo works best?",
+        "a": "A bright, front-facing photo with only one face and nothing covering it gives the most consistent results."
+      },
+      {
+        "q": "Is it free?",
+        "a": "Yes. It is free, needs no sign-up and works on phones, tablets and computers."
+      }
+    ]
+  },
+  "about": {
+    "title": "🤖 What is AI Face Age Test?",
+    "intro": "The AI Face Age Test is a service that uses cutting-edge machine learning technology to analyze uploaded photos and estimate the apparent age of faces. Built on Google's Teachable Machine platform, this system has been trained on extensive facial data to provide accurate age predictions.",
+    "how": {
+      "title": "🎯 How Does It Work?",
+      "lead": "Our AI system operates through the following process:",
+      "items": [
+        "<strong>Face Detection:</strong> Automatically identifies facial regions in uploaded images",
+        "<strong>Feature Analysis:</strong> Analyzes age-related characteristics such as wrinkles, skin texture, and facial contours",
+        "<strong>AI Prediction:</strong> Machine learning model predicts age based on analyzed features",
+        "<strong>Result Display:</strong> Shows estimated age along with probability graphs by age group"
+      ]
+    },
+    "features": [
+      {
+        "icon": "🚀",
+        "title": "Fast Analysis",
+        "text": "Get results within seconds after uploading your photo"
+      },
+      {
+        "icon": "🔒",
+        "title": "Privacy Protection",
+        "text": "Uploaded photos are not stored on servers and are immediately deleted after analysis"
+      },
+      {
+        "icon": "📱",
+        "title": "All Device Support",
+        "text": "Works on PC, tablets, smartphones, and all devices"
+      },
+      {
+        "icon": "🎨",
+        "title": "Intuitive Interface",
+        "text": "Simple and beautiful interface that anyone can easily use"
+      }
+    ],
+    "results": {
+      "title": "📊 Understanding Results",
+      "lead": "Test results are provided as follows:",
+      "items": [
+        "<strong>Estimated Age:</strong> The most likely age as analyzed by AI",
+        "<strong>Age Group Probability:</strong> Bar chart showing probability of belonging to each age group from teens to 50s",
+        "<strong>Special Categories:</strong> Includes special classifications like 'Baby'"
+      ]
+    },
+    "caution": {
+      "title": "⚠️ Important Notes",
+      "items": [
+        "This test is created <strong>for entertainment purposes</strong> and cannot be used for medical or legal purposes",
+        "Lighting, angle, and facial expression may affect results",
+        "For the most accurate results, please use bright photos facing forward",
+        "It's recommended to use photos with only one face at a time"
+      ]
+    },
+    "tech": {
+      "title": "🔬 Technical Background",
+      "text": "This service is built on Google's Teachable Machine 2.0 platform. Using TensorFlow.js, it runs directly in the browser, so photos are not sent to servers, ensuring your privacy is safely protected."
+    },
+    "cta": {
+      "title": "Try the Test Now!",
+      "text": "If you're curious about your facial age, start the test right now.",
+      "button": "Start Test"
+    }
+  },
+  "info": {
+    "title": "🔒 Privacy Policy",
+    "highlight": "🎯 Key Point: Photos are not stored anywhere",
+    "photo": {
+      "title": "📷 Photo Processing Method",
+      "lead": "AI Face Age Test prioritizes user privacy protection above all:",
+      "items": [
+        "<strong>Local Processing:</strong> All analysis is performed directly in the user's browser",
+        "<strong>No Server Transmission:</strong> Uploaded photos are never sent to external servers",
+        "<strong>Immediate Deletion:</strong> Photo data is immediately removed from memory after analysis",
+        "<strong>TensorFlow.js:</strong> Complete privacy guaranteed through browser-based AI engine"
+      ]
+    },
+    "cookies": {
+      "title": "🍪 Cookies and Data Collection",
+      "items": [
+        "<strong>Essential Cookies:</strong> Only minimal data stored for user experience improvement (dark mode settings, etc.)",
+        "<strong>Analytics Tools:</strong> Only anonymized usage statistics collected through Google Analytics",
+        "<strong>Personal Information:</strong> No personal information such as names, emails, or phone numbers is collected",
+        "<strong>Optional Consent:</strong> All data collection follows user's browser settings"
+      ]
+    },
+    "security": {
+      "title": "🛡️ Security Measures",
+      "items": [
+        "<strong>HTTPS Encryption:</strong> All communications are encrypted with SSL/TLS",
+        "<strong>Local Processing:</strong> Sensitive image data is never exposed externally"
+      ]
+    },
+    "contact": {
+      "title": "📧 Contact & Inquiries",
+      "text": "If you have any questions about the service, please feel free to contact us anytime"
+    },
+    "terms": {
+      "title": "⚖️ Terms of Service",
+      "items": [
+        "<strong>Service Purpose:</strong> This service is provided for entertainment and educational purposes",
+        "<strong>Accuracy Limitations:</strong> AI prediction results are for reference only and cannot be used as medical/legal judgment criteria",
+        "<strong>Liability Limitations:</strong> We are not responsible for direct or indirect damages from service use"
+      ]
+    },
+    "updates": {
+      "title": "🔄 Policy Updates",
+      "text": "This privacy policy may be updated as needed. We will notify you through the website of any important changes."
+    },
+    "copyright": {
+      "title": "📄 Copyright Information",
+      "lines": [
+        "<strong>ⓒ 2024. AI Age Test. All rights reserved.</strong>",
+        "All content, design, and code on this website are protected by copyright law.",
+        "Unauthorized reproduction, distribution, or commercial use is prohibited.",
+        "<small>Last Updated: December 2024</small>"
+      ]
+    },
+    "back": "Back to Home"
+  }
+}

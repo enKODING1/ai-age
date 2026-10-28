@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "home": {
+      "title": "Kiểm tra tuổi khuôn mặt AI - Dịch vụ phân tích tuổi bằng trí tuệ nhân tạo",
+      "description": "Công nghệ AI phân tích ảnh khuôn mặt của bạn và cho biết tuổi dự đoán. Dịch vụ kiểm tra tuổi khuôn mặt trực tuyến miễn phí, phân biệt già và trẻ thú vị với AI.",
+      "ogTitle": "Kiểm tra tuổi khuôn mặt AI - Phân tích tuổi bằng trí tuệ nhân tạo",
+      "ogDescription": "Công nghệ AI phân tích ảnh khuôn mặt của bạn và cho biết tuổi dự đoán. Dịch vụ kiểm tra tuổi khuôn mặt trực tuyến miễn phí",
+      "siteName": "AI Age - Kiểm tra tuổi khuôn mặt",
+      "imageAlt": "Hình thu nhỏ dịch vụ kiểm tra tuổi khuôn mặt AI"
+    },
+    "about": {
+      "title": "AI Face Age Test Introduction",
+      "description": "Tìm hiểu về kiểm tra tuổi khuôn mặt bằng AI và cách hoạt động",
+      "ogTitle": "Giới thiệu kiểm tra tuổi khuôn mặt AI",
+      "ogDescription": "Giới thiệu chi tiết về kiểm tra tuổi khuôn mặt bằng AI của chúng tôi"
+    },
+    "info": {
+      "title": "Privacy & Contact - AI Face Age Test",
+      "description": "Chính sách bảo mật, thông tin liên hệ và bản quyền cho kiểm tra tuổi khuôn mặt AI",
+      "ogTitle": "Kiểm tra tuổi khuôn mặt AI - Chính sách bảo mật & Liên hệ",
+      "ogDescription": "Chính sách bảo mật và thông tin liên hệ"
+    }
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu kiểm tra",
+    "info": "Quyền riêng tư & Liên hệ"
+  },
+  "ui": {
+    "language": "Chọn ngôn ngữ",
+    "theme": "Chuyển chế độ tối",
+    "menu": "Menu",
+    "privacy": "Quyền riêng tư",
+    "terms": "Điều khoản",
+    "notFound": "Không tìm thấy trang",
+    "backHome": "Về trang chủ"
+  },
+  "hero": {
+    "home": {
+      "title": "Tuổi của tôi trong mắt AI là bao nhiêu?",
+      "subtitle": "Trí tuệ nhân tạo phân tích khuôn mặt của bạn và cho biết tuổi dự đoán"
+    },
+    "about": {
+      "title": "Kiểm tra tuổi khuôn mặt bằng AI",
+      "subtitle": "Công nghệ AI tiên tiến phân tích tuổi khuôn mặt của bạn"
+    },
+    "info": {
+      "title": "Chính sách bảo mật & Liên hệ",
+      "subtitle": "Thông tin cho dịch vụ an toàn và đáng tin cậy"
+    }
+  },
+  "test": {
+    "upload": "Kéo thả hoặc nhấp để tải lên ảnh của bạn",
+    "analyzing": "Đang phân tích..",
+    "age": "Khoảng {age} tuổi",
+    "error": "Đã xảy ra lỗi khi xử lý hình ảnh. Vui lòng thử lại.",
+    "retry": "Thử lại"
+  },
+  "results": [
+    {
+      "className": "baby",
+      "age": 5,
+      "label": "em bé",
+      "message": "Em bé dễ thương",
+      "explain": "Nếu bạn không phải là em bé thật thì có lẽ bạn dễ thương như em bé vậy٩(ˊωˋ*)و✧"
+    },
+    {
+      "className": "one",
+      "age": 15,
+      "label": "tuổi teen",
+      "message": "Tuổi teen với mục tiêu thực hiện ước mơ!!",
+      "explain": "Mục tiêu của bạn không phải là ghi lại ước mơ mà là thực hiện ước mơ ở độ tuổi teen~!"
+    },
+    {
+      "className": "two",
+      "age": 25,
+      "label": "đôi mươi",
+      "message": "Độ tuổi đôi mươi với tương lai tươi sáng và vô vàn khả năng!",
+      "explain": "Nếu bạn có những giấc mơ không thể tưởng tượng được, hãy nỗ lực không thể tưởng tượng được để thực hiện chúng ở độ tuổi này!"
+    },
+    {
+      "className": "three",
+      "age": 35,
+      "label": "ba mươi",
+      "message": "Độ tuổi ba mươi với sức cạnh tranh tối đa!",
+      "explain": "Sức cạnh tranh tốt nhất có thể là việc học tập, nhưng điều quan trọng nhất là niềm đam mê mà bạn có~!"
+    },
+    {
+      "className": "four",
+      "age": 45,
+      "label": "bốn mươi",
+      "message": "Độ tuổi bốn mươi - bậc thầy của thời gian~!",
+      "explain": "Điều duy nhất chúng ta thực sự sở hữu chỉ có thời gian, và ngay cả những người không có gì khác cũng có thời gian. Bạn là người có thể điều khiển thời gian~!"
+    },
+    {
+      "className": "five",
+      "age": 55,
+      "label": "năm mươi",
+      "message": "Độ tuổi năm mười - khởi đầu tốt là nửa thành công~~!",
+      "explain": "Khoảnh khắc mà sâu bướm nghĩ rằng thế giới sắp kết thúc chính là lúc nó biến thành bướm~~!"
+    }
+  ],
+  "home": {
+    "howTitle": "Cách hoạt động của bài kiểm tra tuổi khuôn mặt AI",
+    "steps": [
+      {
+        "title": "Tải ảnh lên",
+        "text": "Chọn một ảnh rõ nét, chụp chính diện và chỉ có một khuôn mặt. Kéo thả vào khung hoặc chạm để chọn tệp."
+      },
+      {
+        "title": "AI phân tích ngay trên trình duyệt",
+        "text": "Mô hình TensorFlow.js được huấn luyện bằng Google Teachable Machine so sánh ảnh với 6 nhóm tuổi. Ảnh không bao giờ rời khỏi thiết bị của bạn."
+      },
+      {
+        "title": "Xem tuổi ước tính",
+        "text": "Bạn sẽ thấy tuổi ước tính cùng xác suất của từng nhóm tuổi, từ em bé đến năm mươi."
+      }
+    ],
+    "faqTitle": "Câu hỏi thường gặp",
+    "faq": [
+      {
+        "q": "Tuổi được ước tính như thế nào?",
+        "a": "Mô hình đưa ra xác suất cho 6 nhóm tuổi. Tuổi ước tính là trung bình có trọng số của tuổi đại diện mỗi nhóm (5, 15, 25, 35, 45, 55) theo các xác suất đó."
+      },
+      {
+        "q": "Ảnh của tôi có bị tải lên hoặc lưu lại không?",
+        "a": "Không. Ảnh chỉ được phân tích trong trình duyệt của bạn bằng TensorFlow.js. Ảnh không được gửi lên máy chủ hay lưu lại, và sẽ biến mất khi bạn rời trang."
+      },
+      {
+        "q": "Kết quả chính xác đến mức nào?",
+        "a": "Đây là bài kiểm tra giải trí, không dùng để xác định tuổi cho mục đích y tế hay pháp lý. Ánh sáng, góc chụp, trang điểm và biểu cảm đều có thể làm thay đổi kết quả."
+      },
+      {
+        "q": "Nên dùng ảnh như thế nào?",
+        "a": "Ảnh chụp ở nơi đủ sáng, nhìn thẳng, chỉ có một khuôn mặt và không bị che sẽ cho kết quả ổn định nhất."
+      },
+      {
+        "q": "Có miễn phí không?",
+        "a": "Có. Hoàn toàn miễn phí, không cần đăng ký và dùng được trên điện thoại, máy tính bảng lẫn máy tính."
+      }
+    ]
+  },
+  "about": {
+    "title": "🤖 Kiểm tra tuổi khuôn mặt bằng AI là gì?",
+    "intro": "Kiểm tra tuổi khuôn mặt bằng AI là dịch vụ sử dụng công nghệ học máy tiên tiến để phân tích ảnh tải lên và ước tính tuổi khuôn mặt. Dựa trên nền tảng Google Teachable Machine, được huấn luyện với dữ liệu khuôn mặt phong phú để mang lại kết quả chính xác.",
+    "how": {
+      "title": "🎯 Cách hoạt động",
+      "lead": "Hệ thống AI của chúng tôi hoạt động theo quy trình sau:",
+      "items": [
+        "<strong>Nhận diện khuôn mặt:</strong> Tự động xác định vùng khuôn mặt trong ảnh tải lên",
+        "<strong>Phân tích đặc điểm:</strong> Phân tích nếp nhăn, kết cấu da, đường nét khuôn mặt",
+        "<strong>Dự đoán AI:</strong> Mô hình học máy dự đoán tuổi dựa trên các đặc điểm đã phân tích",
+        "<strong>Hiển thị kết quả:</strong> Hiển thị tuổi ước tính và biểu đồ xác suất theo nhóm tuổi"
+      ]
+    },
+    "features": [
+      {
+        "icon": "🚀",
+        "title": "Phân tích nhanh",
+        "text": "Nhận kết quả chỉ sau vài giây tải ảnh lên"
+      },
+      {
+        "icon": "🔒",
+        "title": "Bảo vệ quyền riêng tư",
+        "text": "Ảnh tải lên không được lưu trữ và sẽ bị xóa ngay sau khi phân tích"
+      },
+      {
+        "icon": "📱",
+        "title": "Hỗ trợ mọi thiết bị",
+        "text": "Hoạt động trên PC, máy tính bảng, điện thoại thông minh và mọi thiết bị"
+      },
+      {
+        "icon": "🎨",
+        "title": "Giao diện trực quan",
+        "text": "Giao diện đơn giản, đẹp mắt, dễ sử dụng cho mọi người"
+      }
+    ],
+    "results": {
+      "title": "📊 Cách xem kết quả",
+      "lead": "Kết quả kiểm tra bao gồm:",
+      "items": [
+        "<strong>Tuổi ước tính:</strong> Tuổi mà AI phân tích là có khả năng nhất",
+        "<strong>Xác suất theo nhóm tuổi:</strong> Biểu đồ cột thể hiện xác suất thuộc các nhóm tuổi từ thiếu niên đến 50+",
+        "<strong>Danh mục đặc biệt:</strong> Bao gồm các phân loại đặc biệt như \"Trẻ sơ sinh\""
+      ]
+    },
+    "caution": {
+      "title": "⚠️ Lưu ý quan trọng",
+      "items": [
+        "Bài kiểm tra này<strong>chỉ mang tính giải trí</strong>, không dùng cho mục đích y tế hoặc pháp lý",
+        "Ánh sáng, góc chụp, biểu cảm có thể ảnh hưởng đến kết quả",
+        "Để có kết quả chính xác nhất, hãy sử dụng ảnh sáng rõ, nhìn thẳng",
+        "Nên sử dụng ảnh chỉ có một khuôn mặt mỗi lần"
+      ]
+    },
+    "tech": {
+      "title": "🔬 Nền tảng kỹ thuật",
+      "text": "Dịch vụ này dựa trên Google Teachable Machine 2.0. Sử dụng TensorFlow.js, chạy trực tiếp trên trình duyệt nên ảnh không được gửi lên máy chủ, đảm bảo quyền riêng tư."
+    },
+    "cta": {
+      "title": "Hãy thử kiểm tra ngay!",
+      "text": "Bạn tò mò về tuổi khuôn mặt của mình? Hãy bắt đầu kiểm tra ngay bây giờ!",
+      "button": "Bắt đầu kiểm tra"
+    }
+  },
+  "info": {
+    "title": "🔒 Chính sách bảo mật",
+    "highlight": "🎯 Điểm chính: Ảnh sẽ không được lưu trữ",
+    "photo": {
+      "title": "📷 Cách xử lý ảnh",
+      "lead": "Kiểm tra tuổi khuôn mặt bằng AI đặt quyền riêng tư của người dùng lên hàng đầu:",
+      "items": [
+        "<strong>Xử lý tại chỗ:</strong> Tất cả phân tích được thực hiện trực tiếp trên trình duyệt của người dùng",
+        "<strong>Không gửi lên máy chủ:</strong> Ảnh tải lên không bao giờ được gửi đến máy chủ bên ngoài",
+        "<strong>Xóa ngay lập tức:</strong> Dữ liệu ảnh sẽ bị xóa khỏi bộ nhớ ngay sau khi phân tích",
+        "<strong>TensorFlow.js:</strong> Đảm bảo quyền riêng tư tuyệt đối nhờ AI trên trình duyệt"
+      ]
+    },
+    "cookies": {
+      "title": "🍪 Cookie & Thu thập dữ liệu",
+      "items": [
+        "<strong>Cookie cần thiết:</strong> Chỉ lưu trữ dữ liệu tối thiểu để cải thiện trải nghiệm người dùng (như cài đặt chế độ tối,...)",
+        "<strong>Công cụ phân tích:</strong> Chỉ thu thập thống kê sử dụng ẩn danh qua Google Analytics",
+        "<strong>Thông tin cá nhân:</strong> Không thu thập tên, email, số điện thoại,...",
+        "<strong>Đồng ý tự nguyện:</strong> Mọi thu thập dữ liệu đều tuân theo cài đặt trình duyệt của người dùng"
+      ]
+    },
+    "security": {
+      "title": "🛡️ Biện pháp bảo mật",
+      "items": [
+        "<strong>Mã hóa HTTPS:</strong> Mọi giao tiếp đều được mã hóa bằng SSL/TLS",
+        "<strong>Xử lý tại chỗ:</strong> Dữ liệu hình ảnh nhạy cảm không bao giờ bị lộ ra ngoài"
+      ]
+    },
+    "contact": {
+      "title": "📧 Liên hệ",
+      "text": "Nếu bạn có bất kỳ câu hỏi nào về dịch vụ, hãy liên hệ với chúng tôi bất cứ lúc nào"
+    },
+    "terms": {
+      "title": "⚖️ Điều khoản dịch vụ",
+      "items": [
+        "<strong>Mục đích dịch vụ:</strong> Dịch vụ này chỉ dành cho mục đích giải trí và giáo dục",
+        "<strong>Giới hạn độ chính xác:</strong> Kết quả AI chỉ mang tính tham khảo, không dùng cho y tế/pháp lý",
+        "<strong>Giới hạn trách nhiệm:</strong> Chúng tôi không chịu trách nhiệm cho bất kỳ thiệt hại nào phát sinh từ việc sử dụng dịch vụ"
+      ]
+    },
+    "updates": {
+      "title": "🔄 Cập nhật chính sách",
+      "text": "Chính sách bảo mật này có thể được cập nhật khi cần thiết. Mọi thay đổi quan trọng sẽ được thông báo trên website."
+    },
+    "copyright": {
+      "title": "📄 Thông tin bản quyền",
+      "lines": [
+        "<strong>© 2024. AI Age Test. Bảo lưu mọi quyền.</strong>",
+        "Mọi nội dung, thiết kế và mã nguồn trên website này đều được bảo vệ bởi luật bản quyền.",
+        "Nghiêm cấm sao chép, phân phối hoặc sử dụng cho mục đích thương mại khi chưa được phép.",
+        "<small>Cập nhật lần cuối: 12/2024</small>"
+      ]
+    },
+    "back": "Quay lại trang chủ"
+  }
+}

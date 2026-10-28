@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { localePath, t } from '../i18n';
+
+const ko = t('ko');
+const en = t('en');
+---
+
+<BaseLayout locale="ko" page="not-found" title={`404 · ${ko.ui.notFound}`} description={ko.ui.notFound} noindex>
+    <PageHero title="404" subtitle={`${ko.ui.notFound} · ${en.ui.notFound}`} />
+    <div class="back-to-home">
+        <a href={localePath('ko')} class="back-button">{ko.ui.backHome}</a>
+        <a href={localePath('en')} class="back-button" lang="en">{en.ui.backHome}</a>
+    </div>
+</BaseLayout>
