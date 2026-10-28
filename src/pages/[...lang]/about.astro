@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import type { IconName } from '../../icons';
 import { localePath, localeStaticPaths, t, type Locale } from '../../i18n';
 import { pageJsonLd } from '../../seo/jsonld';
 
@@ -9,6 +11,7 @@ export const getStaticPaths = localeStaticPaths;
 const { locale } = Astro.props as { locale: Locale };
 const d = t(locale);
 const a = d.about;
+const FEATURE_ICONS: IconName[] = ['lightning', 'shield-check', 'device-mobile', 'sparkle'];
 ---
 
 <BaseLayout
@@ -26,15 +29,15 @@ const a = d.about;
         <h2>{a.title}</h2>
         <p set:html={a.intro} />
 
-        <h3>{a.how.title}</h3>
+        <h3><span class="heading-icon"><Icon name="magnifying-glass" /></span>{a.how.title}</h3>
         <p set:html={a.how.lead} />
         <ul>{a.how.items.map((item) => <li set:html={item} />)}</ul>
 
         <div class="feature-grid">
             {
-                a.features.map((feature) => (
+                a.features.map((feature, index) => (
                     <div class="feature-card">
-                        <span class="feature-icon" aria-hidden="true">{feature.icon}</span>
+                        <span class="feature-icon"><Icon name={FEATURE_ICONS[index]} /></span>
                         <h4>{feature.title}</h4>
                         <p set:html={feature.text} />
                     </div>
@@ -42,14 +45,14 @@ const a = d.about;
             }
         </div>
 
-        <h3>{a.results.title}</h3>
+        <h3><span class="heading-icon"><Icon name="chart-bar" /></span>{a.results.title}</h3>
         <p set:html={a.results.lead} />
         <ul>{a.results.items.map((item) => <li set:html={item} />)}</ul>
 
-        <h3>{a.caution.title}</h3>
+        <h3><span class="heading-icon"><Icon name="warning" /></span>{a.caution.title}</h3>
         <ul>{a.caution.items.map((item) => <li set:html={item} />)}</ul>
 
-        <h3>{a.tech.title}</h3>
+        <h3><span class="heading-icon"><Icon name="cpu" /></span>{a.tech.title}</h3>
         <p set:html={a.tech.text} />
 
         <div class="cta-section">

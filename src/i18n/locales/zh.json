@@ -72,7 +72,12 @@
     "capture": "保存此刻",
     "share": "分享结果",
     "shareText": "AI觉得我看起来{age}岁！你也来试试",
-    "copied": "链接已复制"
+    "copied": "链接已复制",
+    "loadingHint": "仅首次需要下载，之后会立即启动。",
+    "faceLoading": "正在准备人脸追踪..",
+    "storyShare": "分享到快拍",
+    "storySaved": "图片已保存，发到快拍吧！",
+    "storyCta": "你也来试试"
   },
   "results": [
     {
@@ -159,10 +164,10 @@
     ]
   },
   "about": {
-    "title": "🤖 什么是AI人脸年龄测试？",
+    "title": "什么是AI人脸年龄测试？",
     "intro": "AI人脸年龄测试是一项利用最前沿的机器学习技术，分析上传照片并估算人脸表观年龄的服务。基于Google Teachable Machine平台，经过大量人脸数据训练，能够提供准确的年龄预测。",
     "how": {
-      "title": "🎯 工作原理",
+      "title": "工作原理",
       "lead": "我们的AI系统通过以下流程运行：",
       "items": [
         "<strong>人脸检测：</strong> 自动识别上传图片中的人脸区域",
@@ -173,28 +178,24 @@
     },
     "features": [
       {
-        "icon": "🚀",
         "title": "快速分析",
         "text": "上传照片后几秒内即可获得结果"
       },
       {
-        "icon": "🔒",
         "title": "隐私保护",
         "text": "上传的照片不会被存储，分析后立即删除"
       },
       {
-        "icon": "📱",
         "title": "全设备支持",
         "text": "支持PC、平板、智能手机等所有设备"
       },
       {
-        "icon": "🎨",
         "title": "直观界面",
         "text": "界面简洁美观，任何人都能轻松使用"
       }
     ],
     "results": {
-      "title": "📊 结果说明",
+      "title": "结果说明",
       "lead": "测试结果如下：",
       "items": [
         "<strong>估算年龄：</strong> AI分析后最有可能的年龄",
@@ -203,7 +204,7 @@
       ]
     },
     "caution": {
-      "title": "⚠️ 注意事项",
+      "title": "注意事项",
       "items": [
         "本测试<strong>仅供娱乐</strong>，不可用于医疗或法律判断",
         "光线、角度、表情等可能影响结果",
@@ -212,7 +213,7 @@
       ]
     },
     "tech": {
-      "title": "🔬 技术背景",
+      "title": "技术背景",
       "text": "本服务基于Google Teachable Machine 2.0平台。利用TensorFlow.js，直接在浏览器中运行，照片不会上传服务器，隐私安全有保障。"
     },
     "cta": {
@@ -235,11 +236,11 @@
       },
       {
         "title": "Cookie 和第三方服务",
-        "text": "为了统计访问量和投放广告，以下服务可能通过 Cookie 收集信息：Google Analytics（访问统计）、Google AdSense 和 Kakao AdFit（广告）。这些信息按各公司的政策处理：<a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>、<a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>。"
+        "text": "为了统计访问量和投放广告，Google Analytics（访问统计）、Google AdSense 和 Kakao AdFit（广告）会使用 Cookie。包括 Google 在内的第三方供应商会使用 Cookie，根据您以往访问本网站或其他网站的记录投放广告。这些信息按各公司的政策处理：<a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>、<a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>。"
       },
       {
         "title": "如何拒绝 Cookie",
-        "text": "您可以在浏览器设置中阻止或删除 Cookie，也可以在<a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google 广告设置</a>中关闭个性化广告。拒绝 Cookie 不影响使用测试。"
+        "text": "您可以在浏览器设置中阻止或删除 Cookie，在<a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google 广告设置</a>中关闭个性化广告，并可在 <a href=\"https://optout.aboutads.info\" target=\"_blank\" rel=\"noopener\">aboutads.info</a> 拒绝第三方供应商用于个性化广告的 Cookie。拒绝 Cookie 不影响使用测试。"
       },
       {
         "title": "保存在浏览器中的信息",

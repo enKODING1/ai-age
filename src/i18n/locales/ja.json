@@ -72,7 +72,12 @@
     "capture": "この瞬間を保存",
     "share": "結果をシェア",
     "shareText": "AIが見た私の年齢は{age}歳！あなたも試してみて",
-    "copied": "リンクをコピーしました"
+    "copied": "リンクをコピーしました",
+    "loadingHint": "ダウンロードは初回のみです。次回からはすぐに始まります。",
+    "faceLoading": "顔追跡を準備中..",
+    "storyShare": "ストーリーズでシェア",
+    "storySaved": "画像を保存しました。ストーリーズに投稿してみよう！",
+    "storyCta": "あなたも試してみて"
   },
   "results": [
     {
@@ -159,10 +164,10 @@
     ]
   },
   "about": {
-    "title": "🤖 AI顔年齢テストとは？",
+    "title": "AI顔年齢テストとは？",
     "intro": "AI顔年齢テストは、最先端の機械学習技術を用いてアップロードされた写真を分析し、顔の見た目年齢を推定するサービスです。GoogleのTeachable Machineプラットフォームを基盤とし、豊富な顔データでトレーニングされており、正確な年齢予測を提供します。",
     "how": {
-      "title": "🎯 仕組み",
+      "title": "仕組み",
       "lead": "本AIシステムは以下のプロセスで動作します：",
       "items": [
         "<strong>顔検出：</strong> アップロード画像から顔領域を自動認識",
@@ -173,28 +178,24 @@
     },
     "features": [
       {
-        "icon": "🚀",
         "title": "高速分析",
         "text": "写真をアップロードして数秒で結果が分かります"
       },
       {
-        "icon": "🔒",
         "title": "プライバシー保護",
         "text": "アップロードした写真はサーバーに保存されず、分析後すぐに削除されます"
       },
       {
-        "icon": "📱",
         "title": "全デバイス対応",
         "text": "PC、タブレット、スマートフォンなど全てのデバイスで利用可能"
       },
       {
-        "icon": "🎨",
         "title": "直感的なインターフェース",
         "text": "誰でも簡単に使えるシンプルで美しいUI"
       }
     ],
     "results": {
-      "title": "📊 結果の見方",
+      "title": "結果の見方",
       "lead": "テスト結果は以下のように提供されます：",
       "items": [
         "<strong>推定年齢：</strong> AIが分析した最も可能性の高い年齢",
@@ -203,7 +204,7 @@
       ]
     },
     "caution": {
-      "title": "⚠️ 注意事項",
+      "title": "注意事項",
       "items": [
         "本テストは<strong>エンターテインメント目的</strong>で作成されており、医療・法的判断には使用できません",
         "照明、角度、表情によって結果が変わる場合があります",
@@ -212,7 +213,7 @@
       ]
     },
     "tech": {
-      "title": "🔬 技術的背景",
+      "title": "技術的背景",
       "text": "本サービスはGoogleのTeachable Machine 2.0を基盤としています。TensorFlow.jsを利用し、ブラウザ上で動作するため、写真はサーバーに送信されずプライバシーが守られます。"
     },
     "cta": {
@@ -235,11 +236,11 @@
       },
       {
         "title": "Cookieと外部サービス",
-        "text": "アクセス統計と広告のため、次のサービスがCookieを通じて情報を収集する場合があります：Google Analytics（アクセス統計）、Google AdSense・Kakao AdFit（広告）。収集された情報は各社のポリシーに従って取り扱われます：<a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>、<a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>。"
+        "text": "アクセス統計と広告のため、Google Analytics（アクセス統計）、Google AdSense・Kakao AdFit（広告）がCookieを使用します。Googleなどの第三者配信事業者は、Cookieを使用して、ユーザーがこのサイトや他のサイトに過去にアクセスした際の情報に基づいて広告を配信します。収集された情報は各社のポリシーに従って取り扱われます：<a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>、<a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>。"
       },
       {
         "title": "Cookieを拒否する方法",
-        "text": "ブラウザの設定でCookieをブロック・削除でき、<a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Googleの広告設定</a>でパーソナライズ広告をオフにできます。Cookieを拒否してもテストはそのまま利用できます。"
+        "text": "ブラウザの設定でCookieをブロック・削除できます。パーソナライズ広告は<a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Googleの広告設定</a>でオフにでき、第三者配信事業者のCookieは <a href=\"https://optout.aboutads.info\" target=\"_blank\" rel=\"noopener\">aboutads.info</a> で無効にできます。Cookieを拒否してもテストはそのまま利用できます。"
       },
       {
         "title": "ブラウザに保存される情報",

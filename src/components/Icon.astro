@@ -1,0 +1,17 @@
+---
+import { ICONS, type IconName } from '../icons';
+
+interface Props {
+    name: IconName;
+    class?: string;
+}
+
+const { name, class: className } = Astro.props;
+// 아이콘은 장식이므로 스크린 리더에서 숨기고, 의미는 옆의 글자나 aria-label 로 전달한다
+const svg = ICONS[name].replace(
+    '<svg ',
+    `<svg class="icon${className ? ` ${className}` : ''}" aria-hidden="true" focusable="false" `,
+);
+---
+
+<Fragment set:html={svg} />

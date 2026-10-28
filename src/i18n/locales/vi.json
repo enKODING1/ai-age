@@ -72,7 +72,12 @@
     "capture": "Lưu khoảnh khắc này",
     "share": "Chia sẻ kết quả",
     "shareText": "AI nói mình trông {age} tuổi! Bạn thử xem",
-    "copied": "Đã sao chép liên kết"
+    "copied": "Đã sao chép liên kết",
+    "loadingHint": "Chỉ tải về lần đầu. Lần sau sẽ bắt đầu ngay.",
+    "faceLoading": "Đang chuẩn bị nhận diện khuôn mặt..",
+    "storyShare": "Chia sẻ lên story",
+    "storySaved": "Đã lưu ảnh. Đăng lên story ngay nhé!",
+    "storyCta": "Thử ngay"
   },
   "results": [
     {
@@ -159,10 +164,10 @@
     ]
   },
   "about": {
-    "title": "🤖 Kiểm tra tuổi khuôn mặt bằng AI là gì?",
+    "title": "Kiểm tra tuổi khuôn mặt bằng AI là gì?",
     "intro": "Kiểm tra tuổi khuôn mặt bằng AI là dịch vụ sử dụng công nghệ học máy tiên tiến để phân tích ảnh tải lên và ước tính tuổi khuôn mặt. Dựa trên nền tảng Google Teachable Machine, được huấn luyện với dữ liệu khuôn mặt phong phú để mang lại kết quả chính xác.",
     "how": {
-      "title": "🎯 Cách hoạt động",
+      "title": "Cách hoạt động",
       "lead": "Hệ thống AI của chúng tôi hoạt động theo quy trình sau:",
       "items": [
         "<strong>Nhận diện khuôn mặt:</strong> Tự động xác định vùng khuôn mặt trong ảnh tải lên",
@@ -173,28 +178,24 @@
     },
     "features": [
       {
-        "icon": "🚀",
         "title": "Phân tích nhanh",
         "text": "Nhận kết quả chỉ sau vài giây tải ảnh lên"
       },
       {
-        "icon": "🔒",
         "title": "Bảo vệ quyền riêng tư",
         "text": "Ảnh tải lên không được lưu trữ và sẽ bị xóa ngay sau khi phân tích"
       },
       {
-        "icon": "📱",
         "title": "Hỗ trợ mọi thiết bị",
         "text": "Hoạt động trên PC, máy tính bảng, điện thoại thông minh và mọi thiết bị"
       },
       {
-        "icon": "🎨",
         "title": "Giao diện trực quan",
         "text": "Giao diện đơn giản, đẹp mắt, dễ sử dụng cho mọi người"
       }
     ],
     "results": {
-      "title": "📊 Cách xem kết quả",
+      "title": "Cách xem kết quả",
       "lead": "Kết quả kiểm tra bao gồm:",
       "items": [
         "<strong>Tuổi ước tính:</strong> Tuổi mà AI phân tích là có khả năng nhất",
@@ -203,7 +204,7 @@
       ]
     },
     "caution": {
-      "title": "⚠️ Lưu ý quan trọng",
+      "title": "Lưu ý quan trọng",
       "items": [
         "Bài kiểm tra này<strong>chỉ mang tính giải trí</strong>, không dùng cho mục đích y tế hoặc pháp lý",
         "Ánh sáng, góc chụp, biểu cảm có thể ảnh hưởng đến kết quả",
@@ -212,7 +213,7 @@
       ]
     },
     "tech": {
-      "title": "🔬 Nền tảng kỹ thuật",
+      "title": "Nền tảng kỹ thuật",
       "text": "Dịch vụ này dựa trên Google Teachable Machine 2.0. Sử dụng TensorFlow.js, chạy trực tiếp trên trình duyệt nên ảnh không được gửi lên máy chủ, đảm bảo quyền riêng tư."
     },
     "cta": {
@@ -235,11 +236,11 @@
       },
       {
         "title": "Cookie và dịch vụ bên thứ ba",
-        "text": "Để thống kê lượt truy cập và hiển thị quảng cáo, các dịch vụ sau có thể thu thập thông tin qua cookie: Google Analytics (thống kê), Google AdSense và Kakao AdFit (quảng cáo). Thông tin đó được xử lý theo chính sách của từng công ty: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
+        "text": "Để thống kê lượt truy cập và hiển thị quảng cáo, Google Analytics (thống kê), Google AdSense và Kakao AdFit (quảng cáo) sử dụng cookie. Các nhà cung cấp bên thứ ba, bao gồm Google, sử dụng cookie để hiển thị quảng cáo dựa trên các lần bạn truy cập trang này và các trang khác trước đây. Thông tin đó được xử lý theo chính sách của từng công ty: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
       },
       {
         "title": "Cách từ chối cookie",
-        "text": "Bạn có thể chặn hoặc xóa cookie trong cài đặt trình duyệt và tắt quảng cáo cá nhân hóa trong <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Cài đặt quảng cáo của Google</a>. Bài kiểm tra vẫn hoạt động bình thường khi không có cookie."
+        "text": "Bạn có thể chặn hoặc xóa cookie trong cài đặt trình duyệt, tắt quảng cáo cá nhân hóa trong <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Cài đặt quảng cáo của Google</a> và từ chối cookie quảng cáo của bên thứ ba tại <a href=\"https://optout.aboutads.info\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>. Bài kiểm tra vẫn hoạt động bình thường khi không có cookie."
       },
       {
         "title": "Dữ liệu lưu trong trình duyệt",

@@ -72,7 +72,12 @@
     "capture": "이 순간 저장",
     "share": "결과 공유하기",
     "shareText": "AI가 본 내 나이는 {age}세! 너도 해봐",
-    "copied": "링크를 복사했어요"
+    "copied": "링크를 복사했어요",
+    "loadingHint": "처음 한 번만 받아요. 다음부터는 바로 시작돼요.",
+    "faceLoading": "얼굴 인식 준비 중..",
+    "storyShare": "스토리에 공유",
+    "storySaved": "이미지를 저장했어요. 스토리에 올려보세요!",
+    "storyCta": "나도 해보기"
   },
   "results": [
     {
@@ -159,10 +164,10 @@
     ]
   },
   "about": {
-    "title": "🤖 AI 얼굴나이 테스트란?",
+    "title": "AI 얼굴나이 테스트란?",
     "intro": "AI 얼굴나이 테스트는 최첨단 머신러닝 기술을 활용하여 업로드된 사진을 분석하고 얼굴의 외관상 나이를 추정하는 서비스입니다. 구글의 티처블 머신(Teachable Machine) 플랫폼을 기반으로 하여, 방대한 얼굴 데이터를 학습한 시스템이 정확한 나이 예측을 제공합니다.",
     "how": {
-      "title": "🎯 어떻게 작동하나요?",
+      "title": "어떻게 작동하나요?",
       "lead": "저희 AI 시스템은 다음과 같은 과정을 통해 작동합니다:",
       "items": [
         "<strong>얼굴 감지:</strong> 업로드된 이미지에서 얼굴 영역을 자동으로 식별합니다",
@@ -173,28 +178,24 @@
     },
     "features": [
       {
-        "icon": "🚀",
         "title": "빠른 분석",
         "text": "사진 업로드 후 몇 초 안에 결과를 확인할 수 있습니다"
       },
       {
-        "icon": "🔒",
         "title": "개인정보 보호",
         "text": "업로드된 사진은 서버에 저장되지 않으며 분석 후 즉시 삭제됩니다"
       },
       {
-        "icon": "📱",
         "title": "모든 기기 지원",
         "text": "PC, 태블릿, 스마트폰 등 모든 기기에서 사용 가능합니다"
       },
       {
-        "icon": "🎨",
         "title": "직관적인 인터페이스",
         "text": "누구나 쉽게 사용할 수 있는 간단하고 아름다운 인터페이스"
       }
     ],
     "results": {
-      "title": "📊 결과 이해하기",
+      "title": "결과 이해하기",
       "lead": "테스트 결과는 다음과 같이 제공됩니다:",
       "items": [
         "<strong>예상 나이:</strong> AI가 분석한 가장 가능성 높은 나이",
@@ -203,7 +204,7 @@
       ]
     },
     "caution": {
-      "title": "⚠️ 주의사항",
+      "title": "주의사항",
       "items": [
         "이 테스트는 <strong>재미 목적</strong>으로 제작되었으며 의료용이나 법적 용도로 사용할 수 없습니다",
         "조명, 각도, 표정 등이 결과에 영향을 줄 수 있습니다",
@@ -212,7 +213,7 @@
       ]
     },
     "tech": {
-      "title": "🔬 기술적 배경",
+      "title": "기술적 배경",
       "text": "이 서비스는 구글의 티처블 머신 2.0 플랫폼을 기반으로 구축되었습니다. TensorFlow.js를 사용하여 브라우저에서 직접 실행되므로 사진이 서버로 전송되지 않아 개인정보가 안전하게 보호됩니다."
     },
     "cta": {
@@ -235,11 +236,11 @@
       },
       {
         "title": "쿠키와 외부 서비스",
-        "text": "방문 통계와 광고를 위해 다음 서비스가 쿠키를 통해 정보를 수집할 수 있습니다: Google Analytics(방문 통계), Google AdSense·카카오 애드핏(광고). 수집된 정보는 각 회사의 방침에 따라 처리됩니다: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">카카오</a>."
+        "text": "방문 통계와 광고를 위해 Google Analytics(방문 통계), Google AdSense·카카오 애드핏(광고)이 쿠키를 사용합니다. Google을 비롯한 제3자 공급업체는 쿠키를 사용해 이용자의 이 사이트 및 다른 사이트 방문 기록을 바탕으로 광고를 게재합니다. 수집된 정보는 각 회사의 방침에 따라 처리됩니다: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">카카오</a>."
       },
       {
         "title": "쿠키 거부 방법",
-        "text": "브라우저 설정에서 쿠키 저장을 차단하거나 삭제할 수 있고, <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google 광고 설정</a>에서 맞춤 광고를 끌 수 있습니다. 쿠키를 거부해도 테스트는 그대로 이용할 수 있습니다."
+        "text": "브라우저 설정에서 쿠키를 차단하거나 삭제할 수 있습니다. 맞춤 광고는 <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google 광고 설정</a>에서 끌 수 있고, 제3자 공급업체의 맞춤 광고 쿠키는 <a href=\"https://optout.aboutads.info\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>에서 거부할 수 있습니다. 쿠키를 거부해도 테스트는 그대로 이용할 수 있습니다."
       },
       {
         "title": "브라우저에 저장되는 정보",

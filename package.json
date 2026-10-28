@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "1.2.0",
+    "@phosphor-icons/core": "2.1.1",
     "astro": "~7.3.0"
   }
 }

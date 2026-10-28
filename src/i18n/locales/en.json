@@ -72,7 +72,12 @@
     "capture": "Save this moment",
     "share": "Share result",
     "shareText": "AI thinks I look {age}! Try it yourself",
-    "copied": "Link copied"
+    "copied": "Link copied",
+    "loadingHint": "This download happens only once. Next time it starts instantly.",
+    "faceLoading": "Preparing face tracking..",
+    "storyShare": "Share to story",
+    "storySaved": "Image saved. Post it to your story!",
+    "storyCta": "Try it yourself"
   },
   "results": [
     {
@@ -159,10 +164,10 @@
     ]
   },
   "about": {
-    "title": "🤖 What is AI Face Age Test?",
+    "title": "What is AI Face Age Test?",
     "intro": "The AI Face Age Test is a service that uses cutting-edge machine learning technology to analyze uploaded photos and estimate the apparent age of faces. Built on Google's Teachable Machine platform, this system has been trained on extensive facial data to provide accurate age predictions.",
     "how": {
-      "title": "🎯 How Does It Work?",
+      "title": "How Does It Work?",
       "lead": "Our AI system operates through the following process:",
       "items": [
         "<strong>Face Detection:</strong> Automatically identifies facial regions in uploaded images",
@@ -173,28 +178,24 @@
     },
     "features": [
       {
-        "icon": "🚀",
         "title": "Fast Analysis",
         "text": "Get results within seconds after uploading your photo"
       },
       {
-        "icon": "🔒",
         "title": "Privacy Protection",
         "text": "Uploaded photos are not stored on servers and are immediately deleted after analysis"
       },
       {
-        "icon": "📱",
         "title": "All Device Support",
         "text": "Works on PC, tablets, smartphones, and all devices"
       },
       {
-        "icon": "🎨",
         "title": "Intuitive Interface",
         "text": "Simple and beautiful interface that anyone can easily use"
       }
     ],
     "results": {
-      "title": "📊 Understanding Results",
+      "title": "Understanding Results",
       "lead": "Test results are provided as follows:",
       "items": [
         "<strong>Estimated Age:</strong> The most likely age as analyzed by AI",
@@ -203,7 +204,7 @@
       ]
     },
     "caution": {
-      "title": "⚠️ Important Notes",
+      "title": "Important Notes",
       "items": [
         "This test is created <strong>for entertainment purposes</strong> and cannot be used for medical or legal purposes",
         "Lighting, angle, and facial expression may affect results",
@@ -212,7 +213,7 @@
       ]
     },
     "tech": {
-      "title": "🔬 Technical Background",
+      "title": "Technical Background",
       "text": "This service is built on Google's Teachable Machine 2.0 platform. Using TensorFlow.js, it runs directly in the browser, so photos are not sent to servers, ensuring your privacy is safely protected."
     },
     "cta": {
@@ -235,11 +236,11 @@
       },
       {
         "title": "Cookies and third-party services",
-        "text": "For visit statistics and ads, the following services may collect information through cookies: Google Analytics (statistics), Google AdSense and Kakao AdFit (ads). That information is handled under each company’s policy: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
+        "text": "For visit statistics and ads, Google Analytics (statistics), Google AdSense and Kakao AdFit (ads) use cookies. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites. That information is handled under each company’s policy: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
       },
       {
         "title": "How to refuse cookies",
-        "text": "You can block or delete cookies in your browser settings, and turn off personalized ads in <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google Ad Settings</a>. The test works the same without cookies."
+        "text": "You can block or delete cookies in your browser settings. You can opt out of personalized advertising in <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google Ad Settings</a>, and opt out of third-party vendors’ cookies for personalized ads at <a href=\"https://optout.aboutads.info\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>. The test works the same without cookies."
       },
       {
         "title": "Data stored in your browser",
