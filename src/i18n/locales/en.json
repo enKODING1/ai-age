@@ -27,7 +27,6 @@
   "ui": {
     "language": "Choose language",
     "theme": "Toggle dark mode",
-    "menu": "Menu",
     "terms": "Terms",
     "notFound": "Page not found",
     "backHome": "Back to home"
@@ -51,7 +50,29 @@
     "analyzing": "Analyzing..",
     "age": "{age} years old",
     "error": "An error occurred while processing the image. Please try again.",
-    "retry": "Try again"
+    "retry": "Try again",
+    "modeUpload": "Upload photo",
+    "modeCamera": "Live camera",
+    "choosePhoto": "Choose a photo",
+    "privacyNote": "Photos and video never leave your device",
+    "loadingModel": "Loading AI model..",
+    "findingFace": "Finding your face..",
+    "cameraTitle": "Live age with your camera",
+    "cameraText": "Point the camera at your face and the AI updates your estimated age in real time. Video is never saved or sent.",
+    "cameraStart": "Turn on camera",
+    "cameraStarting": "Starting camera..",
+    "cameraStop": "Turn off camera",
+    "noFace": "Center your face in the frame",
+    "faceFound": "Face detected",
+    "cameraDenied": "Camera access was blocked. Allow it in your browser’s site settings, or upload a photo instead.",
+    "cameraUnavailable": "No camera is available on this device. Please upload a photo instead.",
+    "useUpload": "Upload a photo instead",
+    "liveLabel": "Live estimated age",
+    "resultLabel": "AI estimated age",
+    "capture": "Save this moment",
+    "share": "Share result",
+    "shareText": "AI thinks I look {age}! Try it yourself",
+    "copied": "Link copied"
   },
   "results": [
     {
@@ -101,12 +122,12 @@
     "howTitle": "How the AI face age test works",
     "steps": [
       {
-        "title": "Upload a photo",
-        "text": "Pick a clear, front-facing photo with one face. Drag and drop it or tap the box to choose a file."
+        "title": "Upload a photo or turn on the camera",
+        "text": "Upload a clear, front-facing photo with one face, or turn on your camera and look into it."
       },
       {
         "title": "AI analyzes it in your browser",
-        "text": "A TensorFlow.js model trained with Google Teachable Machine compares the photo with six age groups. The photo never leaves your device."
+        "text": "The AI finds your face, then a TensorFlow.js model trained with Google Teachable Machine compares the photo with six age groups. Photos and video never leave your device."
       },
       {
         "title": "See your estimated age",
@@ -120,8 +141,8 @@
         "a": "The model gives a probability for six age groups (baby, teens, twenties, thirties, forties, fifties). Your estimated age is the average of each group’s representative age (5, 15, 25, 35, 45, 55) weighted by those probabilities."
       },
       {
-        "q": "Is my photo uploaded or stored?",
-        "a": "No. The photo is analyzed entirely in your browser with TensorFlow.js. It is never sent to a server or saved, and it is gone when you leave the page."
+        "q": "Are my photos or camera video uploaded or stored?",
+        "a": "No. Photos and camera video are analyzed entirely in your browser with TensorFlow.js. Nothing is sent to a server or saved, and it is gone when you leave the page."
       },
       {
         "q": "How accurate is the result?",

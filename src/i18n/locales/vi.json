@@ -27,7 +27,6 @@
   "ui": {
     "language": "Chọn ngôn ngữ",
     "theme": "Chuyển chế độ tối",
-    "menu": "Menu",
     "terms": "Điều khoản",
     "notFound": "Không tìm thấy trang",
     "backHome": "Về trang chủ"
@@ -51,7 +50,29 @@
     "analyzing": "Đang phân tích..",
     "age": "Khoảng {age} tuổi",
     "error": "Đã xảy ra lỗi khi xử lý hình ảnh. Vui lòng thử lại.",
-    "retry": "Thử lại"
+    "retry": "Thử lại",
+    "modeUpload": "Tải ảnh lên",
+    "modeCamera": "Camera trực tiếp",
+    "choosePhoto": "Chọn ảnh",
+    "privacyNote": "Ảnh và video không bao giờ rời khỏi thiết bị của bạn",
+    "loadingModel": "Đang tải mô hình AI..",
+    "findingFace": "Đang tìm khuôn mặt..",
+    "cameraTitle": "Đo tuổi trực tiếp bằng camera",
+    "cameraText": "Hướng camera vào khuôn mặt, AI sẽ cập nhật tuổi ước tính theo thời gian thực. Video không bị lưu hay gửi đi.",
+    "cameraStart": "Bật camera",
+    "cameraStarting": "Đang khởi động camera..",
+    "cameraStop": "Tắt camera",
+    "noFace": "Hãy đưa khuôn mặt vào giữa khung hình",
+    "faceFound": "Đã nhận diện khuôn mặt",
+    "cameraDenied": "Quyền truy cập camera đã bị chặn. Hãy cho phép trong cài đặt trang web của trình duyệt hoặc tải ảnh lên.",
+    "cameraUnavailable": "Thiết bị này không có camera khả dụng. Vui lòng tải ảnh lên.",
+    "useUpload": "Tải ảnh lên thay thế",
+    "liveLabel": "Tuổi ước tính trực tiếp",
+    "resultLabel": "Tuổi AI ước tính",
+    "capture": "Lưu khoảnh khắc này",
+    "share": "Chia sẻ kết quả",
+    "shareText": "AI nói mình trông {age} tuổi! Bạn thử xem",
+    "copied": "Đã sao chép liên kết"
   },
   "results": [
     {
@@ -101,12 +122,12 @@
     "howTitle": "Cách hoạt động của bài kiểm tra tuổi khuôn mặt AI",
     "steps": [
       {
-        "title": "Tải ảnh lên",
-        "text": "Chọn một ảnh rõ nét, chụp chính diện và chỉ có một khuôn mặt. Kéo thả vào khung hoặc chạm để chọn tệp."
+        "title": "Tải ảnh lên hoặc bật camera",
+        "text": "Tải lên một ảnh chính diện rõ nét chỉ có một khuôn mặt, hoặc bật camera và nhìn vào đó."
       },
       {
         "title": "AI phân tích ngay trên trình duyệt",
-        "text": "Mô hình TensorFlow.js được huấn luyện bằng Google Teachable Machine so sánh ảnh với 6 nhóm tuổi. Ảnh không bao giờ rời khỏi thiết bị của bạn."
+        "text": "AI tìm khuôn mặt của bạn, sau đó mô hình TensorFlow.js được huấn luyện bằng Google Teachable Machine so sánh với 6 nhóm tuổi. Ảnh và video không bao giờ rời khỏi thiết bị."
       },
       {
         "title": "Xem tuổi ước tính",
@@ -120,8 +141,8 @@
         "a": "Mô hình đưa ra xác suất cho 6 nhóm tuổi. Tuổi ước tính là trung bình có trọng số của tuổi đại diện mỗi nhóm (5, 15, 25, 35, 45, 55) theo các xác suất đó."
       },
       {
-        "q": "Ảnh của tôi có bị tải lên hoặc lưu lại không?",
-        "a": "Không. Ảnh chỉ được phân tích trong trình duyệt của bạn bằng TensorFlow.js. Ảnh không được gửi lên máy chủ hay lưu lại, và sẽ biến mất khi bạn rời trang."
+        "q": "Ảnh hoặc video camera của tôi có bị tải lên hoặc lưu lại không?",
+        "a": "Không. Ảnh và video camera chỉ được phân tích trong trình duyệt của bạn bằng TensorFlow.js. Không có gì được gửi lên máy chủ hay lưu lại, và sẽ biến mất khi bạn rời trang."
       },
       {
         "q": "Kết quả chính xác đến mức nào?",

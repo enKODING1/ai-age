@@ -27,7 +27,6 @@
   "ui": {
     "language": "选择语言",
     "theme": "切换深色模式",
-    "menu": "菜单",
     "terms": "使用条款",
     "notFound": "找不到页面",
     "backHome": "返回首页"
@@ -51,7 +50,29 @@
     "analyzing": "分析中..",
     "age": "大约 {age} 岁",
     "error": "处理图片时发生错误。请重试。",
-    "retry": "重新测试"
+    "retry": "重新测试",
+    "modeUpload": "上传照片",
+    "modeCamera": "实时摄像头",
+    "choosePhoto": "选择照片",
+    "privacyNote": "照片和视频不会离开您的设备",
+    "loadingModel": "正在加载AI模型..",
+    "findingFace": "正在寻找人脸..",
+    "cameraTitle": "用摄像头实时测年龄",
+    "cameraText": "把摄像头对准脸部，AI会实时显示预估年龄。视频不会被保存或发送。",
+    "cameraStart": "打开摄像头",
+    "cameraStarting": "正在启动摄像头..",
+    "cameraStop": "关闭摄像头",
+    "noFace": "请把脸放在画面中央",
+    "faceFound": "已识别人脸",
+    "cameraDenied": "摄像头权限被拒绝。请在浏览器的网站设置中允许，或改用上传照片。",
+    "cameraUnavailable": "此设备无法使用摄像头，请改用上传照片。",
+    "useUpload": "改用上传照片",
+    "liveLabel": "实时预估年龄",
+    "resultLabel": "AI预估年龄",
+    "capture": "保存此刻",
+    "share": "分享结果",
+    "shareText": "AI觉得我看起来{age}岁！你也来试试",
+    "copied": "链接已复制"
   },
   "results": [
     {
@@ -101,12 +122,12 @@
     "howTitle": "AI人脸年龄测试的工作原理",
     "steps": [
       {
-        "title": "上传照片",
-        "text": "选择一张清晰的单人正脸照片。可以拖拽到框内，或点击选择文件。"
+        "title": "上传照片或打开摄像头",
+        "text": "上传一张清晰的单人正脸照片，或打开摄像头对准您的脸。"
       },
       {
         "title": "AI在浏览器中分析",
-        "text": "使用 Google Teachable Machine 训练的 TensorFlow.js 模型，将照片与六个年龄段进行比对。照片不会离开您的设备。"
+        "text": "AI先找到人脸，再由使用 Google Teachable Machine 训练的 TensorFlow.js 模型与六个年龄段进行比对。照片和视频不会离开您的设备。"
       },
       {
         "title": "查看预估年龄",
@@ -120,8 +141,8 @@
         "a": "模型会给出六个年龄段（婴儿、十几岁到五十几岁）的概率。预估年龄是各年龄段代表年龄（5、15、25、35、45、55岁）按这些概率加权平均得出的结果。"
       },
       {
-        "q": "我的照片会被上传或保存吗？",
-        "a": "不会。照片完全在您的浏览器中通过 TensorFlow.js 分析，不会发送到服务器，也不会被保存，离开页面后即消失。"
+        "q": "我的照片或摄像头视频会被上传或保存吗？",
+        "a": "不会。照片和摄像头视频完全在您的浏览器中通过 TensorFlow.js 分析，不会发送到服务器，也不会被保存，离开页面后即消失。"
       },
       {
         "q": "结果准确吗？",

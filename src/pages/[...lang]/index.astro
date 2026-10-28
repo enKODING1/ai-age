@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import AgeTest from '../../components/AgeTest.astro';
-import Promotions from '../../components/Promotions.astro';
+import AdSlot from '../../components/AdSlot.astro';
 import { localeStaticPaths, t, type Locale } from '../../i18n';
 import { homeJsonLd } from '../../seo/jsonld';
 
@@ -23,7 +23,7 @@ const d = t(locale);
 >
     <PageHero title={d.hero.home.title} subtitle={d.hero.home.subtitle} />
     <AgeTest locale={locale} />
-    <Promotions />
+    <AdSlot />
 
     <section class="home-section" id="how-it-works" aria-labelledby="how-it-works-title">
         <h2 class="section-title" id="how-it-works-title">{d.home.howTitle}</h2>

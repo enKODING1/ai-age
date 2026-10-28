@@ -1,6 +1,6 @@
 ---
-import { MODEL_URL } from '../consts';
-import { t, type Locale } from '../i18n';
+import { MODEL_URL, absoluteUrl } from '../consts';
+import { localePath, t, type Locale } from '../i18n';
 
 interface Props {
     locale: Locale;
@@ -8,44 +8,113 @@ interface Props {
 
 const { locale } = Astro.props;
 const d = t(locale);
-const config = { modelUrl: MODEL_URL, text: d.test, results: d.results };
-const reloadIcon =
-    'M14.66 15.66A8 8 0 1 1 17 10h-2a6 6 0 1 0-1.76 4.24l1.42 1.42zM12 10h8l-4 4-4-4z';
+const text = d.test;
+const config = {
+    modelUrl: MODEL_URL,
+    shareUrl: absoluteUrl(localePath(locale)),
+    text,
+    results: d.results,
+};
+// "대략 {age} 세" → 숫자 부분만 카운트업 애니메이션을 주기 위해 앞뒤 문구를 나눈다
+const [agePrefix, ageSuffix] = text.age.split('{age}');
+const reloadIcon = 'M14.66 15.66A8 8 0 1 1 17 10h-2a6 6 0 1 0-1.76 4.24l1.42 1.42zM12 10h8l-4 4-4-4z';
 ---
 
-<section class="age-test" data-age-test aria-live="polite">
+<section class="age-test" data-age-test data-mode="upload" data-state="upload">
     <script is:inline type="application/json" data-age-test-config set:html={JSON.stringify(config)} />
 
-    <label class="image-upload-wrap" data-view="idle">
-        <input class="file-upload-input" type="file" accept="image/*" />
-        <span class="upload-icon" aria-hidden="true"></span>
-        <span class="upload-text">{d.test.upload}</span>
-    </label>
-
-    <div class="analyzing" data-view="loading" hidden>
-        <p>{d.test.analyzing}</p>
-        <div class="lds-ellipsis" aria-hidden="true"><div></div><div></div><div></div><div></div></div>
+    <div class="mode-tabs" role="tablist">
+        <button class="mode-tab" type="button" role="tab" id="tab-upload" aria-controls="panel-upload" aria-selected="true" data-mode-tab="upload">
+            <span aria-hidden="true">📷</span>{text.modeUpload}
+        </button>
+        <button class="mode-tab" type="button" role="tab" id="tab-camera" aria-controls="panel-camera" aria-selected="false" tabindex="-1" data-mode-tab="camera">
+            <span aria-hidden="true">🎥</span>{text.modeCamera}
+        </button>
+        <span class="mode-indicator" aria-hidden="true"></span>
     </div>
 
-    <div class="predict-wrapper" data-view="result" hidden>
-        <div class="image-wrap"><img data-result-image alt="" /></div>
-        <div class="description">
-            <p data-result-message></p>
-            <p data-result-explain></p>
+    <div class="test-card">
+        <div class="test-view" role="tabpanel" id="panel-upload" aria-labelledby="tab-upload" data-view="upload">
+            <label class="dropzone" data-dropzone>
+                <input class="file-upload-input" type="file" accept="image/*" />
+                <span class="upload-icon" aria-hidden="true"></span>
+                <span class="upload-text">{text.upload}</span>
+                <span class="button button-primary" aria-hidden="true">{text.choosePhoto}</span>
+            </label>
         </div>
-        <p class="prediction-age" data-result-age></p>
-        <div class="label-container" data-result-labels></div>
-        <button class="reload" type="button" data-reset aria-label={d.test.retry}>
-            <svg viewBox="0 0 20 20" aria-hidden="true"><path d={reloadIcon}></path></svg>
-        </button>
+
+        <div class="test-view" role="tabpanel" id="panel-camera" aria-labelledby="tab-camera" data-view="camera" hidden>
+            <div class="camera-intro" data-camera-intro>
+                <span class="camera-icon" aria-hidden="true">🎥</span>
+                <h2 class="camera-title">{text.cameraTitle}</h2>
+                <p class="camera-text">{text.cameraText}</p>
+                <p class="camera-error" data-camera-error hidden></p>
+                <button class="button button-primary" type="button" data-camera-start>{text.cameraStart}</button>
+                <button class="button button-secondary" type="button" data-use-upload hidden>{text.useUpload}</button>
+            </div>
+
+            <div class="camera-live" data-camera-live hidden>
+                <div class="camera-stage" data-camera-stage>
+                    <div class="camera-mirror">
+                        <video data-camera-video playsinline muted autoplay></video>
+                        <canvas class="face-overlay" data-camera-overlay></canvas>
+                    </div>
+                    <div class="scan-line" aria-hidden="true"></div>
+                    <p class="camera-status" data-camera-status>{text.cameraStarting}</p>
+                    <p class="live-age">
+                        <span class="live-age-label">{text.liveLabel}</span>
+                        <span class="live-age-value">{agePrefix}<strong data-live-age>--</strong>{ageSuffix}</span>
+                    </p>
+                </div>
+                <div class="label-container live-labels" data-live-labels></div>
+                <div class="button-row">
+                    <button class="button button-primary" type="button" data-camera-capture disabled>{text.capture}</button>
+                    <button class="button button-secondary" type="button" data-camera-stop>{text.cameraStop}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-view analyzing" data-view="loading" hidden>
+            <div class="scan-frame">
+                <img data-scan-image alt="" />
+                <div class="face-box" data-scan-face hidden></div>
+                <div class="scan-line" aria-hidden="true"></div>
+            </div>
+            <p class="analyzing-text" data-loading-text role="status">{text.loadingModel}</p>
+        </div>
+
+        <div class="test-view result" data-view="result" hidden>
+            <div class="result-photo">
+                <img data-result-image alt="" />
+                <div class="face-box is-locked" data-result-face hidden></div>
+            </div>
+            <p class="result-label">{text.resultLabel}</p>
+            <p class="prediction-age">{agePrefix}<strong data-result-age>0</strong>{ageSuffix}</p>
+            <div class="description">
+                <p data-result-message></p>
+                <p data-result-explain></p>
+            </div>
+            <div class="label-container" data-result-labels></div>
+            <div class="button-row">
+                <button class="button button-primary" type="button" data-share>{text.share}</button>
+                <button class="button button-secondary" type="button" data-reset>
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d={reloadIcon}></path></svg>
+                    {text.retry}
+                </button>
+            </div>
+        </div>
+
+        <div class="test-view error-message" data-view="error" hidden>
+            <p>{text.error}</p>
+            <button class="button button-secondary" type="button" data-reset>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d={reloadIcon}></path></svg>
+                {text.retry}
+            </button>
+        </div>
     </div>
 
-    <div class="error-message" data-view="error" hidden>
-        <p>{d.test.error}</p>
-        <button class="reload" type="button" data-reset aria-label={d.test.retry}>
-            <svg viewBox="0 0 20 20" aria-hidden="true"><path d={reloadIcon}></path></svg>
-        </button>
-    </div>
+    <p class="privacy-note"><span aria-hidden="true">🔒</span> {text.privacyNote}</p>
+    <p class="toast" data-toast role="status" hidden></p>
 </section>
 
 <script>
