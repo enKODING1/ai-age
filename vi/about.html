@@ -33,155 +33,13 @@
     
     <link rel="stylesheet" href="../assets/style/style.css">
     <link rel="stylesheet" href="../assets/style/nav.css">
-    <link href="https://fonts.cdnfonts.com/css/leon-sans-2" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style/page.css">
 
     <title>AI Face Age Test Introduction</title>
     
-    <style>
-        .about-content {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 60px 40px;
-            margin: 40px 0;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            color: #2d3748;
-            line-height: 1.8;
-        }
-        
-        .about-content h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #667eea;
-            margin-bottom: 30px;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .about-content h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #4a5568;
-            margin: 40px 0 20px 0;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .about-content h3::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-        
-        .about-content p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: #4a5568;
-        }
-        
-        .about-content ul {
-            margin: 20px 0;
-            padding-left: 30px;
-        }
-        
-        .about-content li {
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-            color: #4a5568;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .feature-card {
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .feature-card h4 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-        
-        .feature-card p {
-            color: #4a5568;
-            margin: 0;
-        }
-        
-        .cta-section {
-            text-align: center;
-            margin: 50px 0;
-            padding: 40px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            border-radius: 20px;
-            border: 2px solid rgba(102, 126, 234, 0.2);
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 16px 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
-        }
-        
-        @media (max-width: 768px) {
-            .about-content {
-                padding: 40px 25px;
-            }
-            
-            .about-content h2 {
-                font-size: 1.8rem;
-            }
-            
-            .about-content h3 {
-                font-size: 1.3rem;
-            }
-            
-            .feature-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-    </style>
     <link rel="canonical" href="https://aige.netlify.app/vi/about.html" />
     <!-- Language alternates -->
     <link rel="alternate" hreflang="ko" href="https://aige.netlify.app/about.html" />
@@ -198,15 +56,17 @@
     <nav class="nav-container">
         <div class="nav-wrapper">
             <div class="nav-left">
-                <div class="logo">AI Age</div>
-                <div class="nav-item">
-                    <a href="./index.html">Home</a>
-                </div>
-                <div class="nav-item">
-                    <a href="./info.html">Privacy & Contact</a>
-                </div>
-                <div class="nav-item">
-                    <a href="https://egen-teto.vercel.app/" target="_blank">Egen Teto</a>
+                <a class="logo" href="./">AI Age</a>
+                <div class="nav-items desktop-nav">
+                    <div class="nav-item">
+                        <a href="./index.html">Trang chủ</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="./info.html">Quyền riêng tư & Liên hệ</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="https://egen-teto.vercel.app/" target="_blank">Egen Teto</a>
+                    </div>
                 </div>
             </div>
             <div class="nav-right">
@@ -214,6 +74,25 @@
                     <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="sun" d="M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50Z" fill="white"/>
                     </svg>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <!-- 모바일 메뉴 -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-items">
+                <div class="mobile-nav-item">
+                    <a href="./index.html">Trang chủ</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="./info.html">Quyền riêng tư & Liên hệ</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="https://egen-teto.vercel.app/" target="_blank">Egen Teto</a>
                 </div>
             </div>
         </div>
@@ -224,6 +103,45 @@
             <section class="hero-section">
                 <h1 class="hero-title">Kiểm tra tuổi khuôn mặt bằng AI</h1>
                 <p class="hero-subtitle">Công nghệ AI tiên tiến phân tích tuổi khuôn mặt của bạn</p>
+                <div class="language">
+                    <div class="language-selector">
+                        <div class="language-selected" onclick="toggleLanguageDropdown()">
+                            <span class="flag">🇰🇷</span>
+                            <span class="language-text">한국어</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </div>
+                        <div class="language-dropdown" id="languageDropdown">
+                            <div class="language-option" data-value="kr" onclick="selectLanguage('kr', '🇰🇷', '한국어')">
+                                <span class="flag">🇰🇷</span>
+                                <span class="language-text">한국어</span>
+                            </div>
+                            <div class="language-option" data-value="en" onclick="selectLanguage('en', '🇺🇸', 'English')">
+                                <span class="flag">🇺🇸</span>
+                                <span class="language-text">English</span>
+                            </div>
+                            <div class="language-option" data-value="zh" onclick="selectLanguage('zh', '🇨🇳', '中文')">
+                                <span class="flag">🇨🇳</span>
+                                <span class="language-text">中文</span>
+                            </div>
+                            <div class="language-option" data-value="ja" onclick="selectLanguage('ja', '🇯🇵', '日本語')">
+                                <span class="flag">🇯🇵</span>
+                                <span class="language-text">日本語</span>
+                            </div>
+                            <div class="language-option" data-value="th" onclick="selectLanguage('th', '🇹🇭', 'ไทย')">
+                                <span class="flag">🇹🇭</span>
+                                <span class="language-text">ไทย</span>
+                            </div>
+                            <div class="language-option" data-value="vi" onclick="selectLanguage('vi', '🇻🇳', 'Tiếng Việt')">
+                                <span class="flag">🇻🇳</span>
+                                <span class="language-text">Tiếng Việt</span>
+                            </div>
+                            <div class="language-option" data-value="hi" onclick="selectLanguage('hi', '🇮🇳', 'हिन्दी')">
+                                <span class="flag">🇮🇳</span>
+                                <span class="language-text">हिन्दी</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <div class="about-content">
@@ -297,6 +215,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../assets/js/darkmode.js"></script>
     <script src="../assets/js/language.js"></script>
+    <script src="../assets/js/navigation.js"></script>
 </body>
 
 </html> 

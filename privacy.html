@@ -6,6 +6,10 @@
     <title>프라이버시 정책 - AI 얼굴나이 테스트</title>
     <link rel="stylesheet" href="./assets/style/style.css">
     <link rel="stylesheet" href="./assets/style/nav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/page.css">
     <meta name="description" content="AI 얼굴나이 테스트 서비스의 프라이버시 정책 및 개인정보 처리방침">
     <link rel="shortcut icon" href="./favicon.ico">
     <link rel="canonical" href="https://aige.netlify.app/privacy.html" />
@@ -13,9 +17,46 @@
 <body>
     <nav class="nav-container">
         <div class="nav-wrapper">
-            <li><a href="index.html">홈</a></li>
-            <li><a href="https://enkoding.tistory.com" target="_blank">BLOG</a></li>
-            <li><a href="https://github.com/enkoding1" target="_blank">GITHUB</a></li>
+            <div class="nav-left">
+                <a class="logo" href="./">AI Age</a>
+                <div class="nav-items desktop-nav">
+                    <div class="nav-item">
+                        <a href="./index.html">홈</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="https://enkoding.tistory.com" target="_blank">BLOG</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="https://github.com/enkoding1" target="_blank">GITHUB</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div id="darkMode">
+                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="sun" d="M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50Z" fill="white"/>
+                    </svg>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        <!-- 모바일 메뉴 -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-items">
+                <div class="mobile-nav-item">
+                    <a href="./index.html">홈</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="https://enkoding.tistory.com" target="_blank">BLOG</a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="https://github.com/enkoding1" target="_blank">GITHUB</a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -105,5 +146,9 @@
         <p>contact : ksjdevelop53@gmail.com</p>
         <p>ⓒ 2020.enkoding all rights reserved.</p>
     </footer>
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/darkmode.js"></script>
+    <script src="./assets/js/navigation.js"></script>
 </body>
 </html> 

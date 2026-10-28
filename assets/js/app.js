@@ -32,11 +32,12 @@ function createLabel(data) {
     const html =
         `
     <div class="label-wrap">
-        <label for="label-bar">${data.labelTitle}</label>
-        <div class="${data.className}"  id="label-bar">
-            <div style="width:${data.score}%" class="progressbar">
-                ${(data.score == 0) ? '' : data.score + '%'}
-            </div>
+        <div class="label-head">
+            <span class="label-title">${data.labelTitle}</span>
+            <span class="label-score">${data.score}%</span>
+        </div>
+        <div class="label-bar ${data.className}">
+            <div style="width:${data.score}%" class="progressbar"></div>
         </div>
     </div>
     `
