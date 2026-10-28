@@ -236,11 +236,11 @@
       },
       {
         "title": "คุกกี้และบริการภายนอก",
-        "text": "เพื่อสถิติการเข้าชมและโฆษณา บริการต่อไปนี้อาจเก็บข้อมูลผ่านคุกกี้: Google Analytics (สถิติ), Google AdSense และ Kakao AdFit (โฆษณา) ข้อมูลดังกล่าวจะได้รับการจัดการตามนโยบายของแต่ละบริษัท: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>"
+        "text": "เพื่อสถิติการเข้าชมและโฆษณา Google Analytics (สถิติ), Google AdSense และ Kakao AdFit (โฆษณา) ใช้คุกกี้ ผู้ให้บริการบุคคลที่สามรวมถึง Google ใช้คุกกี้เพื่อแสดงโฆษณาตามการเข้าชมเว็บไซต์นี้และเว็บไซต์อื่นก่อนหน้าของคุณ ข้อมูลดังกล่าวจะได้รับการจัดการตามนโยบายของแต่ละบริษัท: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>"
       },
       {
         "title": "วิธีปฏิเสธคุกกี้",
-        "text": "คุณสามารถบล็อกหรือลบคุกกี้ได้ในการตั้งค่าเบราว์เซอร์ และปิดโฆษณาที่ปรับให้เหมาะกับคุณได้ใน<a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">การตั้งค่าโฆษณาของ Google</a> การปฏิเสธคุกกี้ไม่มีผลต่อการใช้งานการทดสอบ"
+        "text": "คุณสามารถบล็อกหรือลบคุกกี้ได้ในการตั้งค่าเบราว์เซอร์ ปิดโฆษณาที่ปรับให้เหมาะกับคุณได้ใน<a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">การตั้งค่าโฆษณาของ Google</a> และเลือกไม่รับคุกกี้โฆษณาของผู้ให้บริการบุคคลที่สามได้ที่ <a href=\"https://optout.aboutads.info\" target=\"_blank\" rel=\"noopener\">aboutads.info</a> การปฏิเสธคุกกี้ไม่มีผลต่อการใช้งานการทดสอบ"
       },
       {
         "title": "ข้อมูลที่บันทึกในเบราว์เซอร์",

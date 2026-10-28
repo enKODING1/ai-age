@@ -236,11 +236,11 @@
       },
       {
         "title": "쿠키와 외부 서비스",
-        "text": "방문 통계와 광고를 위해 다음 서비스가 쿠키를 통해 정보를 수집할 수 있습니다: Google Analytics(방문 통계), Google AdSense·카카오 애드핏(광고). 수집된 정보는 각 회사의 방침에 따라 처리됩니다: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">카카오</a>."
+        "text": "방문 통계와 광고를 위해 Google Analytics(방문 통계), Google AdSense·카카오 애드핏(광고)이 쿠키를 사용합니다. Google을 비롯한 제3자 공급업체는 쿠키를 사용해 이용자의 이 사이트 및 다른 사이트 방문 기록을 바탕으로 광고를 게재합니다. 수집된 정보는 각 회사의 방침에 따라 처리됩니다: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">카카오</a>."
       },
       {
         "title": "쿠키 거부 방법",
-        "text": "브라우저 설정에서 쿠키 저장을 차단하거나 삭제할 수 있고, <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google 광고 설정</a>에서 맞춤 광고를 끌 수 있습니다. 쿠키를 거부해도 테스트는 그대로 이용할 수 있습니다."
+        "text": "브라우저 설정에서 쿠키를 차단하거나 삭제할 수 있습니다. 맞춤 광고는 <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google 광고 설정</a>에서 끌 수 있고, 제3자 공급업체의 맞춤 광고 쿠키는 <a href=\"https://optout.aboutads.info\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>에서 거부할 수 있습니다. 쿠키를 거부해도 테스트는 그대로 이용할 수 있습니다."
       },
       {
         "title": "브라우저에 저장되는 정보",

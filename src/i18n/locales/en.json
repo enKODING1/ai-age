@@ -236,11 +236,11 @@
       },
       {
         "title": "Cookies and third-party services",
-        "text": "For visit statistics and ads, the following services may collect information through cookies: Google Analytics (statistics), Google AdSense and Kakao AdFit (ads). That information is handled under each company’s policy: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
+        "text": "For visit statistics and ads, Google Analytics (statistics), Google AdSense and Kakao AdFit (ads) use cookies. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites. That information is handled under each company’s policy: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
       },
       {
         "title": "How to refuse cookies",
-        "text": "You can block or delete cookies in your browser settings, and turn off personalized ads in <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google Ad Settings</a>. The test works the same without cookies."
+        "text": "You can block or delete cookies in your browser settings. You can opt out of personalized advertising in <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google Ad Settings</a>, and opt out of third-party vendors’ cookies for personalized ads at <a href=\"https://optout.aboutads.info\" target=\"_blank\" rel=\"noopener\">aboutads.info</a>. The test works the same without cookies."
       },
       {
         "title": "Data stored in your browser",
