@@ -30,7 +30,7 @@ const d = t(locale);
         <ol class="steps">
             {
                 d.home.steps.map((step) => (
-                    <li class="step">
+                    <li class="step" data-reveal>
                         <h3>{step.title}</h3>
                         <p>{step.text}</p>
                     </li>
@@ -44,7 +44,7 @@ const d = t(locale);
         <div class="faq-list">
             {
                 d.home.faq.map((item, index) => (
-                    <details class="faq-item" open={index === 0}>
+                    <details class="faq-item" open={index === 0} data-reveal>
                         <summary>
                             <h3>{item.q}</h3>
                         </summary>
