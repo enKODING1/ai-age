@@ -28,12 +28,12 @@ const DICTIONARIES: Record<Locale, Dictionary> = { ko, en, zh, ja, th, vi, hi };
 export const t = (locale: Locale): Dictionary => DICTIONARIES[locale];
 
 // 모든 언어에 존재하는 페이지
-export type LocalizedPage = 'home' | 'about' | 'info';
+export type LocalizedPage = 'home' | 'about' | 'privacy';
 // 한국어로만 제공되는 페이지 포함 전체 페이지
-export type Page = LocalizedPage | 'privacy' | 'terms' | 'not-found';
+export type Page = LocalizedPage | 'terms' | 'not-found';
 
 export const isLocalizedPage = (page: Page): page is LocalizedPage =>
-    page === 'home' || page === 'about' || page === 'info';
+    page === 'home' || page === 'about' || page === 'privacy';
 
 export function localePath(locale: Locale, page: LocalizedPage = 'home') {
     const prefix = locale === DEFAULT_LOCALE ? '/' : `/${locale}/`;

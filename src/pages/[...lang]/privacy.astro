@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { CONTACT_EMAIL } from '../../consts';
+import { localeStaticPaths, t, type Locale } from '../../i18n';
+import { pageJsonLd } from '../../seo/jsonld';
+
+export const getStaticPaths = localeStaticPaths;
+
+const { locale } = Astro.props as { locale: Locale };
+const d = t(locale);
+const p = d.privacy;
+const email = `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>`;
+---
+
+<BaseLayout
+    locale={locale}
+    page="privacy"
+    title={d.meta.privacy.title}
+    description={d.meta.privacy.description}
+    jsonLd={pageJsonLd(locale, 'privacy')}
+>
+    <PageHero title={d.hero.privacy.title} subtitle={d.hero.privacy.subtitle} />
+
+    <article class="prose-card policy">
+        <p class="policy-effective">{p.effective}</p>
+        <p>{p.intro}</p>
+        <ol class="policy-sections">
+            {
+                p.sections.map((section) => (
+                    <li>
+                        <h2>{section.title}</h2>
+                        <p set:html={section.text.replace('{email}', email)} />
+                    </li>
+                ))
+            }
+        </ol>
+    </article>
+</BaseLayout>

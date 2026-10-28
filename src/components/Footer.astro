@@ -10,18 +10,11 @@ const { locale } = Astro.props;
 const d = t(locale);
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" transition:animate="none">
     <ul class="footer-links">
         <li><a href={localePath(locale, 'about')}>{d.nav.about}</a></li>
-        <li><a href={localePath(locale, 'info')}>{d.nav.info}</a></li>
-        {
-            locale === 'ko' && (
-                <>
-                    <li><a href="/privacy/">{d.ui.privacy}</a></li>
-                    <li><a href="/terms/">{d.ui.terms}</a></li>
-                </>
-            )
-        }
+        <li><a href={localePath(locale, 'privacy')}>{d.nav.privacy}</a></li>
+        {locale === 'ko' && <li><a href="/terms/">{d.ui.terms}</a></li>}
     </ul>
     <p class="copyright">© {new Date().getFullYear()} {SITE_NAME}</p>
 </footer>

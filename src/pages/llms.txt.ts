@@ -15,7 +15,7 @@ export const GET: APIRoute = () => {
         const d = t(locale);
         return [
             `- [${d.meta.about.title}](${absoluteUrl(localePath(locale, 'about'))}) (${LOCALE_INFO[locale].label})`,
-            `- [${d.meta.info.title}](${absoluteUrl(localePath(locale, 'info'))}) (${LOCALE_INFO[locale].label})`,
+            `- [${d.meta.privacy.title}](${absoluteUrl(localePath(locale, 'privacy'))}) (${LOCALE_INFO[locale].label})`,
         ];
     }).join('\n');
 

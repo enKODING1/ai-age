@@ -14,23 +14,20 @@
       "ogTitle": "Giới thiệu kiểm tra tuổi khuôn mặt AI",
       "ogDescription": "Giới thiệu chi tiết về kiểm tra tuổi khuôn mặt bằng AI của chúng tôi"
     },
-    "info": {
-      "title": "Privacy & Contact - AI Face Age Test",
-      "description": "Chính sách bảo mật, thông tin liên hệ và bản quyền cho kiểm tra tuổi khuôn mặt AI",
-      "ogTitle": "Kiểm tra tuổi khuôn mặt AI - Chính sách bảo mật & Liên hệ",
-      "ogDescription": "Chính sách bảo mật và thông tin liên hệ"
+    "privacy": {
+      "title": "Chính sách quyền riêng tư - Kiểm tra tuổi khuôn mặt AI",
+      "description": "Chính sách quyền riêng tư của bài kiểm tra tuổi khuôn mặt AI: ảnh và video camera chỉ được xử lý trên thiết bị của bạn, cùng thông tin về cookie và dịch vụ bên thứ ba."
     }
   },
   "nav": {
     "home": "Trang chủ",
     "about": "Giới thiệu kiểm tra",
-    "info": "Quyền riêng tư & Liên hệ"
+    "privacy": "Quyền riêng tư"
   },
   "ui": {
     "language": "Chọn ngôn ngữ",
     "theme": "Chuyển chế độ tối",
     "menu": "Menu",
-    "privacy": "Quyền riêng tư",
     "terms": "Điều khoản",
     "notFound": "Không tìm thấy trang",
     "backHome": "Về trang chủ"
@@ -44,9 +41,9 @@
       "title": "Kiểm tra tuổi khuôn mặt bằng AI",
       "subtitle": "Công nghệ AI tiên tiến phân tích tuổi khuôn mặt của bạn"
     },
-    "info": {
-      "title": "Chính sách bảo mật & Liên hệ",
-      "subtitle": "Thông tin cho dịch vụ an toàn và đáng tin cậy"
+    "privacy": {
+      "title": "Chính sách quyền riêng tư",
+      "subtitle": "Ảnh và video camera không bao giờ rời khỏi thiết bị của bạn"
     }
   },
   "test": {
@@ -203,60 +200,46 @@
       "button": "Bắt đầu kiểm tra"
     }
   },
-  "info": {
-    "title": "🔒 Chính sách bảo mật",
-    "highlight": "🎯 Điểm chính: Ảnh sẽ không được lưu trữ",
-    "photo": {
-      "title": "📷 Cách xử lý ảnh",
-      "lead": "Kiểm tra tuổi khuôn mặt bằng AI đặt quyền riêng tư của người dùng lên hàng đầu:",
-      "items": [
-        "<strong>Xử lý tại chỗ:</strong> Tất cả phân tích được thực hiện trực tiếp trên trình duyệt của người dùng",
-        "<strong>Không gửi lên máy chủ:</strong> Ảnh tải lên không bao giờ được gửi đến máy chủ bên ngoài",
-        "<strong>Xóa ngay lập tức:</strong> Dữ liệu ảnh sẽ bị xóa khỏi bộ nhớ ngay sau khi phân tích",
-        "<strong>TensorFlow.js:</strong> Đảm bảo quyền riêng tư tuyệt đối nhờ AI trên trình duyệt"
-      ]
-    },
-    "cookies": {
-      "title": "🍪 Cookie & Thu thập dữ liệu",
-      "items": [
-        "<strong>Cookie cần thiết:</strong> Chỉ lưu trữ dữ liệu tối thiểu để cải thiện trải nghiệm người dùng (như cài đặt chế độ tối,...)",
-        "<strong>Công cụ phân tích:</strong> Chỉ thu thập thống kê sử dụng ẩn danh qua Google Analytics",
-        "<strong>Thông tin cá nhân:</strong> Không thu thập tên, email, số điện thoại,...",
-        "<strong>Đồng ý tự nguyện:</strong> Mọi thu thập dữ liệu đều tuân theo cài đặt trình duyệt của người dùng"
-      ]
-    },
-    "security": {
-      "title": "🛡️ Biện pháp bảo mật",
-      "items": [
-        "<strong>Mã hóa HTTPS:</strong> Mọi giao tiếp đều được mã hóa bằng SSL/TLS",
-        "<strong>Xử lý tại chỗ:</strong> Dữ liệu hình ảnh nhạy cảm không bao giờ bị lộ ra ngoài"
-      ]
-    },
-    "contact": {
-      "title": "📧 Liên hệ",
-      "text": "Nếu bạn có bất kỳ câu hỏi nào về dịch vụ, hãy liên hệ với chúng tôi bất cứ lúc nào"
-    },
-    "terms": {
-      "title": "⚖️ Điều khoản dịch vụ",
-      "items": [
-        "<strong>Mục đích dịch vụ:</strong> Dịch vụ này chỉ dành cho mục đích giải trí và giáo dục",
-        "<strong>Giới hạn độ chính xác:</strong> Kết quả AI chỉ mang tính tham khảo, không dùng cho y tế/pháp lý",
-        "<strong>Giới hạn trách nhiệm:</strong> Chúng tôi không chịu trách nhiệm cho bất kỳ thiệt hại nào phát sinh từ việc sử dụng dịch vụ"
-      ]
-    },
-    "updates": {
-      "title": "🔄 Cập nhật chính sách",
-      "text": "Chính sách bảo mật này có thể được cập nhật khi cần thiết. Mọi thay đổi quan trọng sẽ được thông báo trên website."
-    },
-    "copyright": {
-      "title": "📄 Thông tin bản quyền",
-      "lines": [
-        "<strong>© 2024. AI Age Test. Bảo lưu mọi quyền.</strong>",
-        "Mọi nội dung, thiết kế và mã nguồn trên website này đều được bảo vệ bởi luật bản quyền.",
-        "Nghiêm cấm sao chép, phân phối hoặc sử dụng cho mục đích thương mại khi chưa được phép.",
-        "<small>Cập nhật lần cuối: 12/2024</small>"
-      ]
-    },
-    "back": "Quay lại trang chủ"
+  "privacy": {
+    "effective": "Ngày hiệu lực: 29/10/2026",
+    "intro": "Chính sách này giải thích cách bài kiểm tra tuổi khuôn mặt AI (“Dịch vụ”) xử lý thông tin của bạn.",
+    "sections": [
+      {
+        "title": "Thông tin cá nhân chúng tôi thu thập",
+        "text": "Dịch vụ không có tài khoản và không thu thập hay lưu trữ thông tin nhận dạng bạn như tên, email hoặc số điện thoại. Chúng tôi không cung cấp thông tin cá nhân cho bên thứ ba hay thuê bên khác xử lý."
+      },
+      {
+        "title": "Ảnh và video camera",
+        "text": "Ảnh bạn tải lên và video camera chỉ được phân tích trong trình duyệt của bạn, không bao giờ được gửi lên máy chủ hay lưu lại, và sẽ biến mất khi bạn đóng trang. Camera chỉ được sử dụng sau khi bạn nhấn “Bật camera”."
+      },
+      {
+        "title": "Cookie và dịch vụ bên thứ ba",
+        "text": "Để thống kê lượt truy cập và hiển thị quảng cáo, các dịch vụ sau có thể thu thập thông tin qua cookie: Google Analytics (thống kê), Google AdSense và Kakao AdFit (quảng cáo). Thông tin đó được xử lý theo chính sách của từng công ty: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
+      },
+      {
+        "title": "Cách từ chối cookie",
+        "text": "Bạn có thể chặn hoặc xóa cookie trong cài đặt trình duyệt và tắt quảng cáo cá nhân hóa trong <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Cài đặt quảng cáo của Google</a>. Bài kiểm tra vẫn hoạt động bình thường khi không có cookie."
+      },
+      {
+        "title": "Dữ liệu lưu trong trình duyệt",
+        "text": "Chỉ có cài đặt chế độ tối được lưu trong trình duyệt của bạn (localStorage)."
+      },
+      {
+        "title": "Thời gian lưu giữ",
+        "text": "Bản thân Dịch vụ không lưu giữ thông tin cá nhân nào. Dữ liệu do dịch vụ bên thứ ba thu thập được lưu giữ theo chính sách của họ."
+      },
+      {
+        "title": "Quyền của bạn",
+        "text": "Bạn có thể yêu cầu xem, chỉnh sửa, xóa hoặc ngừng xử lý thông tin cá nhân của mình. Hãy liên hệ với chúng tôi qua thông tin bên dưới, chúng tôi sẽ xử lý ngay."
+      },
+      {
+        "title": "Liên hệ (người phụ trách bảo vệ thông tin cá nhân)",
+        "text": "Email: {email}"
+      },
+      {
+        "title": "Thay đổi chính sách",
+        "text": "Nếu chính sách này thay đổi, chúng tôi sẽ thông báo trên trang này 7 ngày trước khi có hiệu lực."
+      }
+    ]
   }
 }
