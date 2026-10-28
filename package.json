@@ -12,6 +12,7 @@
     "node": ">=22.12.0"
   },
   "dependencies": {
+    "@mediapipe/tasks-vision": "1.2.0",
     "astro": "~7.3.0"
   }
 }

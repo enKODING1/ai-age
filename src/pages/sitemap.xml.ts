@@ -6,9 +6,9 @@ import { FALLBACK_LOCALE, LOCALE_INFO, LOCALES, localePath, type LocalizedPage }
 const LOCALIZED_PAGES: { page: LocalizedPage; priority: string }[] = [
     { page: 'home', priority: '1.0' },
     { page: 'about', priority: '0.7' },
-    { page: 'info', priority: '0.5' },
+    { page: 'privacy', priority: '0.3' },
 ];
-const KOREAN_ONLY = ['/privacy/', '/terms/'];
+const KOREAN_ONLY = ['/terms/'];
 
 export const GET: APIRoute = () => {
     const urls = LOCALIZED_PAGES.flatMap(({ page, priority }) => {

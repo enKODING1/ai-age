@@ -14,23 +14,19 @@
       "ogTitle": "AI Face Age Test Introduction",
       "ogDescription": "Detailed explanation of our AI-powered face age analysis test"
     },
-    "info": {
-      "title": "Privacy & Contact - AI Face Age Test",
-      "description": "Privacy policy, contact information and copyright details for AI Face Age Test",
-      "ogTitle": "AI Face Age Test - Privacy Policy & Contact",
-      "ogDescription": "Privacy policy and contact information"
+    "privacy": {
+      "title": "Privacy Policy - AI Face Age Test",
+      "description": "How the AI Face Age Test handles your data: photos and camera video stay on your device, plus the cookies and third-party services we use."
     }
   },
   "nav": {
     "home": "Home",
     "about": "About Test",
-    "info": "Privacy & Contact"
+    "privacy": "Privacy"
   },
   "ui": {
     "language": "Choose language",
     "theme": "Toggle dark mode",
-    "menu": "Menu",
-    "privacy": "Privacy",
     "terms": "Terms",
     "notFound": "Page not found",
     "backHome": "Back to home"
@@ -44,9 +40,9 @@
       "title": "AI Face Age Test",
       "subtitle": "Advanced AI technology to analyze your facial age"
     },
-    "info": {
-      "title": "Privacy & Contact",
-      "subtitle": "Information for safe and reliable service operation"
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "Your photos and camera video never leave your device"
     }
   },
   "test": {
@@ -54,7 +50,29 @@
     "analyzing": "Analyzing..",
     "age": "{age} years old",
     "error": "An error occurred while processing the image. Please try again.",
-    "retry": "Try again"
+    "retry": "Try again",
+    "modeUpload": "Upload photo",
+    "modeCamera": "Live camera",
+    "choosePhoto": "Choose a photo",
+    "privacyNote": "Photos and video never leave your device",
+    "loadingModel": "Loading AI model..",
+    "findingFace": "Finding your face..",
+    "cameraTitle": "Live age with your camera",
+    "cameraText": "Point the camera at your face and the AI updates your estimated age in real time. Video is never saved or sent.",
+    "cameraStart": "Turn on camera",
+    "cameraStarting": "Starting camera..",
+    "cameraStop": "Turn off camera",
+    "noFace": "Center your face in the frame",
+    "faceFound": "Face detected",
+    "cameraDenied": "Camera access was blocked. Allow it in your browser’s site settings, or upload a photo instead.",
+    "cameraUnavailable": "No camera is available on this device. Please upload a photo instead.",
+    "useUpload": "Upload a photo instead",
+    "liveLabel": "Live estimated age",
+    "resultLabel": "AI estimated age",
+    "capture": "Save this moment",
+    "share": "Share result",
+    "shareText": "AI thinks I look {age}! Try it yourself",
+    "copied": "Link copied"
   },
   "results": [
     {
@@ -104,12 +122,12 @@
     "howTitle": "How the AI face age test works",
     "steps": [
       {
-        "title": "Upload a photo",
-        "text": "Pick a clear, front-facing photo with one face. Drag and drop it or tap the box to choose a file."
+        "title": "Upload a photo or turn on the camera",
+        "text": "Upload a clear, front-facing photo with one face, or turn on your camera and look into it."
       },
       {
         "title": "AI analyzes it in your browser",
-        "text": "A TensorFlow.js model trained with Google Teachable Machine compares the photo with six age groups. The photo never leaves your device."
+        "text": "The AI finds your face, then a TensorFlow.js model trained with Google Teachable Machine compares the photo with six age groups. Photos and video never leave your device."
       },
       {
         "title": "See your estimated age",
@@ -123,8 +141,8 @@
         "a": "The model gives a probability for six age groups (baby, teens, twenties, thirties, forties, fifties). Your estimated age is the average of each group’s representative age (5, 15, 25, 35, 45, 55) weighted by those probabilities."
       },
       {
-        "q": "Is my photo uploaded or stored?",
-        "a": "No. The photo is analyzed entirely in your browser with TensorFlow.js. It is never sent to a server or saved, and it is gone when you leave the page."
+        "q": "Are my photos or camera video uploaded or stored?",
+        "a": "No. Photos and camera video are analyzed entirely in your browser with TensorFlow.js. Nothing is sent to a server or saved, and it is gone when you leave the page."
       },
       {
         "q": "How accurate is the result?",
@@ -203,60 +221,46 @@
       "button": "Start Test"
     }
   },
-  "info": {
-    "title": "🔒 Privacy Policy",
-    "highlight": "🎯 Key Point: Photos are not stored anywhere",
-    "photo": {
-      "title": "📷 Photo Processing Method",
-      "lead": "AI Face Age Test prioritizes user privacy protection above all:",
-      "items": [
-        "<strong>Local Processing:</strong> All analysis is performed directly in the user's browser",
-        "<strong>No Server Transmission:</strong> Uploaded photos are never sent to external servers",
-        "<strong>Immediate Deletion:</strong> Photo data is immediately removed from memory after analysis",
-        "<strong>TensorFlow.js:</strong> Complete privacy guaranteed through browser-based AI engine"
-      ]
-    },
-    "cookies": {
-      "title": "🍪 Cookies and Data Collection",
-      "items": [
-        "<strong>Essential Cookies:</strong> Only minimal data stored for user experience improvement (dark mode settings, etc.)",
-        "<strong>Analytics Tools:</strong> Only anonymized usage statistics collected through Google Analytics",
-        "<strong>Personal Information:</strong> No personal information such as names, emails, or phone numbers is collected",
-        "<strong>Optional Consent:</strong> All data collection follows user's browser settings"
-      ]
-    },
-    "security": {
-      "title": "🛡️ Security Measures",
-      "items": [
-        "<strong>HTTPS Encryption:</strong> All communications are encrypted with SSL/TLS",
-        "<strong>Local Processing:</strong> Sensitive image data is never exposed externally"
-      ]
-    },
-    "contact": {
-      "title": "📧 Contact & Inquiries",
-      "text": "If you have any questions about the service, please feel free to contact us anytime"
-    },
-    "terms": {
-      "title": "⚖️ Terms of Service",
-      "items": [
-        "<strong>Service Purpose:</strong> This service is provided for entertainment and educational purposes",
-        "<strong>Accuracy Limitations:</strong> AI prediction results are for reference only and cannot be used as medical/legal judgment criteria",
-        "<strong>Liability Limitations:</strong> We are not responsible for direct or indirect damages from service use"
-      ]
-    },
-    "updates": {
-      "title": "🔄 Policy Updates",
-      "text": "This privacy policy may be updated as needed. We will notify you through the website of any important changes."
-    },
-    "copyright": {
-      "title": "📄 Copyright Information",
-      "lines": [
-        "<strong>ⓒ 2024. AI Age Test. All rights reserved.</strong>",
-        "All content, design, and code on this website are protected by copyright law.",
-        "Unauthorized reproduction, distribution, or commercial use is prohibited.",
-        "<small>Last Updated: December 2024</small>"
-      ]
-    },
-    "back": "Back to Home"
+  "privacy": {
+    "effective": "Effective date: October 29, 2026",
+    "intro": "This policy explains what information the AI Face Age Test (the “Service”) handles and how.",
+    "sections": [
+      {
+        "title": "Personal information we collect",
+        "text": "The Service has no accounts and does not collect or store information that identifies you, such as your name, email or phone number. We do not share personal information with third parties or outsource its processing."
+      },
+      {
+        "title": "Photos and camera video",
+        "text": "Photos you upload and camera video are analyzed only inside your browser. They are never sent to a server or stored, and they disappear when you close the page. The camera is used only after you tap “Turn on camera”."
+      },
+      {
+        "title": "Cookies and third-party services",
+        "text": "For visit statistics and ads, the following services may collect information through cookies: Google Analytics (statistics), Google AdSense and Kakao AdFit (ads). That information is handled under each company’s policy: <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
+      },
+      {
+        "title": "How to refuse cookies",
+        "text": "You can block or delete cookies in your browser settings, and turn off personalized ads in <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google Ad Settings</a>. The test works the same without cookies."
+      },
+      {
+        "title": "Data stored in your browser",
+        "text": "Only your dark mode setting is saved in your browser (localStorage)."
+      },
+      {
+        "title": "Retention",
+        "text": "The Service itself keeps no personal information. Data collected by third-party services is kept according to their own policies."
+      },
+      {
+        "title": "Your rights",
+        "text": "You can ask to view, correct, delete or stop the processing of your personal information. Contact us below and we will act without delay."
+      },
+      {
+        "title": "Contact (privacy officer)",
+        "text": "Email: {email}"
+      },
+      {
+        "title": "Changes to this policy",
+        "text": "If this policy changes, we will announce it on this page 7 days before it takes effect."
+      }
+    ]
   }
 }

@@ -14,23 +14,19 @@
       "ogTitle": "AI人脸年龄测试介绍",
       "ogDescription": "详细介绍我们的AI人脸年龄分析测试"
     },
-    "info": {
-      "title": "Privacy & Contact - AI Face Age Test",
-      "description": "AI人脸年龄测试的隐私政策、联系方式和版权信息",
-      "ogTitle": "AI人脸年龄测试 - 隐私政策与联系方式",
-      "ogDescription": "隐私政策和联系方式"
+    "privacy": {
+      "title": "隐私政策 - AI人脸年龄测试",
+      "description": "AI人脸年龄测试的隐私政策：照片和摄像头视频只在您的设备上处理，并说明所使用的 Cookie 和第三方服务。"
     }
   },
   "nav": {
     "home": "首页",
     "about": "测试介绍",
-    "info": "隐私 & 联系方式"
+    "privacy": "隐私政策"
   },
   "ui": {
     "language": "选择语言",
     "theme": "切换深色模式",
-    "menu": "菜单",
-    "privacy": "隐私政策",
     "terms": "使用条款",
     "notFound": "找不到页面",
     "backHome": "返回首页"
@@ -44,9 +40,9 @@
       "title": "AI人脸年龄测试",
       "subtitle": "先进AI技术分析你的脸部年龄"
     },
-    "info": {
-      "title": "隐私政策与联系方式",
-      "subtitle": "安全可靠服务运营信息"
+    "privacy": {
+      "title": "隐私政策",
+      "subtitle": "照片和摄像头视频不会离开您的设备"
     }
   },
   "test": {
@@ -54,7 +50,29 @@
     "analyzing": "分析中..",
     "age": "大约 {age} 岁",
     "error": "处理图片时发生错误。请重试。",
-    "retry": "重新测试"
+    "retry": "重新测试",
+    "modeUpload": "上传照片",
+    "modeCamera": "实时摄像头",
+    "choosePhoto": "选择照片",
+    "privacyNote": "照片和视频不会离开您的设备",
+    "loadingModel": "正在加载AI模型..",
+    "findingFace": "正在寻找人脸..",
+    "cameraTitle": "用摄像头实时测年龄",
+    "cameraText": "把摄像头对准脸部，AI会实时显示预估年龄。视频不会被保存或发送。",
+    "cameraStart": "打开摄像头",
+    "cameraStarting": "正在启动摄像头..",
+    "cameraStop": "关闭摄像头",
+    "noFace": "请把脸放在画面中央",
+    "faceFound": "已识别人脸",
+    "cameraDenied": "摄像头权限被拒绝。请在浏览器的网站设置中允许，或改用上传照片。",
+    "cameraUnavailable": "此设备无法使用摄像头，请改用上传照片。",
+    "useUpload": "改用上传照片",
+    "liveLabel": "实时预估年龄",
+    "resultLabel": "AI预估年龄",
+    "capture": "保存此刻",
+    "share": "分享结果",
+    "shareText": "AI觉得我看起来{age}岁！你也来试试",
+    "copied": "链接已复制"
   },
   "results": [
     {
@@ -104,12 +122,12 @@
     "howTitle": "AI人脸年龄测试的工作原理",
     "steps": [
       {
-        "title": "上传照片",
-        "text": "选择一张清晰的单人正脸照片。可以拖拽到框内，或点击选择文件。"
+        "title": "上传照片或打开摄像头",
+        "text": "上传一张清晰的单人正脸照片，或打开摄像头对准您的脸。"
       },
       {
         "title": "AI在浏览器中分析",
-        "text": "使用 Google Teachable Machine 训练的 TensorFlow.js 模型，将照片与六个年龄段进行比对。照片不会离开您的设备。"
+        "text": "AI先找到人脸，再由使用 Google Teachable Machine 训练的 TensorFlow.js 模型与六个年龄段进行比对。照片和视频不会离开您的设备。"
       },
       {
         "title": "查看预估年龄",
@@ -123,8 +141,8 @@
         "a": "模型会给出六个年龄段（婴儿、十几岁到五十几岁）的概率。预估年龄是各年龄段代表年龄（5、15、25、35、45、55岁）按这些概率加权平均得出的结果。"
       },
       {
-        "q": "我的照片会被上传或保存吗？",
-        "a": "不会。照片完全在您的浏览器中通过 TensorFlow.js 分析，不会发送到服务器，也不会被保存，离开页面后即消失。"
+        "q": "我的照片或摄像头视频会被上传或保存吗？",
+        "a": "不会。照片和摄像头视频完全在您的浏览器中通过 TensorFlow.js 分析，不会发送到服务器，也不会被保存，离开页面后即消失。"
       },
       {
         "q": "结果准确吗？",
@@ -203,60 +221,46 @@
       "button": "开始测试"
     }
   },
-  "info": {
-    "title": "🔒 隐私政策",
-    "highlight": "🎯 重点：照片绝不会被存储",
-    "photo": {
-      "title": "📷 照片处理方式",
-      "lead": "AI人脸年龄测试将用户隐私保护放在首位：",
-      "items": [
-        "<strong>本地处理：</strong> 所有分析均在用户浏览器本地完成",
-        "<strong>不上传服务器：</strong> 上传的照片绝不会发送到外部服务器",
-        "<strong>立即删除：</strong> 分析后照片数据会立即从内存中删除",
-        "<strong>TensorFlow.js：</strong> 基于浏览器AI引擎，完全保障隐私"
-      ]
-    },
-    "cookies": {
-      "title": "🍪 Cookie与数据收集",
-      "items": [
-        "<strong>必要Cookie：</strong> 仅保存极少量数据用于提升用户体验（如暗黑模式设置等）",
-        "<strong>分析工具：</strong> 仅通过Google Analytics收集匿名使用统计",
-        "<strong>个人信息：</strong> 不收集姓名、邮箱、电话等任何个人信息",
-        "<strong>自愿同意：</strong> 所有数据收集均遵循用户浏览器设置"
-      ]
-    },
-    "security": {
-      "title": "🛡️ 安全措施",
-      "items": [
-        "<strong>HTTPS加密：</strong> 所有通信均通过SSL/TLS加密",
-        "<strong>本地处理：</strong> 敏感图片数据绝不会外泄"
-      ]
-    },
-    "contact": {
-      "title": "📧 联系方式",
-      "text": "如有任何服务相关问题，欢迎随时联系我们"
-    },
-    "terms": {
-      "title": "⚖️ 服务条款",
-      "items": [
-        "<strong>服务目的：</strong> 本服务仅供娱乐和教育用途",
-        "<strong>准确性限制：</strong> AI预测结果仅供参考，不能作为医疗/法律判断依据",
-        "<strong>责任限制：</strong> 对因使用本服务造成的直接或间接损失不承担任何责任"
-      ]
-    },
-    "updates": {
-      "title": "🔄 政策更新",
-      "text": "本隐私政策可能会根据需要进行更新。重要变更会通过网站通知。"
-    },
-    "copyright": {
-      "title": "📄 版权信息",
-      "lines": [
-        "<strong>© 2024. AI Age Test. 保留所有权利。</strong>",
-        "本网站所有内容、设计和代码均受版权法保护。",
-        "未经授权，禁止转载、分发或商业用途。",
-        "<small>最后更新：2024年12月</small>"
-      ]
-    },
-    "back": "返回首页"
+  "privacy": {
+    "effective": "生效日期：2026年10月29日",
+    "intro": "本政策说明AI人脸年龄测试（以下简称“本服务”）如何处理您的信息。",
+    "sections": [
+      {
+        "title": "我们收集的个人信息",
+        "text": "本服务无需注册，不会收集或保存姓名、电子邮件、电话号码等可识别您身份的信息，也不会向第三方提供个人信息或委托他人处理。"
+      },
+      {
+        "title": "照片和摄像头视频",
+        "text": "您上传的照片和摄像头视频只在您的浏览器中分析，不会发送到服务器或被保存，关闭页面后即消失。只有在您点击“打开摄像头”后才会使用摄像头。"
+      },
+      {
+        "title": "Cookie 和第三方服务",
+        "text": "为了统计访问量和投放广告，以下服务可能通过 Cookie 收集信息：Google Analytics（访问统计）、Google AdSense 和 Kakao AdFit（广告）。这些信息按各公司的政策处理：<a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google</a>、<a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>。"
+      },
+      {
+        "title": "如何拒绝 Cookie",
+        "text": "您可以在浏览器设置中阻止或删除 Cookie，也可以在<a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">Google 广告设置</a>中关闭个性化广告。拒绝 Cookie 不影响使用测试。"
+      },
+      {
+        "title": "保存在浏览器中的信息",
+        "text": "只有深色模式设置会保存在您的浏览器（localStorage）中。"
+      },
+      {
+        "title": "保存期限",
+        "text": "本服务本身不保存任何个人信息。第三方服务收集的信息按其各自政策保存。"
+      },
+      {
+        "title": "您的权利",
+        "text": "您可以要求查阅、更正、删除或停止处理您的个人信息。请通过以下联系方式提出，我们将及时处理。"
+      },
+      {
+        "title": "联系方式（个人信息保护负责人）",
+        "text": "电子邮件：{email}"
+      },
+      {
+        "title": "政策变更",
+        "text": "本政策如有变更，将在生效前7天于本页面公告。"
+      }
+    ]
   }
 }

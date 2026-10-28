@@ -15,7 +15,7 @@ export const GET: APIRoute = () => {
         const d = t(locale);
         return [
             `- [${d.meta.about.title}](${absoluteUrl(localePath(locale, 'about'))}) (${LOCALE_INFO[locale].label})`,
-            `- [${d.meta.info.title}](${absoluteUrl(localePath(locale, 'info'))}) (${LOCALE_INFO[locale].label})`,
+            `- [${d.meta.privacy.title}](${absoluteUrl(localePath(locale, 'privacy'))}) (${LOCALE_INFO[locale].label})`,
         ];
     }).join('\n');
 
@@ -28,10 +28,11 @@ export const GET: APIRoute = () => {
 
 ## Key facts
 
-- Model: image classifier trained with Google Teachable Machine, run in the browser with TensorFlow.js.
+- Modes: upload a photo, or use the live camera mode that updates the estimated age in real time.
+- Model: MediaPipe face detection finds the face, then an image classifier trained with Google Teachable Machine runs in the browser with TensorFlow.js.
 - Output: probabilities for six age groups (baby, teens, twenties, thirties, forties, fifties).
 - Estimated age: probability-weighted average of each group's representative age (5, 15, 25, 35, 45, 55).
-- Privacy: the photo never leaves the device; nothing is stored.
+- Privacy: photos and camera video never leave the device; nothing is stored.
 - Not for medical, legal or identity verification use.
 
 ## How it works

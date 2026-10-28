@@ -1,5 +1,5 @@
 ---
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter, slide } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import {
@@ -106,6 +106,15 @@ const canonical = localized ? absoluteUrl(localePath(locale, page)) : absoluteUr
                 };
                 applyTheme();
                 document.addEventListener('astro:after-swap', applyTheme);
+
+                // 세션의 첫 방문에만 등장 애니메이션을 재생한다 (페이지 전환 때는 html 클래스가 교체되어 재생되지 않음)
+                try {
+                    if (!sessionStorage.getItem('aige-intro')) {
+                        sessionStorage.setItem('aige-intro', '1');
+                        document.documentElement.classList.add('intro');
+                        setTimeout(() => document.documentElement.classList.remove('intro'), 1600);
+                    }
+                } catch (e) {}
             })();
         </script>
 
@@ -131,9 +140,33 @@ const canonical = localized ? absoluteUrl(localePath(locale, page)) : absoluteUr
     </head>
     <body>
         <Header locale={locale} page={page} />
-        <main id="main" class="content-wrapper">
+        <main id="main" class="content-wrapper" transition:animate={slide({ duration: '0.32s' })}>
             <slot />
         </main>
         <Footer locale={locale} />
+
+        <script>
+            // 스크롤해서 보이게 된 카드부터 차례로 등장시킨다
+            document.addEventListener('astro:page-load', () => {
+                const targets = document.querySelectorAll<HTMLElement>('[data-reveal]');
+                if (!targets.length || !('IntersectionObserver' in window)) return;
+
+                document.documentElement.classList.add('reveal-ready');
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        for (const entry of entries) {
+                            if (!entry.isIntersecting) continue;
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    },
+                    { rootMargin: '0px 0px -10% 0px' },
+                );
+                targets.forEach((el, index) => {
+                    el.style.setProperty('--reveal-delay', `${(index % 5) * 70}ms`);
+                    observer.observe(el);
+                });
+            });
+        </script>
     </body>
 </html>

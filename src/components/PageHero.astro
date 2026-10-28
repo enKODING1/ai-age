@@ -8,6 +8,7 @@ const { title, subtitle } = Astro.props;
 ---
 
 <section class="hero-section">
-    <h1 class="hero-title">{title}</h1>
+    <!-- 페이지 전환 때 제목 스티커가 이전 페이지 제목에서 이어지도록 같은 이름을 준다 -->
+    <h1 class="hero-title" transition:name="hero-title">{title}</h1>
     <p class="hero-subtitle">{subtitle}</p>
 </section>

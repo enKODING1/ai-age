@@ -10,3 +10,9 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# 카메라는 이 사이트에서만 사용 (광고 등 외부 iframe 은 차단)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "camera=(self), microphone=(), geolocation=()"
