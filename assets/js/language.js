@@ -32,64 +32,13 @@ function selectLanguage(value, flag, text) {
     isDropdownOpen = false;
     
     // Navigate to appropriate page
-    const currentPath = window.location.pathname;
-    const currentFileName = currentPath.split('/').pop() || 'index.html';
-    
-    if (value === 'kr') {
-        // 한국어 페이지로 이동 (루트)
-        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
-            currentPath.includes('/th/') || currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
-            window.location.href = '../' + currentFileName;
-        }
-    } else if (value === 'en') {
-        // 영어 페이지로 이동
-        if (currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
-            currentPath.includes('/th/') || currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
-            window.location.href = '../en/' + currentFileName;
-        } else if (!currentPath.includes('/en/')) {
-            window.location.href = './en/' + currentFileName;
-        }
-    } else if (value === 'zh') {
-        // 중국어 페이지로 이동
-        if (currentPath.includes('/en/') || currentPath.includes('/ja/') || 
-            currentPath.includes('/th/') || currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
-            window.location.href = '../zh/' + currentFileName;
-        } else if (!currentPath.includes('/zh/')) {
-            window.location.href = './zh/' + currentFileName;
-        }
-    } else if (value === 'ja') {
-        // 일본어 페이지로 이동
-        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || 
-            currentPath.includes('/th/') || currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
-            window.location.href = '../ja/' + currentFileName;
-        } else if (!currentPath.includes('/ja/')) {
-            window.location.href = './ja/' + currentFileName;
-        }
-    } else if (value === 'th') {
-        // 태국어 페이지로 이동
-        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
-            currentPath.includes('/vi/') || currentPath.includes('/hi/')) {
-            window.location.href = '../th/' + currentFileName;
-        } else if (!currentPath.includes('/th/')) {
-            window.location.href = './th/' + currentFileName;
-        }
-    } else if (value === 'vi') {
-        // 베트남어 페이지로 이동
-        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
-            currentPath.includes('/th/') || currentPath.includes('/hi/')) {
-            window.location.href = '../vi/' + currentFileName;
-        } else if (!currentPath.includes('/vi/')) {
-            window.location.href = './vi/' + currentFileName;
-        }
-    } else if (value === 'hi') {
-        // 힌디어 페이지로 이동
-        if (currentPath.includes('/en/') || currentPath.includes('/zh/') || currentPath.includes('/ja/') || 
-            currentPath.includes('/th/') || currentPath.includes('/vi/')) {
-            window.location.href = '../hi/' + currentFileName;
-        } else if (!currentPath.includes('/hi/')) {
-            window.location.href = './hi/' + currentFileName;
-        }
-    }
+    // 한국어(kr)는 루트, 나머지 언어는 /{언어}/ 하위 경로
+    const currentLanguage = document.documentElement.lang === 'ko' ? 'kr' : document.documentElement.lang;
+    if (value === currentLanguage) return;
+
+    const fileName = window.location.pathname.split('/').pop();
+    const page = /\.html$/.test(fileName) && fileName !== 'index.html' ? fileName : '';
+    window.location.href = (value === 'kr' ? '/' : '/' + value + '/') + page;
 }
 
 // 클릭 외부 영역 감지하여 드롭다운 닫기
@@ -160,42 +109,22 @@ function updateFocus(options, index) {
 }
 
 // 페이지 로드 시 현재 언어에 맞게 초기화
+const LANGUAGE_LABELS = {
+    ko: ['🇰🇷', '한국어'],
+    en: ['🇺🇸', 'English'],
+    zh: ['🇨🇳', '中文'],
+    ja: ['🇯🇵', '日本語'],
+    th: ['🇹🇭', 'ไทย'],
+    vi: ['🇻🇳', 'Tiếng Việt'],
+    hi: ['🇮🇳', 'हिन्दी']
+};
+
 document.addEventListener('DOMContentLoaded', function() {
-    const currentPath = window.location.pathname;
     const selected = document.querySelector('.language-selected');
-    
+
     if (!selected) return;
-    
-    const flagSpan = selected.querySelector('.flag');
-    const textSpan = selected.querySelector('.language-text');
-    
-    if (currentPath.includes('/en/')) {
-        // 영어 페이지
-        flagSpan.textContent = '🇺🇸';
-        textSpan.textContent = 'English';
-    } else if (currentPath.includes('/zh/')) {
-        // 중국어 페이지
-        flagSpan.textContent = '🇨🇳';
-        textSpan.textContent = '中文';
-    } else if (currentPath.includes('/ja/')) {
-        // 일본어 페이지
-        flagSpan.textContent = '🇯🇵';
-        textSpan.textContent = '日本語';
-    } else if (currentPath.includes('/th/')) {
-        // 태국어 페이지
-        flagSpan.textContent = '🇹🇭';
-        textSpan.textContent = 'ไทย';
-    } else if (currentPath.includes('/vi/')) {
-        // 베트남어 페이지
-        flagSpan.textContent = '🇻🇳';
-        textSpan.textContent = 'Tiếng Việt';
-    } else if (currentPath.includes('/hi/')) {
-        // 힌디어 페이지
-        flagSpan.textContent = '🇮🇳';
-        textSpan.textContent = 'हिन्दी';
-    } else {
-        // 한국어 페이지
-        flagSpan.textContent = '🇰🇷';
-        textSpan.textContent = '한국어';
-    }
-}); 
+
+    const [flag, text] = LANGUAGE_LABELS[document.documentElement.lang] || LANGUAGE_LABELS.ko;
+    selected.querySelector('.flag').textContent = flag;
+    selected.querySelector('.language-text').textContent = text;
+});
