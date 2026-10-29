@@ -1091,7 +1091,7 @@ label {
     justify-content: center;
     width: 320px;
     max-width: 100%;
-    min-height: 200px;
+    min-height: 50px;
     margin: 40px auto 0;
     overflow: hidden;
 }

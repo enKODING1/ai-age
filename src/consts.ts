@@ -5,7 +5,7 @@ export const UPDATED_AT = '2026-10-29';
 
 export const GA_ID = 'G-53HXVB2652';
 export const ADSENSE_CLIENT = 'ca-pub-5207006250876379';
-export const KAKAO_AD = { unit: 'DAN-yzYtkRfLLQrZjIi1', width: 320, height: 200 };
+export const KAKAO_AD = { unit: 'DAN-rCnk2z6YiPGVPPbO', width: 320, height: 50 };
 export const GOOGLE_SITE_VERIFICATION = 'Yk2euFjnay1FF1dBlJSE71D2TtMojzDKIY7scno9tg8';
 export const NAVER_SITE_VERIFICATION = '7aa6331705a17931b2bd844bd5285ea03a77210b';
 export const BING_SITE_VERIFICATION = '4F1C7887D159E213D7B4251E74ECD43D';
