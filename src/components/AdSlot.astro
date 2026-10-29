@@ -9,10 +9,17 @@ import { KAKAO_AD } from '../consts';
         style="display: none"
         data-ad-unit={KAKAO_AD.unit}
         data-ad-width={String(KAKAO_AD.width)}
-        data-ad-height={String(KAKAO_AD.height)}></ins>
+        data-ad-height={String(KAKAO_AD.height)}
+        data-ad-onfail="onKakaoAdFail"></ins>
 </aside>
 
 <script>
+    // 광고 요청이 실패하거나 노출할 광고가 없으면(NO-AD) 애드핏이 ins 요소를 넘겨 호출한다.
+    // 미리 잡아 둔 자리를 접어 빈 상자가 남지 않게 한다
+    Object.assign(window, {
+        onKakaoAdFail: (ins: HTMLElement) => ins.closest('[data-kakao-ad]')?.setAttribute('hidden', ''),
+    });
+
     // 카카오 애드핏은 스크립트가 로드될 때 광고 영역을 찾는다.
     // SPA 전환으로 새 영역이 생기면 스크립트를 다시 붙여 광고를 채운다.
     document.addEventListener('astro:page-load', () => {
