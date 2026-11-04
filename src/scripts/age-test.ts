@@ -42,8 +42,11 @@ const bindProgress = (container: Element) =>
 
 const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-const track = (name: string, params: Record<string, unknown>) =>
-    (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.('event', name, params);
+const track = (name: string, params: Record<string, unknown>) => {
+    const w = window as unknown as { gtag?: (...args: unknown[]) => void; clarity?: (...args: unknown[]) => void };
+    w.gtag?.('event', name, params);
+    w.clarity?.('event', name);
+};
 
 // 카메라와 결과 이미지는 페이지 전환 때 정리해야 하므로 모듈 단위로 둔다
 let stream: MediaStream | undefined;

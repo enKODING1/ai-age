@@ -236,7 +236,7 @@
       },
       {
         "title": "Cookies and third-party services",
-        "text": "For visit statistics and ads, Google Analytics (statistics), Google AdSense and Kakao AdFit (ads) use cookies. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites. That information is handled under each company’s policy: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
+        "text": "For visit statistics, service improvement and ads, Google Analytics (statistics), Microsoft Clarity (usage analytics such as clicks and scrolling), Google AdSense and Kakao AdFit (ads) use cookies. Photos and the camera view are masked in Microsoft Clarity recordings. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites. That information is handled under each company’s policy: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://privacy.microsoft.com/privacystatement\" target=\"_blank\" rel=\"noopener\">Microsoft</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>."
       },
       {
         "title": "How to refuse cookies",

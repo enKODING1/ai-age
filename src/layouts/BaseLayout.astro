@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import {
     ADSENSE_CLIENT,
     BING_SITE_VERIFICATION,
+    CLARITY_PROJECT_ID,
     GA_ID,
     GOOGLE_SITE_VERIFICATION,
     NAVER_SITE_VERIFICATION,
@@ -121,6 +122,19 @@ const canonical = localized ? absoluteUrl(localePath(locale, page)) : absoluteUr
                 } catch (e) {}
             })();
         </script>
+
+        <!-- Microsoft Clarity: 클릭·스크롤 히트맵과 세션 녹화. 사진·카메라 화면은 data-clarity-mask 로 가린다 -->
+        {
+            CLARITY_PROJECT_ID && (
+                <script is:inline define:vars={{ CLARITY_PROJECT_ID }}>
+                    (function (c, l, a, r, i, t, y) {
+                        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+                        t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+                        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+                    })(window, document, 'clarity', 'script', CLARITY_PROJECT_ID);
+                </script>
+            )
+        }
 
         <!-- GA4: 페이지 전환(history 변경)은 GA4 향상된 측정이 page_view 로 집계한다 -->
         <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>

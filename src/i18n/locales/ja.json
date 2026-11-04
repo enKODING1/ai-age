@@ -236,7 +236,7 @@
       },
       {
         "title": "Cookieと外部サービス",
-        "text": "アクセス統計と広告のため、Google Analytics（アクセス統計）、Google AdSense・Kakao AdFit（広告）がCookieを使用します。Googleなどの第三者配信事業者は、Cookieを使用して、ユーザーがこのサイトや他のサイトに過去にアクセスした際の情報に基づいて広告を配信します。収集された情報は各社のポリシーに従って取り扱われます：<a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>、<a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>。"
+        "text": "アクセス統計、サービス改善、広告のため、Google Analytics（アクセス統計）、Microsoft Clarity（クリックやスクロールなどの利用状況分析）、Google AdSense・Kakao AdFit（広告）がCookieを使用します。Microsoft Clarityの記録では写真とカメラ画面が隠されます。Googleなどの第三者配信事業者は、Cookieを使用して、ユーザーがこのサイトや他のサイトに過去にアクセスした際の情報に基づいて広告を配信します。収集された情報は各社のポリシーに従って取り扱われます：<a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>、<a href=\"https://privacy.microsoft.com/privacystatement\" target=\"_blank\" rel=\"noopener\">Microsoft</a>、<a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">Kakao</a>。"
       },
       {
         "title": "Cookieを拒否する方法",

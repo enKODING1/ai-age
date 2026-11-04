@@ -55,7 +55,7 @@ const [agePrefix, ageSuffix] = text.age.split('{age}');
             </div>
 
             <div class="camera-live" data-camera-live hidden>
-                <div class="camera-stage" data-camera-stage>
+                <div class="camera-stage" data-camera-stage data-clarity-mask="True">
                     <div class="camera-mirror">
                         <video data-camera-video playsinline muted autoplay></video>
                         <canvas class="face-overlay" data-camera-overlay></canvas>
@@ -82,7 +82,7 @@ const [agePrefix, ageSuffix] = text.age.split('{age}');
         </div>
 
         <div class="test-view analyzing" data-view="loading" hidden>
-            <div class="scan-frame">
+            <div class="scan-frame" data-clarity-mask="True">
                 <img data-scan-image alt="" />
                 <div class="face-box" data-scan-face hidden></div>
                 <div class="scan-line" aria-hidden="true"></div>
@@ -93,7 +93,7 @@ const [agePrefix, ageSuffix] = text.age.split('{age}');
         </div>
 
         <div class="test-view result" data-view="result" hidden>
-            <div class="result-photo">
+            <div class="result-photo" data-clarity-mask="True">
                 <img data-result-image alt="" />
                 <div class="face-box is-locked" data-result-face hidden></div>
             </div>

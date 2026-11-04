@@ -236,7 +236,7 @@
       },
       {
         "title": "쿠키와 외부 서비스",
-        "text": "방문 통계와 광고를 위해 Google Analytics(방문 통계), Google AdSense·카카오 애드핏(광고)이 쿠키를 사용합니다. Google을 비롯한 제3자 공급업체는 쿠키를 사용해 이용자의 이 사이트 및 다른 사이트 방문 기록을 바탕으로 광고를 게재합니다. 수집된 정보는 각 회사의 방침에 따라 처리됩니다: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">카카오</a>."
+        "text": "방문 통계와 서비스 개선, 광고를 위해 Google Analytics(방문 통계), Microsoft Clarity(클릭·스크롤 등 이용 행태 분석), Google AdSense·카카오 애드핏(광고)이 쿠키를 사용합니다. Microsoft Clarity의 이용 기록에서 사진과 카메라 화면은 가려집니다. Google을 비롯한 제3자 공급업체는 쿠키를 사용해 이용자의 이 사이트 및 다른 사이트 방문 기록을 바탕으로 광고를 게재합니다. 수집된 정보는 각 회사의 방침에 따라 처리됩니다: <a href=\"https://policies.google.com/technologies/ads\" target=\"_blank\" rel=\"noopener\">Google</a>, <a href=\"https://privacy.microsoft.com/privacystatement\" target=\"_blank\" rel=\"noopener\">Microsoft</a>, <a href=\"https://www.kakao.com/policy/privacy\" target=\"_blank\" rel=\"noopener\">카카오</a>."
       },
       {
         "title": "쿠키 거부 방법",
